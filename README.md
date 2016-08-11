@@ -15,7 +15,7 @@ The following **required** functionality is completed:
 
 - [ ] **Login Screen**
     * [ ] Signup Form including user details
-    * [ ] Login From consisting of user credentials
+    * [ ] Login Form consisting of user credentials
     * [ ] Login using Fb integration
 - [ ] **Timeline Screen**
     * [ ] Show stats from different categories in each group.
