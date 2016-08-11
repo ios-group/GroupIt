@@ -13,7 +13,7 @@
 
 The following **required** functionality is completed:
 
-- [ ] Login Screen
+- [ ] **Login Screen**
     * [ ] Signup Form including user details
     * [ ] Login From consisting of user credentials
     * [ ] Login using Fb integration
