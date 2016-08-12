@@ -16,6 +16,28 @@
 		7BA8B2F81D5C5A230015471D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA8B2F61D5C5A230015471D /* LaunchScreen.storyboard */; };
 		7BA8B3031D5C5A230015471D /* GroupItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B3021D5C5A230015471D /* GroupItTests.swift */; };
 		7BA8B30E1D5C5A240015471D /* GroupItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B30D1D5C5A240015471D /* GroupItUITests.swift */; };
+		7BC1B3E51D5D67D4008DA8F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E41D5D67D4008DA8F8 /* User.swift */; };
+		7BC1B3E71D5D67E1008DA8F8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E61D5D67E1008DA8F8 /* Group.swift */; };
+		7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */; };
+		7BC1B3EE1D5D685A008DA8F8 /* TodoCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3ED1D5D685A008DA8F8 /* TodoCategory.swift */; };
+		7BC1B3F01D5D6870008DA8F8 /* ImageCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3EF1D5D6870008DA8F8 /* ImageCategory.swift */; };
+		7BC1B3F21D5D68B8008DA8F8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3F11D5D68B8008DA8F8 /* Category.swift */; };
+		7BC1B3F71D5D6DAA008DA8F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3F61D5D6DAA008DA8F8 /* LoginViewController.swift */; };
+		7BC1B3FA1D5D6DC5008DA8F8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3F91D5D6DC5008DA8F8 /* SignUpViewController.swift */; };
+		7BC1B3FC1D5D6DE0008DA8F8 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3FB1D5D6DE0008DA8F8 /* PasswordRecoveryViewController.swift */; };
+		7BC1B3FF1D5D6E25008DA8F8 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3FE1D5D6E25008DA8F8 /* GroupsViewController.swift */; };
+		7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4011D5D6E8B008DA8F8 /* GroupSetupViewController.swift */; };
+		7BC1B4051D5D6EAF008DA8F8 /* GroupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4041D5D6EAF008DA8F8 /* GroupDetailsViewController.swift */; };
+		7BC1B4091D5D6EE2008DA8F8 /* PollDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4081D5D6EE2008DA8F8 /* PollDetailsViewController.swift */; };
+		7BC1B40B1D5D6EF6008DA8F8 /* PollSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B40A1D5D6EF6008DA8F8 /* PollSetupViewController.swift */; };
+		7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B40D1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift */; };
+		7BC1B4111D5D6F65008DA8F8 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4101D5D6F65008DA8F8 /* ImageDetailsViewController.swift */; };
+		7BC1B4141D5D6F8B008DA8F8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B4131D5D6F8B008DA8F8 /* Login.storyboard */; };
+		7BC1B4161D5D6FA3008DA8F8 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B4151D5D6FA3008DA8F8 /* Groups.storyboard */; };
+		7BC1B41A1D5D6FF0008DA8F8 /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B4191D5D6FF0008DA8F8 /* Group.storyboard */; };
+		7BC1B41C1D5D7011008DA8F8 /* PollCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */; };
+		7BC1B41E1D5D701E008DA8F8 /* TodoCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41D1D5D701E008DA8F8 /* TodoCategory.storyboard */; };
+		7BC1B4201D5D702A008DA8F8 /* ImageCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41F1D5D702A008DA8F8 /* ImageCategory.storyboard */; };
 		B19CF5170B69D9CDDFD075D5 /* Pods_GroupIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC21FD303961B1A68A9D833D /* Pods_GroupIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +75,28 @@
 		7BA8B3091D5C5A230015471D /* GroupItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA8B30D1D5C5A240015471D /* GroupItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItUITests.swift; sourceTree = "<group>"; };
 		7BA8B30F1D5C5A240015471D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BC1B3E41D5D67D4008DA8F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7BC1B3E61D5D67E1008DA8F8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollCategory.swift; sourceTree = "<group>"; };
+		7BC1B3ED1D5D685A008DA8F8 /* TodoCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategory.swift; sourceTree = "<group>"; };
+		7BC1B3EF1D5D6870008DA8F8 /* ImageCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCategory.swift; sourceTree = "<group>"; };
+		7BC1B3F11D5D68B8008DA8F8 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		7BC1B3F61D5D6DAA008DA8F8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7BC1B3F91D5D6DC5008DA8F8 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7BC1B3FB1D5D6DE0008DA8F8 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		7BC1B3FE1D5D6E25008DA8F8 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		7BC1B4011D5D6E8B008DA8F8 /* GroupSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSetupViewController.swift; sourceTree = "<group>"; };
+		7BC1B4041D5D6EAF008DA8F8 /* GroupDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewController.swift; sourceTree = "<group>"; };
+		7BC1B4081D5D6EE2008DA8F8 /* PollDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollDetailsViewController.swift; sourceTree = "<group>"; };
+		7BC1B40A1D5D6EF6008DA8F8 /* PollSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollSetupViewController.swift; sourceTree = "<group>"; };
+		7BC1B40D1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetailsViewController.swift; sourceTree = "<group>"; };
+		7BC1B4101D5D6F65008DA8F8 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
+		7BC1B4131D5D6F8B008DA8F8 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		7BC1B4151D5D6FA3008DA8F8 /* Groups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
+		7BC1B4191D5D6FF0008DA8F8 /* Group.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Group.storyboard; sourceTree = "<group>"; };
+		7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PollCategory.storyboard; sourceTree = "<group>"; };
+		7BC1B41D1D5D701E008DA8F8 /* TodoCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoCategory.storyboard; sourceTree = "<group>"; };
+		7BC1B41F1D5D702A008DA8F8 /* ImageCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageCategory.storyboard; sourceTree = "<group>"; };
 		8C223E4FFA3DC87DC3096863 /* Pods-GroupItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupItUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupItUITests/Pods-GroupItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A50D317C894AF59C0EA22D22 /* Pods_GroupItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC21FD303961B1A68A9D833D /* Pods_GroupIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +158,12 @@
 		7BA8B2EC1D5C5A230015471D /* GroupIt */ = {
 			isa = PBXGroup;
 			children = (
+				7BC1B4121D5D6F6D008DA8F8 /* Storyboard */,
+				7BC1B3F31D5D6AA0008DA8F8 /* Util */,
+				7BC1B3E31D5D677D008DA8F8 /* Db */,
+				7BC1B3E21D5D676F008DA8F8 /* Model */,
+				7BC1B3E11D5D675F008DA8F8 /* Controller */,
+				7BC1B3E01D5D6754008DA8F8 /* View */,
 				7BA8B2ED1D5C5A230015471D /* AppDelegate.swift */,
 				7BA8B2EF1D5C5A230015471D /* ViewController.swift */,
 				7BA8B2F11D5C5A230015471D /* Main.storyboard */,
@@ -140,6 +190,126 @@
 				7BA8B30F1D5C5A240015471D /* Info.plist */,
 			);
 			path = GroupItUITests;
+			sourceTree = "<group>";
+		};
+		7BC1B3E01D5D6754008DA8F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7BC1B3E11D5D675F008DA8F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B4061D5D6EBE008DA8F8 /* Category */,
+				7BC1B4001D5D6E33008DA8F8 /* Group */,
+				7BC1B3FD1D5D6DEA008DA8F8 /* Groups */,
+				7BC1B3F81D5D6DB4008DA8F8 /* Login */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7BC1B3E21D5D676F008DA8F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B3E41D5D67D4008DA8F8 /* User.swift */,
+				7BC1B3E61D5D67E1008DA8F8 /* Group.swift */,
+				7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */,
+				7BC1B3ED1D5D685A008DA8F8 /* TodoCategory.swift */,
+				7BC1B3EF1D5D6870008DA8F8 /* ImageCategory.swift */,
+				7BC1B3F11D5D68B8008DA8F8 /* Category.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7BC1B3E31D5D677D008DA8F8 /* Db */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Db;
+			sourceTree = "<group>";
+		};
+		7BC1B3F31D5D6AA0008DA8F8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		7BC1B3F81D5D6DB4008DA8F8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B3F61D5D6DAA008DA8F8 /* LoginViewController.swift */,
+				7BC1B3F91D5D6DC5008DA8F8 /* SignUpViewController.swift */,
+				7BC1B3FB1D5D6DE0008DA8F8 /* PasswordRecoveryViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		7BC1B3FD1D5D6DEA008DA8F8 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B3FE1D5D6E25008DA8F8 /* GroupsViewController.swift */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
+		7BC1B4001D5D6E33008DA8F8 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B4011D5D6E8B008DA8F8 /* GroupSetupViewController.swift */,
+				7BC1B4041D5D6EAF008DA8F8 /* GroupDetailsViewController.swift */,
+			);
+			name = Group;
+			sourceTree = "<group>";
+		};
+		7BC1B4061D5D6EBE008DA8F8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B40F1D5D6F48008DA8F8 /* Image */,
+				7BC1B40C1D5D6EFE008DA8F8 /* Todo */,
+				7BC1B4071D5D6ED1008DA8F8 /* Poll */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		7BC1B4071D5D6ED1008DA8F8 /* Poll */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B4081D5D6EE2008DA8F8 /* PollDetailsViewController.swift */,
+				7BC1B40A1D5D6EF6008DA8F8 /* PollSetupViewController.swift */,
+			);
+			name = Poll;
+			sourceTree = "<group>";
+		};
+		7BC1B40C1D5D6EFE008DA8F8 /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B40D1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift */,
+			);
+			name = Todo;
+			sourceTree = "<group>";
+		};
+		7BC1B40F1D5D6F48008DA8F8 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B4101D5D6F65008DA8F8 /* ImageDetailsViewController.swift */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		7BC1B4121D5D6F6D008DA8F8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B4131D5D6F8B008DA8F8 /* Login.storyboard */,
+				7BC1B4151D5D6FA3008DA8F8 /* Groups.storyboard */,
+				7BC1B4191D5D6FF0008DA8F8 /* Group.storyboard */,
+				7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */,
+				7BC1B41D1D5D701E008DA8F8 /* TodoCategory.storyboard */,
+				7BC1B41F1D5D702A008DA8F8 /* ImageCategory.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 		8A81E93D8A6935892EA5D64B /* Frameworks */ = {
@@ -277,9 +447,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC1B41C1D5D7011008DA8F8 /* PollCategory.storyboard in Resources */,
 				7BA8B2F81D5C5A230015471D /* LaunchScreen.storyboard in Resources */,
+				7BC1B41A1D5D6FF0008DA8F8 /* Group.storyboard in Resources */,
 				7BA8B2F51D5C5A230015471D /* Assets.xcassets in Resources */,
+				7BC1B4161D5D6FA3008DA8F8 /* Groups.storyboard in Resources */,
+				7BC1B4201D5D702A008DA8F8 /* ImageCategory.storyboard in Resources */,
 				7BA8B2F31D5C5A230015471D /* Main.storyboard in Resources */,
+				7BC1B4141D5D6F8B008DA8F8 /* Login.storyboard in Resources */,
+				7BC1B41E1D5D701E008DA8F8 /* TodoCategory.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,8 +603,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC1B3F71D5D6DAA008DA8F8 /* LoginViewController.swift in Sources */,
 				7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */,
 				7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */,
+				7BC1B4091D5D6EE2008DA8F8 /* PollDetailsViewController.swift in Sources */,
+				7BC1B3E51D5D67D4008DA8F8 /* User.swift in Sources */,
+				7BC1B3FA1D5D6DC5008DA8F8 /* SignUpViewController.swift in Sources */,
+				7BC1B3F01D5D6870008DA8F8 /* ImageCategory.swift in Sources */,
+				7BC1B3EE1D5D685A008DA8F8 /* TodoCategory.swift in Sources */,
+				7BC1B3FC1D5D6DE0008DA8F8 /* PasswordRecoveryViewController.swift in Sources */,
+				7BC1B3FF1D5D6E25008DA8F8 /* GroupsViewController.swift in Sources */,
+				7BC1B3E71D5D67E1008DA8F8 /* Group.swift in Sources */,
+				7BC1B4051D5D6EAF008DA8F8 /* GroupDetailsViewController.swift in Sources */,
+				7BC1B4111D5D6F65008DA8F8 /* ImageDetailsViewController.swift in Sources */,
+				7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */,
+				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,
+				7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */,
+				7BC1B3F21D5D68B8008DA8F8 /* Category.swift in Sources */,
+				7BC1B40B1D5D6EF6008DA8F8 /* PollSetupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
