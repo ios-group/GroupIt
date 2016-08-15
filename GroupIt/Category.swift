@@ -8,12 +8,11 @@
 
 import UIKit
 
-class Category: NSObject {
+protocol Category: CustomStringConvertible {
 
     /**
      * categoryId, categoryType enum, categoryOwner
      */
-    
 }
 
 enum CategoryType {
