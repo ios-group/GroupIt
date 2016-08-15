@@ -7,15 +7,34 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    private func initParse() {
+        
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // ============= instantiate parse ==============
+        Parse.initializeWithConfiguration(
+            ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = Constants.parseAppId
+                configuration.clientKey = nil  // set to nil assuming you have not set clientKey
+                configuration.server = Constants.parseServer
+            })
+        )
+        // ============= instantiate storyboard and view controllers ==============
+        let todoCategoryStoryboard = UIStoryboard(name: Constants.TODO_CATEGORY_STORYBOARD_NAME, bundle: nil)
+        let todoDetailsNavViewController = todoCategoryStoryboard.instantiateViewControllerWithIdentifier(Constants.TODO_CATEGORY_NAV_VIEW_CONTROLLER_ID) as! UINavigationController
+        
+        window?.rootViewController  = todoDetailsNavViewController.topViewController
+        window?.makeKeyAndVisible()
         return true
     }
 

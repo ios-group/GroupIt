@@ -38,6 +38,14 @@
 		7BC1B41C1D5D7011008DA8F8 /* PollCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */; };
 		7BC1B41E1D5D701E008DA8F8 /* TodoCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41D1D5D701E008DA8F8 /* TodoCategory.storyboard */; };
 		7BC1B4201D5D702A008DA8F8 /* ImageCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41F1D5D702A008DA8F8 /* ImageCategory.storyboard */; };
+		7BC1B4741D5FC630008DA8F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4731D5FC630008DA8F8 /* Constants.swift */; };
+		7BC1B4761D5FC986008DA8F8 /* ParseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4751D5FC986008DA8F8 /* ParseDAO.swift */; };
+		7BC1B4781D5FCD86008DA8F8 /* TodoCategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4771D5FCD86008DA8F8 /* TodoCategoryMapper.swift */; };
+		7BC1B47A1D5FD861008DA8F8 /* TodoCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4791D5FD861008DA8F8 /* TodoCategoryManager.swift */; };
+		7BC1B47E1D5FEBCD008DA8F8 /* TodoCategoryDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B47D1D5FEBCD008DA8F8 /* TodoCategoryDataUtil.swift */; };
+		7BC1B4801D604A60008DA8F8 /* TodoItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B47F1D604A60008DA8F8 /* TodoItemMapper.swift */; };
+		7BC1B4841D6084BA008DA8F8 /* TodoItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4831D6084BA008DA8F8 /* TodoItemManager.swift */; };
+		7BC1B48A1D614369008DA8F8 /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4891D614369008DA8F8 /* TodoItemCell.swift */; };
 		B19CF5170B69D9CDDFD075D5 /* Pods_GroupIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC21FD303961B1A68A9D833D /* Pods_GroupIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +105,14 @@
 		7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PollCategory.storyboard; sourceTree = "<group>"; };
 		7BC1B41D1D5D701E008DA8F8 /* TodoCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoCategory.storyboard; sourceTree = "<group>"; };
 		7BC1B41F1D5D702A008DA8F8 /* ImageCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageCategory.storyboard; sourceTree = "<group>"; };
+		7BC1B4731D5FC630008DA8F8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7BC1B4751D5FC986008DA8F8 /* ParseDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseDAO.swift; sourceTree = "<group>"; };
+		7BC1B4771D5FCD86008DA8F8 /* TodoCategoryMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategoryMapper.swift; sourceTree = "<group>"; };
+		7BC1B4791D5FD861008DA8F8 /* TodoCategoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategoryManager.swift; sourceTree = "<group>"; };
+		7BC1B47D1D5FEBCD008DA8F8 /* TodoCategoryDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategoryDataUtil.swift; sourceTree = "<group>"; };
+		7BC1B47F1D604A60008DA8F8 /* TodoItemMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemMapper.swift; sourceTree = "<group>"; };
+		7BC1B4831D6084BA008DA8F8 /* TodoItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemManager.swift; sourceTree = "<group>"; };
+		7BC1B4891D614369008DA8F8 /* TodoItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
 		8C223E4FFA3DC87DC3096863 /* Pods-GroupItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupItUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupItUITests/Pods-GroupItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A50D317C894AF59C0EA22D22 /* Pods_GroupItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC21FD303961B1A68A9D833D /* Pods_GroupIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,9 +174,11 @@
 		7BA8B2EC1D5C5A230015471D /* GroupIt */ = {
 			isa = PBXGroup;
 			children = (
+				7BC1B4721D5FC60D008DA8F8 /* Mapper */,
+				7BC1B4711D5FC5FD008DA8F8 /* Manager */,
 				7BC1B4121D5D6F6D008DA8F8 /* Storyboard */,
 				7BC1B3F31D5D6AA0008DA8F8 /* Util */,
-				7BC1B3E31D5D677D008DA8F8 /* Db */,
+				7BC1B3E31D5D677D008DA8F8 /* Datastore */,
 				7BC1B3E21D5D676F008DA8F8 /* Model */,
 				7BC1B3E11D5D675F008DA8F8 /* Controller */,
 				7BC1B3E01D5D6754008DA8F8 /* View */,
@@ -195,6 +213,7 @@
 		7BC1B3E01D5D6754008DA8F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7BC1B4891D614369008DA8F8 /* TodoItemCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -223,16 +242,19 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		7BC1B3E31D5D677D008DA8F8 /* Db */ = {
+		7BC1B3E31D5D677D008DA8F8 /* Datastore */ = {
 			isa = PBXGroup;
 			children = (
+				7BC1B4751D5FC986008DA8F8 /* ParseDAO.swift */,
 			);
-			name = Db;
+			name = Datastore;
 			sourceTree = "<group>";
 		};
 		7BC1B3F31D5D6AA0008DA8F8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7BC1B47C1D5FEBBC008DA8F8 /* Data */,
+				7BC1B4731D5FC630008DA8F8 /* Constants.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -310,6 +332,32 @@
 				7BC1B41F1D5D702A008DA8F8 /* ImageCategory.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		7BC1B4711D5FC5FD008DA8F8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B4791D5FD861008DA8F8 /* TodoCategoryManager.swift */,
+				7BC1B4831D6084BA008DA8F8 /* TodoItemManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		7BC1B4721D5FC60D008DA8F8 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B4771D5FCD86008DA8F8 /* TodoCategoryMapper.swift */,
+				7BC1B47F1D604A60008DA8F8 /* TodoItemMapper.swift */,
+			);
+			name = Mapper;
+			sourceTree = "<group>";
+		};
+		7BC1B47C1D5FEBBC008DA8F8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7BC1B47D1D5FEBCD008DA8F8 /* TodoCategoryDataUtil.swift */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		8A81E93D8A6935892EA5D64B /* Frameworks */ = {
@@ -603,12 +651,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC1B4761D5FC986008DA8F8 /* ParseDAO.swift in Sources */,
 				7BC1B3F71D5D6DAA008DA8F8 /* LoginViewController.swift in Sources */,
+				7BC1B4741D5FC630008DA8F8 /* Constants.swift in Sources */,
 				7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */,
 				7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */,
 				7BC1B4091D5D6EE2008DA8F8 /* PollDetailsViewController.swift in Sources */,
+				7BC1B47E1D5FEBCD008DA8F8 /* TodoCategoryDataUtil.swift in Sources */,
 				7BC1B3E51D5D67D4008DA8F8 /* User.swift in Sources */,
+				7BC1B4781D5FCD86008DA8F8 /* TodoCategoryMapper.swift in Sources */,
 				7BC1B3FA1D5D6DC5008DA8F8 /* SignUpViewController.swift in Sources */,
+				7BC1B4841D6084BA008DA8F8 /* TodoItemManager.swift in Sources */,
 				7BC1B3F01D5D6870008DA8F8 /* ImageCategory.swift in Sources */,
 				7BC1B3EE1D5D685A008DA8F8 /* TodoCategory.swift in Sources */,
 				7BC1B3FC1D5D6DE0008DA8F8 /* PasswordRecoveryViewController.swift in Sources */,
@@ -616,10 +669,13 @@
 				7BC1B3E71D5D67E1008DA8F8 /* Group.swift in Sources */,
 				7BC1B4051D5D6EAF008DA8F8 /* GroupDetailsViewController.swift in Sources */,
 				7BC1B4111D5D6F65008DA8F8 /* ImageDetailsViewController.swift in Sources */,
+				7BC1B4801D604A60008DA8F8 /* TodoItemMapper.swift in Sources */,
 				7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */,
 				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,
 				7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */,
+				7BC1B47A1D5FD861008DA8F8 /* TodoCategoryManager.swift in Sources */,
 				7BC1B3F21D5D68B8008DA8F8 /* Category.swift in Sources */,
+				7BC1B48A1D614369008DA8F8 /* TodoItemCell.swift in Sources */,
 				7BC1B40B1D5D6EF6008DA8F8 /* PollSetupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
