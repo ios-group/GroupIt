@@ -75,12 +75,22 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    private func deleteGroupById(groupId : String) {
+        print("Inside deleteGroupById()")
+        groupManager.deleteGroupById(groupId) { (deleted : Bool, error : NSError?) in
+            if error == nil {
+                print(deleted)
+            } else {
+                print(error)
+            }
+        }
+    }
 /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+     
     }
 */
     

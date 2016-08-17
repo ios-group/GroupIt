@@ -27,4 +27,10 @@ class GroupManager: NSObject {
             completion(self.groupMapper.groups(pfObjects), error)
         }
     }
+    
+    func deleteGroupById(id : String, completion : (Bool, NSError?) -> Void)  {
+        groupDao.deleteById(id) { (deleted : Bool, error : NSError?) in
+            completion(deleted, error)
+        }
+    }
 }
