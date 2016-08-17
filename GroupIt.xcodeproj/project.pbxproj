@@ -16,6 +16,10 @@
 		7BA8B2F81D5C5A230015471D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA8B2F61D5C5A230015471D /* LaunchScreen.storyboard */; };
 		7BA8B3031D5C5A230015471D /* GroupItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B3021D5C5A230015471D /* GroupItTests.swift */; };
 		7BA8B30E1D5C5A240015471D /* GroupItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B30D1D5C5A240015471D /* GroupItUITests.swift */; };
+		7BB7609A1D643BE900D0EFD3 /* TodoItemDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760991D643BE900D0EFD3 /* TodoItemDO.swift */; };
+		7BB7609C1D643C8900D0EFD3 /* TodoCategoryDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB7609B1D643C8900D0EFD3 /* TodoCategoryDO.swift */; };
+		7BB760A01D643FB900D0EFD3 /* GroupDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB7609F1D643FB900D0EFD3 /* GroupDO.swift */; };
+		7BB760A21D643FED00D0EFD3 /* CategoryDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760A11D643FED00D0EFD3 /* CategoryDO.swift */; };
 		7BC1B3E51D5D67D4008DA8F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E41D5D67D4008DA8F8 /* User.swift */; };
 		7BC1B3E71D5D67E1008DA8F8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E61D5D67E1008DA8F8 /* Group.swift */; };
 		7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */; };
@@ -83,6 +87,11 @@
 		7BA8B3091D5C5A230015471D /* GroupItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA8B30D1D5C5A240015471D /* GroupItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItUITests.swift; sourceTree = "<group>"; };
 		7BA8B30F1D5C5A240015471D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BB760991D643BE900D0EFD3 /* TodoItemDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemDO.swift; sourceTree = "<group>"; };
+		7BB7609B1D643C8900D0EFD3 /* TodoCategoryDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCategoryDO.swift; sourceTree = "<group>"; };
+		7BB7609F1D643FB900D0EFD3 /* GroupDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDO.swift; sourceTree = "<group>"; };
+		7BB760A11D643FED00D0EFD3 /* CategoryDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDO.swift; sourceTree = "<group>"; };
+		7BB760A41D65037200D0EFD3 /* GroupIt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GroupIt-Bridging-Header.h"; sourceTree = "<group>"; };
 		7BC1B3E41D5D67D4008DA8F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7BC1B3E61D5D67E1008DA8F8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollCategory.swift; sourceTree = "<group>"; };
@@ -188,6 +197,7 @@
 				7BA8B2F41D5C5A230015471D /* Assets.xcassets */,
 				7BA8B2F61D5C5A230015471D /* LaunchScreen.storyboard */,
 				7BA8B2F91D5C5A230015471D /* Info.plist */,
+				7BB760A41D65037200D0EFD3 /* GroupIt-Bridging-Header.h */,
 			);
 			path = GroupIt;
 			sourceTree = "<group>";
@@ -208,6 +218,17 @@
 				7BA8B30F1D5C5A240015471D /* Info.plist */,
 			);
 			path = GroupItUITests;
+			sourceTree = "<group>";
+		};
+		7BB760981D643BBD00D0EFD3 /* DO */ = {
+			isa = PBXGroup;
+			children = (
+				7BB760991D643BE900D0EFD3 /* TodoItemDO.swift */,
+				7BB7609B1D643C8900D0EFD3 /* TodoCategoryDO.swift */,
+				7BB7609F1D643FB900D0EFD3 /* GroupDO.swift */,
+				7BB760A11D643FED00D0EFD3 /* CategoryDO.swift */,
+			);
+			name = DO;
 			sourceTree = "<group>";
 		};
 		7BC1B3E01D5D6754008DA8F8 /* View */ = {
@@ -245,6 +266,7 @@
 		7BC1B3E31D5D677D008DA8F8 /* Datastore */ = {
 			isa = PBXGroup;
 			children = (
+				7BB760981D643BBD00D0EFD3 /* DO */,
 				7BC1B4751D5FC986008DA8F8 /* ParseDAO.swift */,
 			);
 			name = Datastore;
@@ -657,10 +679,12 @@
 				7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */,
 				7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */,
 				7BC1B4091D5D6EE2008DA8F8 /* PollDetailsViewController.swift in Sources */,
+				7BB760A01D643FB900D0EFD3 /* GroupDO.swift in Sources */,
 				7BC1B47E1D5FEBCD008DA8F8 /* TodoCategoryDataUtil.swift in Sources */,
 				7BC1B3E51D5D67D4008DA8F8 /* User.swift in Sources */,
 				7BC1B4781D5FCD86008DA8F8 /* TodoCategoryMapper.swift in Sources */,
 				7BC1B3FA1D5D6DC5008DA8F8 /* SignUpViewController.swift in Sources */,
+				7BB7609C1D643C8900D0EFD3 /* TodoCategoryDO.swift in Sources */,
 				7BC1B4841D6084BA008DA8F8 /* TodoItemManager.swift in Sources */,
 				7BC1B3F01D5D6870008DA8F8 /* ImageCategory.swift in Sources */,
 				7BC1B3EE1D5D685A008DA8F8 /* TodoCategory.swift in Sources */,
@@ -677,6 +701,8 @@
 				7BC1B3F21D5D68B8008DA8F8 /* Category.swift in Sources */,
 				7BC1B48A1D614369008DA8F8 /* TodoItemCell.swift in Sources */,
 				7BC1B40B1D5D6EF6008DA8F8 /* PollSetupViewController.swift in Sources */,
+				7BB760A21D643FED00D0EFD3 /* CategoryDO.swift in Sources */,
+				7BB7609A1D643BE900D0EFD3 /* TodoItemDO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,10 +845,13 @@
 			baseConfigurationReference = 381A715E0EEF71F56A63154D /* Pods-GroupIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GroupIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.group5.GroupIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GroupIt/GroupIt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -831,10 +860,12 @@
 			baseConfigurationReference = D180F337EBD3A72360B72F11 /* Pods-GroupIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GroupIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.group5.GroupIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GroupIt/GroupIt-Bridging-Header.h";
 			};
 			name = Release;
 		};

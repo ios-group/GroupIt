@@ -18,6 +18,7 @@ class Constants: NSObject {
     // ======== Groups ======
     
     // ======== Group ======
+    static let GROUP_CLASSNAME : String = "Group"
     
     // ======== TodoCategory ======
     static let TODO_ITEM_CLASSNAME : String = "TodoItem"
