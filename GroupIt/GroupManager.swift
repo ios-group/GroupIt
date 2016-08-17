@@ -21,29 +21,10 @@ class GroupManager: NSObject {
         }
     }
     
-//    func updateGroup(id : String, todoCategory : TodoCategory, completion : (Bool, NSError?) -> Void) {
-//        let pfObjectNew = todoCategoryMapper.toPFObject(todoCategory)
-//        todoCategoryDao.updateById(id, pfObjectNew: pfObjectNew) { (updated : Bool, error : NSError?) in
-//            completion(updated, error)
-//        }
-//    }
-    
-//    func getAllGroups(completion : ([TodoCategory], NSError?) -> Void) {
-//        todoCategoryDao.getAll { (pfObjects : [PFObject]?, error : NSError?) in
-//            completion(self.todoCategoryMapper.toTodoCategories(pfObjects), error)
-//        }
-//    }
-    
-//    func getGroupById(id : String, completion : (todoCategory : TodoCategory?, error : NSError?) -> Void) {
-//        todoCategoryDao.getById(id) { (pfObject: PFObject?, error : NSError?) in
-//            completion(todoCategory: self.todoCategoryMapper.toTodoCategory(pfObject), error: error)
-//        }
-//    }
-    
-//    func deleteGroupById(id : String, completion : (Bool, NSError?) -> Void)  {
-//        todoCategoryDao.deleteById(id) { (deleted : Bool, error : NSError?) in
-//            completion(deleted, error)
-//        }
-//    }
-
+    func getAllGroups(completion : ([Group], NSError?) -> Void) {
+        
+        groupDao.getAll { (pfObjects : [PFObject]?, error : NSError?) in
+            completion(self.groupMapper.groups(pfObjects), error)
+        }
+    }
 }

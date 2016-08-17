@@ -16,9 +16,13 @@ class Constants: NSObject {
     static let parseServer : String = "https://parse-demo-2.herokuapp.com/parse"
     
     // ======== Groups ======
+    static let GROUPS_STORYBOARD_NAME : String = "Groups"
+    static let GROUPS_VIEW_CONTROLLER_ID : String = "GroupsViewController"
+    static let GROUPS_NAV_VIEW_CONTROLLER_ID : String = "GroupsNavViewController"
     
     // ======== Group ======
-    
+    static let GROUP_CLASSNAME : String = "Group"
+
     // ======== TodoCategory ======
     static let TODO_ITEM_CLASSNAME : String = "TodoItem"
     static let TODO_CATEGORY_CLASSNAME : String = "TodoCategory"
