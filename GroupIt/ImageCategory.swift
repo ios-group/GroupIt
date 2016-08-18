@@ -26,5 +26,17 @@ class ImageCategory: Category {
             return self.imageName!
         }
     }
+    
+    func getCategoryType() -> CategoryType {
+        return CategoryType.IMAGES
+    }
+    
+    func getID() -> String? {
+        return id
+    }
+    
+    func getName() -> String? {
+        return imageName
+    }
 
 }
