@@ -10,39 +10,23 @@ import UIKit
 import Parse
 
 class TodoItemMapper: NSObject {
-
-    func toPFObject(todoItem : TodoItem) -> PFObject {
-        let todoItemPFObject = PFObject(className: Constants.TODO_ITEM_CLASSNAME)
-        todoItemPFObject.objectId = todoItem.id
-        todoItemPFObject["todoItemName"] = todoItem.todoItemName
-        todoItemPFObject["completed"] = todoItem.isCompleted
-        return todoItemPFObject
-    }
     
-    func toPFObjects(todoItems : [TodoItem]) -> [PFObject] {
-        var todoItemPFObjects : [PFObject] = []
-        for todoItem  in todoItems {
-            todoItemPFObjects.append(toPFObject(todoItem))
-        }
-        return todoItemPFObjects
+    func toTodoItemDO(todoCategoryDO : TodoCategoryDO, todoItem : TodoItem) -> TodoItemDO {
+        let todoItemDO = TodoItemDO()
+        todoItemDO.objectId = todoItem.id
+        todoItemDO["todoItemName"] = todoItem.todoItemName
+        todoItemDO["completed"] = todoItem.completed
+        todoItemDO["category"] = todoCategoryDO
+        return todoItemDO
     }
 
-    func toTodoItem(pfObject:PFObject) -> TodoItem {
-        var todoItemDictionary : Dictionary<String, AnyObject> = [:]
-        todoItemDictionary["id"] = pfObject.objectId
-        todoItemDictionary["todoItemName"] = pfObject.objectForKey("todoItemName") as! String
-        todoItemDictionary["completed"] = pfObject.objectForKey("completed") as! Bool
-        return TodoItem(todoItemDictionary: todoItemDictionary)
+    func toTodoItem(todoItemDO : TodoItemDO) -> TodoItem {
+        var todoItemDictionary = Dictionary<String, AnyObject?>()
+        todoItemDictionary["id"] = todoItemDO.objectId
+        todoItemDictionary["todoItemName"] = todoItemDO["todoItemName"]
+        todoItemDictionary["completed"] = todoItemDO["completed"]
+        todoItemDictionary["category"] = todoItemDO["category"]
+        let todoItem = TodoItem(todoItemDictionary: todoItemDictionary)
+        return todoItem
     }
-    
-    func toTodoItems(pfObjects : [PFObject]?) -> [TodoItem] {
-        var todoItems : [TodoItem] = []
-        if let pfObjects = pfObjects {
-            for pfObject in pfObjects {
-                todoItems.append(toTodoItem(pfObject))
-            }
-        }
-        return todoItems
-    }
-
 }

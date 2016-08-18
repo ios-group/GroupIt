@@ -11,39 +11,56 @@ import Parse
 
 class TodoItemManager: NSObject {
 
+    let todoCategoryDao = ParseDAO(className: Constants.TODO_CATEGORY_CLASSNAME)
     let todoItemDao = ParseDAO(className: Constants.TODO_ITEM_CLASSNAME)
+
     let todoItemMapper = TodoItemMapper()
+    let todoCategoryMapper = TodoCategoryMapper()
     
-    
-    func createTodoItem(todoItem : TodoItem, completion : (Bool, NSError?) -> ()) -> Void {
-        let pfObject = todoItemMapper.toPFObject(todoItem)
-        todoItemDao.create(pfObject) { (created : Bool, error : NSError?) in
-            completion(created, error)
+    func upsertTodoItem(categoryId : String, todoItem : TodoItem, completion : (Bool, NSError?) -> ()) -> Void {
+        todoCategoryDao.getById(categoryId) { (todoCategoryPfObject : PFObject?, error : NSError?) in
+            if error == nil {
+                let todoItemDO = self.todoItemMapper.toTodoItemDO(todoCategoryPfObject as! TodoCategoryDO, todoItem: todoItem)
+                self.todoItemDao.upsert(todoItemDO) { (created : Bool, error : NSError?) in
+                    completion(created, error)
+                }
+            } else {
+                completion(false, error)
+            }
         }
     }
-    
-    func updatetodoItem(id : String, todoItem : TodoItem, completion : (Bool, NSError?) -> Void) {
-        let pfObjectNew = todoItemMapper.toPFObject(todoItem)
-        todoItemDao.updateById(id, pfObjectNew: pfObjectNew) { (updated : Bool, error : NSError?) in
-            completion(updated, error)
-        }
-    }
-    
-    func getAllTodoItems(completion : ([TodoItem], NSError?) -> Void) {
-        todoItemDao.getAll { (pfObjects : [PFObject]?, error : NSError?) in
-            completion(self.todoItemMapper.toTodoItems(pfObjects), error)
-        }
-    }
-    
-    func gettodoItemById(id : String, completion : (todoItem : TodoItem?, error : NSError?) -> Void) {
-        todoItemDao.getById(id) { (pfObject: PFObject?, error : NSError?) in
-            completion(todoItem: self.todoItemMapper.toTodoItem(pfObject!), error: error)
-        }
-    }
-    
+
     func deleteTodoItemById(id : String, completion : (Bool, NSError?) -> Void)  {
         todoItemDao.deleteById(id) { (deleted : Bool, error : NSError?) in
             completion(deleted, error)
         }
     }
+
+    func getAllTodoItems(completion : ([TodoItem], NSError?) -> Void) {
+        var todoItems : [TodoItem] = []
+        todoItemDao.getAll { (todoItemPfObjects : [PFObject]?, error : NSError?) in
+            if error == nil {
+                if let todoItemPfObjects = todoItemPfObjects {
+                    for todoItemPfObject in todoItemPfObjects {
+                        todoItems.append(self.todoItemMapper.toTodoItem(todoItemPfObject as! TodoItemDO))
+                    }
+                }
+            }
+            completion(todoItems, error)
+        }
+    }
+
+    func getAllTodoItemsByCategoryId(completion : ([TodoItem], NSError?) -> Void) {
+        var todoItems : [TodoItem] = []
+        todoItemDao.getAllByForeignKey { (todoItemPfObjects : [PFObject]?, error : NSError?) in
+            if error == nil {
+                if let todoItemPfObjects = todoItemPfObjects {
+                    for todoItemPfObject in todoItemPfObjects {
+                        todoItems.append(self.todoItemMapper.toTodoItem(todoItemPfObject as! TodoItemDO))
+                    }
+                }
+            }
+            completion(todoItems, error)
+        }
+    }    
 }
