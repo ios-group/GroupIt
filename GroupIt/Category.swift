@@ -9,14 +9,23 @@
 import UIKit
 
 protocol Category: CustomStringConvertible {
-
     /**
      * categoryId, categoryType enum, categoryOwner
      */
+    func getID() -> String?
+    func getCategoryType() -> CategoryType
+    func getName() -> String?
+    
 }
 
 enum CategoryType {
+    
     case TODO
     case POLL
     case IMAGES
+    static let allValues = [TODO, POLL, IMAGES]
+}
+
+func getAllCategoryTypes() -> [CategoryType]{
+    return CategoryType.allValues
 }

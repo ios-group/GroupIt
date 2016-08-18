@@ -24,6 +24,18 @@ class TodoCategory: Category {
         todoItems = todoCategoryDictionary["todoItems"] as! [TodoItem]
     }
     
+    func getID() -> String? {
+        return id
+    }
+    
+    func getCategoryType() -> CategoryType {
+        return CategoryType.TODO
+    }
+    
+    func getName() -> String? {
+        return todoName
+    }
+    
     func addTodoItem(todoItem : TodoItem) {
         todoItems.append(todoItem)
     }

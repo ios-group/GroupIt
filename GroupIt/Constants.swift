@@ -12,12 +12,17 @@ class Constants: NSObject {
     
     // ======== Parse ========
     
-    static let parseAppId : String = "parse-demo-2-app-id"
-    static let parseServer : String = "https://parse-demo-2.herokuapp.com/parse"
+    static let parseAppId : String = "groupit2"
+    static let parseServer : String = "https://groupit2.herokuapp.com/parse"
     
     // ======== Groups ======
     
+    
     // ======== Group ======
+    static let GROUP_STORYBOARD_NAME : String = "Group"
+    static let GROUP_VIEW_CONTROLLER_ID : String = "GroupViewController"
+    static let GROUP_NAV_VIEW_CONTROLLER_ID : String = "GroupViewNavViewController"
+    
     
     // ======== TodoCategory ======
     static let TODO_ITEM_CLASSNAME : String = "TodoItem"
@@ -30,4 +35,10 @@ class Constants: NSObject {
     // ======== PollCategory ======
     
     // ======== ImageCategory ======
+    
+    
+    // ======== Segues ======
+    static let READ_GROUP_TODO_CATEGORY_SEGUE : String = "readGroupVCtoDoVCsegue"
+    static let SETUP_GROUP_TODO_CATEGORY_SEGUE : String = "setupGroupVCtoDoVCsegue"
+    
 }

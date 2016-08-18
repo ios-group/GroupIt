@@ -24,7 +24,7 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         todoItemsTableView.dataSource = self
         todoItemsTableView.delegate = self
         
-        performCRUD()
+//        performCRUD()
     }
     
     // ================== Todo Category CRUD =====================
