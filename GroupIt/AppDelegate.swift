@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = Constants.parseServer
             })
         )
-        // ============= instantiate storyboard and view controllers ==============
         return true
     }
     

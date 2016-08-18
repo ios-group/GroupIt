@@ -8,7 +8,7 @@
         <!--Group Name-->
         <scene sceneID="9PW-Kx-cMw">
             <objects>
-                <viewController id="GDr-aB-ZiW" customClass="GroupViewController" customModule="GroupIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupViewController" id="GDr-aB-ZiW" customClass="GroupViewController" customModule="GroupIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3aP-O8-k4W"/>
                         <viewControllerLayoutGuide type="bottom" id="oSO-bj-PjI"/>
