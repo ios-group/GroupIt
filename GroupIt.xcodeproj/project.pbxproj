@@ -10,7 +10,6 @@
 		158C7F5F4F1DD68469E39F42 /* Pods_GroupItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50D317C894AF59C0EA22D22 /* Pods_GroupItTests.framework */; };
 		3419A5A11D63B6BD00508FF7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3419A5A01D63B6BD00508FF7 /* CategoryCell.swift */; };
 		347382491D624BC10015545E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347382481D624BC10015545E /* GroupViewController.swift */; };
-		3473824B1D6258E50015545E /* GroupDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3473824A1D6258E50015545E /* GroupDataUtil.swift */; };
 		5CBA2512DF1117376544DB12 /* Pods_GroupItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62437C027773D917379FA288 /* Pods_GroupItUITests.framework */; };
 		7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B2ED1D5C5A230015471D /* AppDelegate.swift */; };
 		7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B2EF1D5C5A230015471D /* ViewController.swift */; };
@@ -73,7 +72,6 @@
 		289274919171848AF31D3931 /* Pods-GroupItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupItTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupItTests/Pods-GroupItTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3419A5A01D63B6BD00508FF7 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		347382481D624BC10015545E /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
-		3473824A1D6258E50015545E /* GroupDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDataUtil.swift; sourceTree = "<group>"; };
 		381A715E0EEF71F56A63154D /* Pods-GroupIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupIt/Pods-GroupIt.debug.xcconfig"; sourceTree = "<group>"; };
 		62437C027773D917379FA288 /* Pods_GroupItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA8B2EA1D5C5A230015471D /* GroupIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -364,7 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				7BC1B47D1D5FEBCD008DA8F8 /* TodoCategoryDataUtil.swift */,
-				3473824A1D6258E50015545E /* GroupDataUtil.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -683,7 +680,6 @@
 				7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */,
 				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,
 				7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */,
-				3473824B1D6258E50015545E /* GroupDataUtil.swift in Sources */,
 				7BC1B47A1D5FD861008DA8F8 /* TodoCategoryManager.swift in Sources */,
 				7BC1B3F21D5D68B8008DA8F8 /* Category.swift in Sources */,
 				7BC1B48A1D614369008DA8F8 /* TodoItemCell.swift in Sources */,
