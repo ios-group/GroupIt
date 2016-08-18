@@ -16,7 +16,7 @@ class GroupManager: NSObject {
     
     func createGroup(group : Group, completion : (Bool, NSError?) -> ()) -> Void {
         let pfObject = groupMapper.toPFObject(group)
-        groupDao.create(pfObject) { (created : Bool, error : NSError?) in
+        groupDao.upsert(pfObject) { (created : Bool, error : NSError?) in
             completion(created, error)
         }
     }

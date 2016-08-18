@@ -44,5 +44,5 @@ class Constants: NSObject {
     // ======== Segues ======
     static let READ_GROUP_TODO_CATEGORY_SEGUE : String = "readGroupVCtoDoVCsegue"
     static let SETUP_GROUP_TODO_CATEGORY_SEGUE : String = "setupGroupVCtoDoVCsegue"
-    
+    static let READ_GROUPS_GROUP_SEGUE : String = "readGroupsVCtoGroupVCsegue"
 }

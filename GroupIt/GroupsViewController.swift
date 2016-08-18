@@ -42,6 +42,10 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let sender = tableView.cellForRowAtIndexPath(indexPath) as! GroupsCell
+        performSegueWithIdentifier(Constants.READ_GROUPS_GROUP_SEGUE, sender: sender)
+    }
 
     //================== GROUPS Library Operations =====================
     
@@ -85,13 +89,20 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
     }
-/*
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-     
+        
+        print("prepare for segue")
+        if segue.identifier == Constants.READ_GROUPS_GROUP_SEGUE {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let groupDetails = groups[(indexPath?.row)!]
+            
+            let groupViewController = segue.destinationViewController as! GroupViewController
+            groupViewController.group = groupDetails
+        }
     }
-*/
-    
 }

@@ -48,11 +48,22 @@
                     <navigationItem key="navigationItem" title="Groups" id="UFi-fd-OBm"/>
                     <connections>
                         <outlet property="tableView" destination="8uX-tE-YmK" id="bkp-ZN-pVE"/>
+                        <segue destination="gDO-gh-tvO" kind="push" identifier="readGroupsVCtoGroupVCsegue" id="d4X-iX-gRi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6Q-U0-zFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="553" y="-7"/>
+        </scene>
+        <!--GroupViewController-->
+        <scene sceneID="n6e-oa-HFY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Group" referencedIdentifier="GroupViewController" id="gDO-gh-tvO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nsq-Ru-2ct"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GL1-yu-eK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918.5" y="-90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AJ8-cw-oE2">
