@@ -60,4 +60,14 @@ class ParseDAO: NSObject {
             completion(pfObject, error)
         }
     }
+
+    func deleteAll(completion: (NSError?) -> ()) {
+        let pfQuery = PFQuery(className: className)
+        pfQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            for object in objects!{
+                object.deleteInBackground()
+            }
+            completion(error)
+        }
+    }
 }

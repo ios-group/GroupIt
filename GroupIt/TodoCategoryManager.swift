@@ -63,4 +63,10 @@ class TodoCategoryManager: NSObject {
         }
     }
     
+    func deleteAllCategories(completion : (NSError?) -> Void) {
+        todoCategoryDao.deleteAll { (error: NSError?) in
+            completion(error)
+        }
+    }
+    
 }
