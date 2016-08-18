@@ -28,6 +28,18 @@ class PollCategory: Category {
             return self.pollName!
         }
     }
+    
+    func getCategoryType() -> CategoryType {
+        return CategoryType.POLL
+    }
+    
+    func getID() -> String? {
+        return id
+    }
+    
+    func getName() -> String? {
+        return pollName
+    }
 }
 
 

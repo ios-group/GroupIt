@@ -1,7 +1,155 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TIP-Hc-Tcg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Group Name-->
+        <scene sceneID="9PW-Kx-cMw">
+            <objects>
+                <viewController id="GDr-aB-ZiW" customClass="GroupViewController" customModule="GroupIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3aP-O8-k4W"/>
+                        <viewControllerLayoutGuide type="bottom" id="oSO-bj-PjI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kfh-VK-mN6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbr-89-tMy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="71" id="Eai-Cg-Ndl" customClass="CategoryCell" customModule="GroupIt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eai-Cg-Ndl" id="n21-hI-235">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CategoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mp-hV-eP5">
+                                                    <rect key="frame" x="12" y="10" width="240" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfl-ii-Frm">
+                                                    <rect key="frame" x="15" y="29" width="237" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CategoryType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-JU-oz1">
+                                                    <rect key="frame" x="14" y="40" width="238" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.11092448979616165" green="0.42874768376350403" blue="0.51403164863586426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="categoryName" destination="4mp-hV-eP5" id="zce-IU-3Ba"/>
+                                            <outlet property="categoryTypeLabel" destination="GQl-JU-oz1" id="cYt-Cj-i0Q"/>
+                                            <outlet property="idLabel" destination="bfl-ii-Frm" id="kZb-nc-SXc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUS-3F-Q3g">
+                                <rect key="frame" x="113" y="500" width="95" height="30"/>
+                                <state key="normal" title="Add Category"/>
+                                <connections>
+                                    <action selector="onAddCategoryButton:" destination="GDr-aB-ZiW" eventType="touchUpInside" id="B3e-fq-6No"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-ds-l2T">
+                                <rect key="frame" x="85" y="242" width="140" height="30"/>
+                                <state key="normal" title="create todocategory"/>
+                                <connections>
+                                    <action selector="onCreateButton:" destination="GDr-aB-ZiW" eventType="touchUpInside" id="mfc-mO-6ft"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgc-jR-VRL">
+                                <rect key="frame" x="81" y="273" width="148" height="30"/>
+                                <state key="normal" title="get todocategorybyid"/>
+                                <connections>
+                                    <action selector="onGetButton:" destination="GDr-aB-ZiW" eventType="touchUpInside" id="O9t-Ib-tCj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDz-Pq-W2C">
+                                <rect key="frame" x="86" y="316" width="138" height="30"/>
+                                <state key="normal" title="get all todocategory"/>
+                                <connections>
+                                    <action selector="onGetAllButton:" destination="GDr-aB-ZiW" eventType="touchUpInside" id="dAB-fQ-G7I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26B-US-Ppc">
+                                <rect key="frame" x="86" y="347" width="139" height="30"/>
+                                <state key="normal" title="delete todocategory"/>
+                                <connections>
+                                    <action selector="onDeleteButton:" destination="GDr-aB-ZiW" eventType="touchUpInside" id="xIP-do-Pmh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9i5-Zj-h1E">
+                                <rect key="frame" x="65" y="385" width="181" height="30"/>
+                                <state key="normal" title="update todocategory by id"/>
+                                <connections>
+                                    <action selector="onupdateButton:" destination="GDr-aB-ZiW" eventType="touchUpInside" id="S2I-0N-R2X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIt-0Y-0RE">
+                                <rect key="frame" x="0.0" y="414" width="320" height="30"/>
+                                <state key="normal" title="Delete all todocategories"/>
+                                <connections>
+                                    <action selector="onDeleteAllButton:" destination="GDr-aB-ZiW" eventType="touchUpInside" id="bj6-TB-dlZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Group Name" id="V2i-ht-bZU"/>
+                    <connections>
+                        <outlet property="tableView" destination="zbr-89-tMy" id="bCK-7K-QXD"/>
+                        <segue destination="LGI-TN-gmE" kind="push" identifier="readGroupVCtoDoVCsegue" id="V35-sx-4dr"/>
+                        <segue destination="LGI-TN-gmE" kind="push" identifier="setupGroupVCtoDoVCsegue" id="o7n-0q-jDF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BWn-Nu-8ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="329"/>
+        </scene>
+        <!--TodoDetailsViewController-->
+        <scene sceneID="hqr-LC-aa5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TodoCategory" referencedIdentifier="TodoDetailsViewController" id="LGI-TN-gmE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CXm-83-bLO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRw-9E-Zay" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936.5" y="126"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WbF-j1-z8D">
+            <objects>
+                <navigationController storyboardIdentifier="GroupViewNavViewController" automaticallyAdjustsScrollViewInsets="NO" id="TIP-Hc-Tcg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1QP-Gn-Qkg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GDr-aB-ZiW" kind="relationship" relationship="rootViewController" id="qmK-sA-ipo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uuh-Cg-7q8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="174.40000000000001" y="340.80000000000001"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="V35-sx-4dr"/>
+    </inferredMetricsTieBreakers>
 </document>

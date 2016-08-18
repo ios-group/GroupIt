@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        registerParseSubclasses()
         
         // ============= instantiate parse ==============
         Parse.initializeWithConfiguration(
@@ -30,6 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         return true
+    }
+    
+    func registerParseSubclasses() {
+        TodoItemDO.registerSubclass()
+        TodoCategoryDO.registerSubclass()
+        GroupDO.registerSubclass()
     }
 
     func applicationWillResignActive(application: UIApplication) {

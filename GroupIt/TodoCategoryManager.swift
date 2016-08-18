@@ -14,35 +14,58 @@ class TodoCategoryManager: NSObject {
     let todoCategoryDao = ParseDAO(className: Constants.TODO_CATEGORY_CLASSNAME)
     let todoCategoryMapper = TodoCategoryMapper()
     
-    func createTodoCategory(todoCategory : TodoCategory, completion : (Bool, NSError?) -> ()) -> Void {
-        let pfObject = todoCategoryMapper.toPFObject(todoCategory)
-        todoCategoryDao.create(pfObject) { (created : Bool, error : NSError?) in
+    func upsertTodoCategory(todoCategory : TodoCategory, completion : (Bool, NSError?) -> ()) -> Void {
+        let todoCategoryDO = todoCategoryMapper.toTodoCategoryDO(todoCategory)
+        todoCategoryDao.upsert(todoCategoryDO) { (created : Bool, error : NSError?) in
             completion(created, error)
-        }
-    }
-    
-    func updateTodoCategory(id : String, todoCategory : TodoCategory, completion : (Bool, NSError?) -> Void) {
-        let pfObjectNew = todoCategoryMapper.toPFObject(todoCategory)
-        todoCategoryDao.updateById(id, pfObjectNew: pfObjectNew) { (updated : Bool, error : NSError?) in
-            completion(updated, error)
-        }
-    }
-    
-    func getAllTodoCategories(completion : ([TodoCategory], NSError?) -> Void) {
-        todoCategoryDao.getAll { (pfObjects : [PFObject]?, error : NSError?) in
-            completion(self.todoCategoryMapper.toTodoCategories(pfObjects), error)
-        }
-    }
-    
-    func getTodoCategoryById(id : String, completion : (todoCategory : TodoCategory?, error : NSError?) -> Void) {
-        todoCategoryDao.getById(id) { (pfObject: PFObject?, error : NSError?) in
-            completion(todoCategory: self.todoCategoryMapper.toTodoCategory(pfObject), error: error)
         }
     }
     
     func deleteTodoCategoryById(id : String, completion : (Bool, NSError?) -> Void)  {
         todoCategoryDao.deleteById(id) { (deleted : Bool, error : NSError?) in
             completion(deleted, error)
+        }
+    }
+
+    func getAllTodoCategories(completion : ([TodoCategory], NSError?) -> Void) {
+        var todoCategories : [TodoCategory] = []
+        todoCategoryDao.getAll { (todoCategoryPfObjects : [PFObject]?, error : NSError?) in
+            if error == nil {
+                if let todoCategoryPfObjects = todoCategoryPfObjects {
+                    for todoCategoryPfObject in todoCategoryPfObjects {
+                        let todoCategory = self.todoCategoryMapper.toTodoCategory(todoCategoryPfObject as! TodoCategoryDO)
+                        todoCategories.append(todoCategory)
+                    }
+                }
+            }
+            completion(todoCategories, error)
+        }
+    }
+    
+    func getAllTodoCategoriesByGroupId(completion : ([TodoCategory], NSError?) -> Void) {
+        var todoCategories : [TodoCategory] = []
+        todoCategoryDao.getAllByForeignKey { (todoCategoryPfObjects : [PFObject]?, error : NSError?) in
+            if error == nil {
+                if let todoCategoryPfObjects = todoCategoryPfObjects {
+                    for todoCategoryPfObject in todoCategoryPfObjects {
+                        todoCategories.append(self.todoCategoryMapper.toTodoCategory(todoCategoryPfObject as! TodoCategoryDO))
+                    }
+                }
+            }
+            completion(todoCategories, error)
+        }
+    }
+
+    func getTodoCategoryById(id : String, completion : (todoCategory : TodoCategory?, error : NSError?) -> Void) {
+        todoCategoryDao.getById(id) { (todoCategoryPfObject: PFObject?, error : NSError?) in
+            let todoCategory = self.todoCategoryMapper.toTodoCategory(todoCategoryPfObject as! TodoCategoryDO)
+            completion(todoCategory: todoCategory, error: error)
+        }
+    }
+    
+    func deleteAllCategories(completion : (NSError?) -> Void) {
+        todoCategoryDao.deleteAll { (error: NSError?) in
+            completion(error)
         }
     }
 }
