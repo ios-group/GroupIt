@@ -54,7 +54,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBAction func onCreateButton(sender: UIButton){
         print("on create button")
         let category = categoryDataUtil.createTodoCategory()
-        groupManager.createTodoCategory(category) { (created: Bool, error: NSError?) in
+        groupManager.upsertTodoCategory(category) { (created: Bool, error: NSError?) in
             if error == nil{
                 print(created)
                 self.makeNetworkCallToRefreshTheTableView()
@@ -141,9 +141,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.READ_GROUP_TODO_CATEGORY_SEGUE {
             print(sender)
-    
             let destinationVC = segue.destinationViewController as! TodoDetailsViewController
-            
             let categoryCell = sender as! CategoryCell
             destinationVC.todoCategory = categoryCell.category
             ////        window?.rootViewController  = todoDetailsNavViewController.topViewController

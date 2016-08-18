@@ -15,13 +15,13 @@ class TodoCategory: Category {
     var id : String?
     var todoName : String?
     var todoDescription : String?
-    var todoItems : [TodoItem] = []
+    var todoItems : [TodoItem]! = []
     
-    init(todoCategoryDictionary : Dictionary<String, AnyObject>) {
+    init(todoCategoryDictionary : Dictionary<String, AnyObject?>) {
         id = todoCategoryDictionary["id"] as? String
         todoName = todoCategoryDictionary["todoName"] as? String
         todoDescription = todoCategoryDictionary["todoDescription"] as? String
-        todoItems = todoCategoryDictionary["todoItems"] as! [TodoItem]
+        todoItems = todoCategoryDictionary["todoItems"] as? [TodoItem] ?? []
     }
     
     func getID() -> String? {
@@ -79,17 +79,17 @@ class TodoItem : CustomStringConvertible {
     /* todoItemName, isCompleted */
     var id : String?
     var todoItemName : String?
-    var isCompleted : Bool = false
+    var completed : Bool
     
-    init(todoItemDictionary : Dictionary<String, AnyObject>) {
+    init(todoItemDictionary : Dictionary<String, AnyObject?>) {
         id = todoItemDictionary["id"] as? String
         todoItemName = todoItemDictionary["todoItemName"] as? String
-        isCompleted = todoItemDictionary["completed"] as! Bool
+        completed = todoItemDictionary["completed"] as? Bool ?? false
     }
     
     var description: String {
         get {
-            return "\(self.id), \(self.todoItemName!), \(self.isCompleted)"
+            return "\(self.todoItemName!), \(self.completed)"
         }
     }
 }

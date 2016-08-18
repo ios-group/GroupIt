@@ -23,8 +23,9 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         
         todoItemsTableView.dataSource = self
         todoItemsTableView.delegate = self
-        
+            
 //        performCRUD()
+//        performCRUDTodoItem()
     }
     
     // ================== Todo Category CRUD =====================
@@ -32,13 +33,13 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 //        createTodo()
 //        getAllTodos()
 //        updateTodoById()
-        getTodoById()
+//        getTodoById()
 //        deleteTodoById()
     }
 
     private func createTodo() {
         let todoCategory = todoCategoryDataUtil.createTodoCategory()
-        todoCategoryManager.createTodoCategory(todoCategory) { (created : Bool, error : NSError?) in
+        todoCategoryManager.upsertTodoCategory(todoCategory) { (created : Bool, error : NSError?) in
             if error == nil {
                 print(created)
             } else {
@@ -46,7 +47,7 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
     }
-    
+
     private func getAllTodos() {
         todoCategoryManager.getAllTodoCategories { (todoCategories : [TodoCategory], error : NSError?) in
             if error == nil {
@@ -56,9 +57,9 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
     }
-    
+
     private func updateTodoById() {
-        todoCategoryManager.updateTodoCategory(todoCategory!.id!, todoCategory: todoCategory!) { (updated : Bool, error: NSError?) in
+        todoCategoryManager.upsertTodoCategory(todoCategory!) { (updated : Bool, error: NSError?) in
             if error == nil {
                 print(self.todoCategory)
             } else {
@@ -96,17 +97,25 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     
     func performCRUDTodoItem() {
 //        createTodoItem()
+//        getAllTodoItems()
+//        getAllTodoItemsByCategoryId()
 //        deleteTodoItem()
-        updateTodoItem()
+//        updateTodoItem()
         
     }
     
     private func createTodoItem() {
         let todoItem = todoCategoryDataUtil.createTodoItem("todo-item-added")
-        todoCategory!.addTodoItem(todoItem)
-        updateTodoById()
+        let categoryId = "b6RZfzOYcu" //todoCategory.id!
+            todoItemManager.upsertTodoItem(categoryId, todoItem: todoItem, completion: { (created : Bool, error : NSError?) in
+                if error == nil {
+                    print(created)
+                } else {
+                    print(error)
+                }
+            })
     }
-    
+
     private func deleteTodoItem() {
         let id = "YTzPeSMGOM"
         todoCategory!.deleteTodoItem(id)
@@ -123,27 +132,25 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     private func updateTodoItem() {
         let id = "CnEaBtvx0a"
         let todoItem = todoCategory!.getTodoItemById(id)
-        todoItem?.isCompleted = false
+        todoItem?.completed = false
         updateTodoById()
     }
     
-    // ==================  =====================
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func getAllTodoItems() {
+        todoItemManager.getAllTodoItems { (todoItems : [TodoItem], error :NSError?) in
+            print(todoItems)
+            self.todoCategory?.todoItems = todoItems
+            self.todoItemsTableView.reloadData()
+        }
     }
     
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func getAllTodoItemsByCategoryId() {
+        todoItemManager.getAllTodoItemsByCategoryId { (todoItems : [TodoItem], error :NSError?) in
+            print(todoItems)
+            self.todoCategory?.todoItems = todoItems
+            self.todoItemsTableView.reloadData()
+        }
     }
-    */
 
     // === Table View ====
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

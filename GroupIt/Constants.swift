@@ -23,6 +23,7 @@ class Constants: NSObject {
     static let GROUP_VIEW_CONTROLLER_ID : String = "GroupViewController"
     static let GROUP_NAV_VIEW_CONTROLLER_ID : String = "GroupViewNavViewController"
     
+    static let GROUP_CLASSNAME : String = "Group"
     
     // ======== TodoCategory ======
     static let TODO_ITEM_CLASSNAME : String = "TodoItem"

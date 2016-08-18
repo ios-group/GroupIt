@@ -17,36 +17,9 @@ class ParseDAO: NSObject {
         self.className = className
     }
     
-    func create(pfObject :  PFObject, completion : (Bool, NSError?) -> Void) {
+    func upsert(pfObject :  PFObject, completion : (Bool, NSError?) -> Void) {
         pfObject.saveInBackgroundWithBlock { (created: Bool, error: NSError?) -> Void in
             completion(created, error)
-        }
-    }
-    
-    func updateById(id :String, pfObjectNew : PFObject, completion : (Bool, NSError?) -> Void) {
-        getById(id) { (pfObject : PFObject?, error : NSError?) in
-            if let pfObject = pfObject {
-                pfObjectNew.objectId = pfObject.objectId
-                pfObjectNew.saveInBackgroundWithBlock({ (updated :Bool, error : NSError?) in
-                    completion(updated, error)
-                })
-            }
-        }
-    }
-    
-    func getAll(completion : ([PFObject]?, NSError?) -> Void) {
-        let pfQuery = PFQuery(className: className)
-        pfQuery.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            completion(objects, error)
-        }
-    }
-    
-    func getById(id: String, completion : (PFObject?, NSError?) -> ()) {
-        let pfQuery = PFQuery(className: className)
-        pfQuery.includeKey("result.todoItems")
-        pfQuery.getObjectInBackgroundWithId(id) { (pfObject : PFObject?, error : NSError?) in
-            completion(pfObject, error)
         }
     }
     
@@ -60,6 +33,34 @@ class ParseDAO: NSObject {
         }
     }
     
+    func getAll(completion : ([PFObject]?, NSError?) -> Void) {
+        let pfQuery = PFQuery(className: className)
+        pfQuery.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            completion(objects, error)
+        }
+    }
+    
+    func getAllByForeignKey(completion : ([PFObject]?, NSError?) -> Void) {
+        let pfQueryInner = PFQuery(className: Constants.TODO_CATEGORY_CLASSNAME)
+        pfQueryInner.whereKey("objectId", equalTo: "b6RZfzOYc")
+        
+        let pfQuery = PFQuery(className: className)
+        pfQuery.whereKey("category", matchesQuery: pfQueryInner)
+        
+        pfQuery.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            completion(objects, error)
+        }
+    }
+
+    func getById(id: String, completion : (PFObject?, NSError?) -> ()) {
+        let pfQuery = PFQuery(className: className)
+        pfQuery.getObjectInBackgroundWithId(id) { (pfObject : PFObject?, error : NSError?) in
+            completion(pfObject, error)
+        }
+    }
+    
     func deleteAll(completion: (NSError?) -> ()) {
         let pfQuery = PFQuery(className: className)
         pfQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
@@ -69,5 +70,4 @@ class ParseDAO: NSObject {
             completion(error)
         }
     }
-
 }

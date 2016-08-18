@@ -91,7 +91,7 @@ Our solution is trying to solve above problem by reversing the way we thing toda
     - [ ] Shared ToDo
         - [ ] TBD
     - [ ] Polling
-        - [ ] TBD
+        - [ ] Integrate with charting library for summary view.
     - [ ] Shared Images
         - [ ] TBD
     - [ ] Shared Calendar
