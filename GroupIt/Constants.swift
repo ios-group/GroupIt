@@ -16,6 +16,9 @@ class Constants: NSObject {
     static let parseServer : String = "https://groupit2.herokuapp.com/parse"
     
     // ======== Groups ======
+    static let GROUPS_STORYBOARD_NAME : String = "Groups"
+    static let GROUPS_VIEW_CONTROLLER_ID : String = "GroupsViewController"
+    static let GROUPS_NAV_VIEW_CONTROLLER_ID : String = "GroupsNavViewController"
     
     
     // ======== Group ======
@@ -41,5 +44,5 @@ class Constants: NSObject {
     // ======== Segues ======
     static let READ_GROUP_TODO_CATEGORY_SEGUE : String = "readGroupVCtoDoVCsegue"
     static let SETUP_GROUP_TODO_CATEGORY_SEGUE : String = "setupGroupVCtoDoVCsegue"
-    
+    static let READ_GROUPS_GROUP_SEGUE : String = "readGroupsVCtoGroupVCsegue"
 }

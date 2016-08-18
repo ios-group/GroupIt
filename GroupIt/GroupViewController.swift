@@ -15,6 +15,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     let categoryDataUtil = TodoCategoryDataUtil()
     var toDoCategories : [TodoCategory]?
     
+    var group : Group?
     
     let id = "2VhIUxULKz"
     
@@ -26,6 +27,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewDidLoad() {
+        print(group?.groupName)
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
