@@ -11,6 +11,7 @@ import UIKit
 class GroupsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let groupManager = GroupManager()
+    let todoCategoryManager = TodoCategoryManager()
     let groupDataUtil = GroupDataUtil()
     var groups: [Group] = []
     @IBOutlet weak var tableView: UITableView!
@@ -97,12 +98,15 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         
         print("prepare for segue")
         if segue.identifier == Constants.READ_GROUPS_GROUP_SEGUE {
+            let groupViewController = segue.destinationViewController as! GroupViewController
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
-            let groupDetails = groups[(indexPath?.row)!]
-            
-            let groupViewController = segue.destinationViewController as! GroupViewController
-            groupViewController.group = groupDetails
+            let group = groups[(indexPath?.row)!]
+            todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (categories : [TodoCategory], error : NSError?) in
+                group.categories = categories
+                groupViewController.group = group
+                groupViewController.tableView.reloadData()
+            })
         }
     }
 }

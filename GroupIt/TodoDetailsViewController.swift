@@ -145,7 +145,8 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     private func getAllTodoItemsByCategoryId() {
-        todoItemManager.getAllTodoItemsByCategoryId { (todoItems : [TodoItem], error :NSError?) in
+        let id = "CnEaBtvx0a"
+        todoItemManager.getAllTodoItemsByCategoryId(id) { (todoItems : [TodoItem], error : NSError?) in
             print(todoItems)
             self.todoCategory?.todoItems = todoItems
             self.todoItemsTableView.reloadData()

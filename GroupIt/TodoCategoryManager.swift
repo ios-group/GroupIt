@@ -42,9 +42,14 @@ class TodoCategoryManager: NSObject {
         }
     }
     
-    func getAllTodoCategoriesByGroupId(completion : ([TodoCategory], NSError?) -> Void) {
+    func getAllTodoCategoriesByGroupId(groupId : String, completion : ([TodoCategory], NSError?) -> Void) {
         var todoCategories : [TodoCategory] = []
-        todoCategoryDao.getAllByForeignKey { (todoCategoryPfObjects : [PFObject]?, error : NSError?) in
+        let parseContext = ParseContext(className: "TodoCategory")
+        parseContext.className = Constants.TODO_CATEGORY_CLASSNAME
+        parseContext.predicateFormat = "group IN %@"
+        parseContext.innerClassName = Constants.GROUP_CLASSNAME
+        parseContext.innerPredicateFormat = "objectId = '\(groupId)'"
+        todoCategoryDao.getAllByForeignKey(parseContext) { (todoCategoryPfObjects : [PFObject]?, error : NSError?) in
             if error == nil {
                 if let todoCategoryPfObjects = todoCategoryPfObjects {
                     for todoCategoryPfObject in todoCategoryPfObjects {

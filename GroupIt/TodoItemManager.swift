@@ -50,9 +50,14 @@ class TodoItemManager: NSObject {
         }
     }
 
-    func getAllTodoItemsByCategoryId(completion : ([TodoItem], NSError?) -> Void) {
+    func getAllTodoItemsByCategoryId(categoryId : String, completion : ([TodoItem], NSError?) -> Void) {
         var todoItems : [TodoItem] = []
-        todoItemDao.getAllByForeignKey { (todoItemPfObjects : [PFObject]?, error : NSError?) in
+        let parseContext = ParseContext(className: Constants.TODO_ITEM_CLASSNAME)
+        parseContext.className = Constants.TODO_ITEM_CLASSNAME
+        parseContext.predicateFormat = "category IN %@"
+        parseContext.innerClassName = Constants.TODO_CATEGORY_CLASSNAME
+        parseContext.innerPredicateFormat = "objectId = '\(categoryId)'"
+        todoItemDao.getAllByForeignKey(parseContext) { (todoItemPfObjects : [PFObject]?, error : NSError?) in
             if error == nil {
                 if let todoItemPfObjects = todoItemPfObjects {
                     for todoItemPfObject in todoItemPfObjects {

@@ -12,8 +12,9 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     let groupManager = TodoCategoryManager()
+    let todoItemManager = TodoItemManager()
     let categoryDataUtil = TodoCategoryDataUtil()
-    var toDoCategories : [TodoCategory]?
+//    var toDoCategories : [TodoCategory]?
     
     var group : Group?
     
@@ -21,7 +22,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func makeNetworkCallToRefreshTheTableView(){
         groupManager.getAllTodoCategories({ (toDoCategories : [TodoCategory], error : NSError?) in
-            self.toDoCategories = toDoCategories
+            self.group?.categories = toDoCategories
             self.tableView.reloadData()
         })
     }
@@ -32,7 +33,8 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         
-        makeNetworkCallToRefreshTheTableView()
+//        makeNetworkCallToRefreshTheTableView()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,11 +42,13 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return toDoCategories?.count ?? 0
+//        return toDoCategories?.count ?? 0
+        return group?.categories?.count ?? 0
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) as! CategoryCell
-        cell.category = self.toDoCategories![indexPath.row]
+//        cell.category = self.toDoCategories![indexPath.row]
+        cell.category = self.group?.categories![indexPath.row]
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -143,13 +147,15 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.READ_GROUP_TODO_CATEGORY_SEGUE {
             print(sender)
-            let destinationVC = segue.destinationViewController as! TodoDetailsViewController
+            let todoDetailsVeiwController = segue.destinationViewController as! TodoDetailsViewController
             let categoryCell = sender as! CategoryCell
-            destinationVC.todoCategory = categoryCell.category
-            ////        window?.rootViewController  = todoDetailsNavViewController.topViewController
-            //
+            let indexPath = tableView.indexPathForCell(categoryCell)
+            let todoCategory = self.group?.categories![(indexPath?.row)!]
+            todoItemManager.getAllTodoItemsByCategoryId((todoCategory?.id)!, completion: { (todoItems : [TodoItem], error : NSError?) in
+                todoCategory!.todoItems = todoItems
+                todoDetailsVeiwController.todoCategory = todoCategory
+                todoDetailsVeiwController.todoItemsTableView.reloadData()
+            })
         }
     }
-    
-    
 }
