@@ -16,6 +16,10 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
     var groups: [Group] = []
     @IBOutlet weak var tableView: UITableView!
     
+    func onAddButton() {
+        print("adding a new group ... ")
+    }
+
     override func viewDidLoad() {
         print("Inside GroupsViewController")
         super.viewDidLoad()
@@ -23,15 +27,14 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         //instantiate tableview details
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
+        self.navigationItem.rightBarButtonItem = addButton
 
         //get all the groups for
         getAllGroups()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.groups.count ?? 0
@@ -102,6 +105,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let group = groups[(indexPath?.row)!]
+            groupViewController.group = group
             todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (categories : [TodoCategory], error : NSError?) in
                 group.categories = categories
                 groupViewController.group = group

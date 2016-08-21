@@ -35,6 +35,8 @@ class Constants: NSObject {
     static let TODO_CATEGORY_VIEW_CONTROLLER_ID : String = "TodoDetailsViewController"
     static let TODO_CATEGORY_NAV_VIEW_CONTROLLER_ID : String = "TodoDetailsNavViewController"
     static let TODO_ITEM_CELL_ID = "TodoItemCell"
+    
+    static let CREATE_TODO_ITEM_SEQUE = "createTodoItemSeque"
 
     // ======== PollCategory ======
     

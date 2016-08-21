@@ -27,13 +27,18 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         })
     }
     
+    func onAddButton() {
+        print("adding a new category ... ")
+    }
+    
     override func viewDidLoad() {
-        print(group?.groupName)
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
-//        makeNetworkCallToRefreshTheTableView()
+        self.title = group?.groupName
+        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
+        self.navigationItem.rightBarButtonItem = addButton
         self.tableView.reloadData()
     }
 
@@ -151,6 +156,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
             let categoryCell = sender as! CategoryCell
             let indexPath = tableView.indexPathForCell(categoryCell)
             let todoCategory = self.group?.categories![(indexPath?.row)!]
+            todoDetailsVeiwController.todoCategory = todoCategory
             todoItemManager.getAllTodoItemsByCategoryId((todoCategory?.id)!, completion: { (todoItems : [TodoItem], error : NSError?) in
                 todoCategory!.todoItems = todoItems
                 todoDetailsVeiwController.todoCategory = todoCategory

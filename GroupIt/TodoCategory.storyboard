@@ -48,11 +48,60 @@
                     <navigationItem key="navigationItem" title="Todo" id="6bN-82-Ned"/>
                     <connections>
                         <outlet property="todoItemsTableView" destination="kXC-tg-Qyd" id="wFm-gd-BOY"/>
+                        <segue destination="rkR-C9-IWh" kind="modal" identifier="createTodoItemSeque" id="86X-Gp-btQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gi2-Rx-g1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="515" y="419"/>
+        </scene>
+        <!--Todo Item Create View Controller-->
+        <scene sceneID="vFK-f6-Ndf">
+            <objects>
+                <viewController id="rkR-C9-IWh" customClass="TodoItemCreateViewController" customModule="GroupIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kM5-6b-iQB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Icf-xI-aTF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hyu-MT-Vda">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5kl-47-F00">
+                                <rect key="frame" x="28" y="66" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lfy-Cl-9Uo">
+                                <rect key="frame" x="28" y="121" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5M-rc-DYT">
+                                <rect key="frame" x="175" y="206" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onSaveButtonTap:" destination="rkR-C9-IWh" eventType="touchUpInside" id="zeV-iQ-gmU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-cf-Akx">
+                                <rect key="frame" x="88" y="206" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancelButtonTap:" destination="rkR-C9-IWh" eventType="touchUpInside" id="zdy-aD-53O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="todoItemDescriptionTextField" destination="Lfy-Cl-9Uo" id="ZyY-wk-N53"/>
+                        <outlet property="todoItemNameTextField" destination="5kl-47-F00" id="khG-HI-nox"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VmJ-yX-ciC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="418"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dzN-Rl-a05">

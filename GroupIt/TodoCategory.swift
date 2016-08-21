@@ -75,11 +75,15 @@ class TodoCategory: Category {
     }
 }
 
-class TodoItem : CustomStringConvertible {
+class TodoItem : NSObject {
     /* todoItemName, isCompleted */
     var id : String?
     var todoItemName : String?
     var completed : Bool
+    
+    override init() {
+        self.completed = false
+    }
     
     init(todoItemDictionary : Dictionary<String, AnyObject?>) {
         id = todoItemDictionary["id"] as? String
@@ -87,7 +91,7 @@ class TodoItem : CustomStringConvertible {
         completed = todoItemDictionary["completed"] as? Bool ?? false
     }
     
-    var description: String {
+    override var description: String {
         get {
             return "\(self.todoItemName!), \(self.completed)"
         }
