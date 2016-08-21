@@ -18,11 +18,19 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var todoItemsTableView: UITableView!
     
+    func onAddButton() {
+        print("adding a new todo item ... ")
+        performSegueWithIdentifier(Constants.CREATE_TODO_ITEM_SEQUE, sender: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         todoItemsTableView.dataSource = self
         todoItemsTableView.delegate = self
+        
+        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
+        self.navigationItem.rightBarButtonItem = addButton
 
         self.title = todoCategory?.todoName
         
@@ -30,6 +38,13 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 //        performCRUDTodoItem()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let segueIdentifier = segue.identifier
+        if segueIdentifier == Constants.CREATE_TODO_ITEM_SEQUE {
+            let todoItemCreateViewController = segue.destinationViewController as! TodoItemCreateViewController
+            todoItemCreateViewController.delegate = self
+        }
+    }
     // ================== Todo Category CRUD =====================
     func performCRUD() {
 //        createTodo()
@@ -167,8 +182,57 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let todoItemCell = tableView.dequeueReusableCellWithIdentifier(Constants.TODO_ITEM_CELL_ID) as! TodoItemCell
+        let todoItem = todoCategory!.todoItems[indexPath.row]
+        todoItemCell.todoItem = todoItem
         todoItemCell.todoItemNameLabel.text = todoCategory!.todoItems[indexPath.row].todoItemName
+        if (!todoItem.completed) {
+            todoItemCell.accessoryType = .None
+            todoItemCell.backgroundColor = UIColor.redColor()
+        } else {
+            todoItemCell.accessoryType = .Checkmark
+            todoItemCell.backgroundColor = UIColor.greenColor()
+        }
+        
         return todoItemCell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("selected ... \(indexPath.row)")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let todoItemCell = tableView.cellForRowAtIndexPath(indexPath) as! TodoItemCell
+        let todoItem = (todoCategory?.todoItems[indexPath.row])! as TodoItem
+        todoItem.completed = !todoItem.completed
+        todoItemManager.upsertTodoItem((todoCategory?.getID())!, todoItem: todoItem) { (updated : Bool, error : NSError?) in
+            if error != nil {
+                print(error)
+            } else {
+                print("updated ... \(todoItem)")
+            }
+        }
+        //TODO Need to think what to do if error happened while updating above.
+        if (!todoItem.completed) {
+            todoItemCell.accessoryType = .None
+            todoItemCell.backgroundColor = UIColor.redColor()
+        } else {
+            todoItemCell.accessoryType = .Checkmark
+            todoItemCell.backgroundColor = UIColor.greenColor()
+        }
+        todoItemCell.todoItem = todoItem
+    }
+}
+
+extension TodoDetailsViewController : TodoItemCreateDelegate {
+    
+    func onSave(todoItem: TodoItem) {
+        self.todoCategory?.todoItems.append(todoItem)
+        self.todoItemsTableView.reloadData()
+        todoItemManager.upsertTodoItem((self.todoCategory?.getID())!, todoItem: todoItem) { (created : Bool, error : NSError?) in
+            if error == nil {
+                print("created ... \(todoItem)")
+            } else {
+                print(error)
+            }
+        }
     }
 }
 

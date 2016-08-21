@@ -27,13 +27,18 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         })
     }
     
+    func onAddButton() {
+        print("adding a new category ... ")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
         self.title = group?.groupName
-        
+        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
+        self.navigationItem.rightBarButtonItem = addButton
         self.tableView.reloadData()
     }
 

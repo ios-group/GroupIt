@@ -81,6 +81,10 @@ class TodoItem : CustomStringConvertible {
     var todoItemName : String?
     var completed : Bool
     
+    init() {
+        self.completed = false
+    }
+    
     init(todoItemDictionary : Dictionary<String, AnyObject?>) {
         id = todoItemDictionary["id"] as? String
         todoItemName = todoItemDictionary["todoItemName"] as? String

@@ -12,9 +12,13 @@ class TodoItemCell: UITableViewCell {
 
     @IBOutlet weak var todoItemNameLabel: UILabel!
     
+    var todoItem : TodoItem?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        todoItemNameLabel.text = todoItem?.todoItemName
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
