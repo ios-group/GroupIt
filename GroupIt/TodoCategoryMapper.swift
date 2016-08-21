@@ -21,9 +21,10 @@ class TodoCategoryMapper: NSObject {
     
     func toTodoCategory(todoCategoryDO : TodoCategoryDO) -> TodoCategory {
         var todoCategoryDictionary = Dictionary<String, AnyObject?>()
+        todoCategoryDictionary["id"] = todoCategoryDO.objectId
         todoCategoryDictionary["todoName"] = todoCategoryDO.todoName
         todoCategoryDictionary["todoDescription"] = todoCategoryDO.todoDescription
-//        todoItemDictionary["group"] = todoItemDO.group
+        todoCategoryDictionary["group"] = todoCategoryDO.group
         let todoCategory = TodoCategory(todoCategoryDictionary: todoCategoryDictionary)
         return todoCategory
     }

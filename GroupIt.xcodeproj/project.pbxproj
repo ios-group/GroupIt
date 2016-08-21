@@ -27,6 +27,7 @@
 		7BB7609C1D643C8900D0EFD3 /* TodoCategoryDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB7609B1D643C8900D0EFD3 /* TodoCategoryDO.swift */; };
 		7BB760A01D643FB900D0EFD3 /* GroupDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB7609F1D643FB900D0EFD3 /* GroupDO.swift */; };
 		7BB760A21D643FED00D0EFD3 /* CategoryDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760A11D643FED00D0EFD3 /* CategoryDO.swift */; };
+		7BB760AA1D691D0A00D0EFD3 /* ParseContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760A91D691D0900D0EFD3 /* ParseContext.swift */; };
 		7BC1B3E51D5D67D4008DA8F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E41D5D67D4008DA8F8 /* User.swift */; };
 		7BC1B3E71D5D67E1008DA8F8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E61D5D67E1008DA8F8 /* Group.swift */; };
 		7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */; };
@@ -106,6 +107,7 @@
 		7BB7609F1D643FB900D0EFD3 /* GroupDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDO.swift; sourceTree = "<group>"; };
 		7BB760A11D643FED00D0EFD3 /* CategoryDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDO.swift; sourceTree = "<group>"; };
 		7BB760A41D65037200D0EFD3 /* GroupIt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GroupIt-Bridging-Header.h"; sourceTree = "<group>"; };
+		7BB760A91D691D0900D0EFD3 /* ParseContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseContext.swift; sourceTree = "<group>"; };
 		7BC1B3E41D5D67D4008DA8F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7BC1B3E61D5D67E1008DA8F8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollCategory.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			children = (
 				7BB760981D643BBD00D0EFD3 /* DO */,
 				7BC1B4751D5FC986008DA8F8 /* ParseDAO.swift */,
+				7BB760A91D691D0900D0EFD3 /* ParseContext.swift */,
 			);
 			name = Datastore;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				7BC1B4761D5FC986008DA8F8 /* ParseDAO.swift in Sources */,
 				7BC1B3F71D5D6DAA008DA8F8 /* LoginViewController.swift in Sources */,
 				7BC1B4741D5FC630008DA8F8 /* Constants.swift in Sources */,
+				7BB760AA1D691D0A00D0EFD3 /* ParseContext.swift in Sources */,
 				053A67291D63F4140042465A /* GroupMapper.swift in Sources */,
 				7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */,
 				7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */,

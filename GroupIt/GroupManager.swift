@@ -21,16 +21,25 @@ class GroupManager: NSObject {
         }
     }
     
+    func deleteGroupById(id : String, completion : (Bool, NSError?) -> Void)  {
+        groupDao.deleteById(id) { (deleted : Bool, error : NSError?) in
+            completion(deleted, error)
+        }
+    }
+    
+    
     func getAllGroups(completion : ([Group], NSError?) -> Void) {
         
         groupDao.getAll { (pfObjects : [PFObject]?, error : NSError?) in
             completion(self.groupMapper.groups(pfObjects), error)
         }
     }
-    
-    func deleteGroupById(id : String, completion : (Bool, NSError?) -> Void)  {
-        groupDao.deleteById(id) { (deleted : Bool, error : NSError?) in
-            completion(deleted, error)
+
+    func getGroupsById(completion : ([Group], NSError?) -> Void) {
+        
+        groupDao.getAll { (pfObjects : [PFObject]?, error : NSError?) in
+            completion(self.groupMapper.groups(pfObjects), error)
         }
     }
+
 }

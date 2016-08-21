@@ -13,6 +13,7 @@ class GroupDO : PFObject, PFSubclassing {
 
     @NSManaged var id : String?
     @NSManaged var groupName : String?
+    @NSManaged var groupDescription : String?
 
     static func parseClassName() -> String {
         return Constants.GROUP_CLASSNAME

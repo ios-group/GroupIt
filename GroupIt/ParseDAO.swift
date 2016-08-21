@@ -16,7 +16,9 @@ class ParseDAO: NSObject {
     init(className : String) {
         self.className = className
     }
-    
+
+    // =============== Write ====================
+
     func upsert(pfObject :  PFObject, completion : (Bool, NSError?) -> Void) {
         pfObject.saveInBackgroundWithBlock { (created: Bool, error: NSError?) -> Void in
             completion(created, error)
@@ -32,6 +34,18 @@ class ParseDAO: NSObject {
             }
         }
     }
+    
+    func deleteAll(completion: (NSError?) -> ()) {
+        let pfQuery = PFQuery(className: className)
+        pfQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            for object in objects!{
+                object.deleteInBackground()
+            }
+            completion(error)
+        }
+    }
+    
+    // =============== Read ====================
     
     func getAll(completion : ([PFObject]?, NSError?) -> Void) {
         let pfQuery = PFQuery(className: className)
@@ -54,20 +68,24 @@ class ParseDAO: NSObject {
         }
     }
 
+    func getAllByForeignKey(parseContext : ParseContext, completion : ([PFObject]?, NSError?) -> Void) {
+        let innerPredicate = NSPredicate(format: parseContext.innerPredicateFormat!)
+        let pfQueryInnner = PFQuery(className: parseContext.innerClassName!, predicate: innerPredicate)
+        
+        let predicate = NSPredicate(format: parseContext.predicateFormat!, pfQueryInnner)
+        let pfQuery = PFQuery(className: parseContext.className, predicate: predicate)
+        
+        pfQuery.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            completion(objects, error)
+        }
+    }
+
     func getById(id: String, completion : (PFObject?, NSError?) -> ()) {
         let pfQuery = PFQuery(className: className)
         pfQuery.getObjectInBackgroundWithId(id) { (pfObject : PFObject?, error : NSError?) in
             completion(pfObject, error)
         }
     }
-
-    func deleteAll(completion: (NSError?) -> ()) {
-        let pfQuery = PFQuery(className: className)
-        pfQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-            for object in objects!{
-                object.deleteInBackground()
-            }
-            completion(error)
-        }
-    }
+    
 }
