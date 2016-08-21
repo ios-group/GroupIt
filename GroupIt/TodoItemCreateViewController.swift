@@ -27,19 +27,28 @@ class TodoItemCreateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepopulateData()
+    }
+    
+    func prepopulateData() {
+        if let todoItem = todoItem {
+            self.todoItemNameTextField.text = todoItem.todoItemName
+        }
     }
     
     @IBAction func onSaveButtonTap(sender: AnyObject) {
         print("saving todo item ... ")
-        initTodoItem()
-        self.delegate?.onSave(todoItem!)
+        let updatedTodoItem = getUpdatedTodoItem()
+        self.delegate?.onSave(updatedTodoItem)
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
-    func initTodoItem() {
-        todoItem = TodoItem()
-        todoItem?.todoItemName = todoItemNameTextField.text
-        todoItem?.completed = false
+    func getUpdatedTodoItem() -> TodoItem {
+        let todoItem = TodoItem()
+        todoItem.id = self.todoItem?.id
+        todoItem.todoItemName = todoItemNameTextField.text
+        todoItem.completed = false
+        return todoItem
     }
     
     @IBAction func onCancelButtonTap(sender: AnyObject) {
