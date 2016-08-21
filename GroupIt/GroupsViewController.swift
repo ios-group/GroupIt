@@ -102,6 +102,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let group = groups[(indexPath?.row)!]
+            groupViewController.group = group
             todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (categories : [TodoCategory], error : NSError?) in
                 group.categories = categories
                 groupViewController.group = group

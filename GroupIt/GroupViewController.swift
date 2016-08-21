@@ -28,12 +28,12 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewDidLoad() {
-        print(group?.groupName)
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
-//        makeNetworkCallToRefreshTheTableView()
+        self.title = group?.groupName
+        
         self.tableView.reloadData()
     }
 
@@ -151,6 +151,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
             let categoryCell = sender as! CategoryCell
             let indexPath = tableView.indexPathForCell(categoryCell)
             let todoCategory = self.group?.categories![(indexPath?.row)!]
+            todoDetailsVeiwController.todoCategory = todoCategory
             todoItemManager.getAllTodoItemsByCategoryId((todoCategory?.id)!, completion: { (todoItems : [TodoItem], error : NSError?) in
                 todoCategory!.todoItems = todoItems
                 todoDetailsVeiwController.todoCategory = todoCategory
