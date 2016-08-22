@@ -17,6 +17,10 @@ class TodoCategory: Category {
     var todoDescription : String?
     var todoItems : [TodoItem]! = []
     
+    init() {
+        // no-op
+    }
+    
     init(todoCategoryDictionary : Dictionary<String, AnyObject?>) {
         id = todoCategoryDictionary["id"] as? String
         todoName = todoCategoryDictionary["todoName"] as? String

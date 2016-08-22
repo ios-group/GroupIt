@@ -1,15 +1,18 @@
 PODS:
   - Bolts/Tasks (1.8.4)
+  - HPReorderTableView (0.2)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
 
 DEPENDENCIES:
+  - HPReorderTableView (~> 0.2)
   - Parse (= 1.14.2)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  HPReorderTableView: fbecadc7f8b2d5a138d976aa5fe6fbb09524022a
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
 
-PODFILE CHECKSUM: 2f690e1fd6c522c66239bb81bc13fef8c76d8dcd
+PODFILE CHECKSUM: 7156e8035a850ff6e2dbd5939e015dba2e3df514
 
 COCOAPODS: 1.0.1

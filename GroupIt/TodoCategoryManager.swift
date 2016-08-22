@@ -11,13 +11,34 @@ import Parse
 
 class TodoCategoryManager: NSObject {
 
+    let groupDao = ParseDAO(className: Constants.GROUP_CLASSNAME)
+    
     let todoCategoryDao = ParseDAO(className: Constants.TODO_CATEGORY_CLASSNAME)
     let todoCategoryMapper = TodoCategoryMapper()
     
-    func upsertTodoCategory(todoCategory : TodoCategory, completion : (Bool, NSError?) -> ()) -> Void {
-        let todoCategoryDO = todoCategoryMapper.toTodoCategoryDO(todoCategory)
-        todoCategoryDao.upsert(todoCategoryDO) { (created : Bool, error : NSError?) in
-            completion(created, error)
+//    func upsertTodoItem(categoryId : String, todoItem : TodoItem, completion : (Bool, NSError?) -> ()) -> Void {
+//        todoCategoryDao.getById(categoryId) { (todoCategoryPfObject : PFObject?, error : NSError?) in
+//            if error == nil {
+//                let todoItemDO = self.todoItemMapper.toTodoItemDO(todoCategoryPfObject as! TodoCategoryDO, todoItem: todoItem)
+//                self.todoItemDao.upsert(todoItemDO) { (created : Bool, error : NSError?) in
+//                    completion(created, error)
+//                }
+//            } else {
+//                completion(false, error)
+//            }
+//        }
+//    }
+
+    func upsertTodoCategory(groupId : String, todoCategory : TodoCategory, completion : (Bool, NSError?) -> ()) -> Void {
+        groupDao.getById(groupId) { (groupPfObject : PFObject?, error : NSError?) in
+            if error == nil {
+                let todoCategoryDO = self.todoCategoryMapper.toTodoCategoryDO(groupPfObject as! GroupDO, todoCategory: todoCategory)
+                self.todoCategoryDao.upsert(todoCategoryDO, completion: { (upserted : Bool, error : NSError?) in
+                    completion(upserted, error)
+                })
+            } else {
+                completion(false, error)
+            }
         }
     }
     
