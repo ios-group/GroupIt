@@ -11,11 +11,12 @@ import Parse
 
 class TodoCategoryMapper: NSObject {
 
-    func toTodoCategoryDO(todoCategory : TodoCategory) -> TodoCategoryDO {
+    func toTodoCategoryDO(groupDO : GroupDO, todoCategory : TodoCategory) -> TodoCategoryDO {
         let todoCategoryDO = TodoCategoryDO()
         todoCategoryDO.objectId = todoCategory.id
-        todoCategoryDO.todoName = todoCategory.todoName
-        todoCategoryDO.todoDescription = todoCategory.todoDescription
+        todoCategoryDO["todoName"] = todoCategory.todoName
+//        todoCategoryDO["todoDescription"] = todoCategory.todoDescription
+        todoCategoryDO["group"] = groupDO
         return todoCategoryDO
     }
     

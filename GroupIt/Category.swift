@@ -18,7 +18,7 @@ protocol Category: CustomStringConvertible {
     
 }
 
-enum CategoryType {
+enum CategoryType : String {
     
     case TODO
     case POLL

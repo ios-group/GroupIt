@@ -25,6 +25,7 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.todoItemsTableView.editing = true
         
         todoItemsTableView.dataSource = self
         todoItemsTableView.delegate = self
@@ -59,16 +60,16 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 //        deleteTodoById()
     }
 
-    private func createTodo() {
-        let todoCategory = todoCategoryDataUtil.createTodoCategory()
-        todoCategoryManager.upsertTodoCategory(todoCategory) { (created : Bool, error : NSError?) in
-            if error == nil {
-                print(created)
-            } else {
-                print(error)
-            }
-        }
-    }
+//    private func createTodo() {
+//        let todoCategory = todoCategoryDataUtil.createTodoCategory()
+//        todoCategoryManager.upsertTodoCategory(todoCategory) { (created : Bool, error : NSError?) in
+//            if error == nil {
+//                print(created)
+//            } else {
+//                print(error)
+//            }
+//        }
+//    }
 
     private func getAllTodos() {
         todoCategoryManager.getAllTodoCategories { (todoCategories : [TodoCategory], error : NSError?) in
@@ -80,15 +81,15 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
-    private func updateTodoById() {
-        todoCategoryManager.upsertTodoCategory(todoCategory!) { (updated : Bool, error: NSError?) in
-            if error == nil {
-                print(self.todoCategory)
-            } else {
-                print(error!)
-            }
-        }
-    }
+//    private func updateTodoById() {
+//        todoCategoryManager.upsertTodoCategory(todoCategory!) { (updated : Bool, error: NSError?) in
+//            if error == nil {
+//                print(self.todoCategory)
+//            } else {
+//                print(error!)
+//            }
+//        }
+//    }
     
     private func getTodoById() {
         let id = "aODllSOFRu"
@@ -138,25 +139,25 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
             })
     }
 
-    private func deleteTodoItem() {
-        let id = "YTzPeSMGOM"
-        todoCategory!.deleteTodoItem(id)
-        todoItemManager.deleteTodoItemById(id) { (deleted : Bool, error : NSError?) in
-            if error == nil {
-                print("todo item deleted ... id: \(id) deleted : \(deleted)")
-                self.updateTodoById()
-            } else {
-                print(error!)
-            }
-        }
-    }
+//    private func deleteTodoItem() {
+//        let id = "YTzPeSMGOM"
+//        todoCategory!.deleteTodoItem(id)
+//        todoItemManager.deleteTodoItemById(id) { (deleted : Bool, error : NSError?) in
+//            if error == nil {
+//                print("todo item deleted ... id: \(id) deleted : \(deleted)")
+//                self.updateTodoById()
+//            } else {
+//                print(error!)
+//            }
+//        }
+//    }
 
-    private func updateTodoItem() {
-        let id = "CnEaBtvx0a"
-        let todoItem = todoCategory!.getTodoItemById(id)
-        todoItem?.completed = false
-        updateTodoById()
-    }
+//    private func updateTodoItem() {
+//        let id = "CnEaBtvx0a"
+//        let todoItem = todoCategory!.getTodoItemById(id)
+//        todoItem?.completed = false
+//        updateTodoById()
+//    }
     
     private func getAllTodoItems() {
         todoItemManager.getAllTodoItems { (todoItems : [TodoItem], error :NSError?) in
@@ -224,6 +225,21 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         }
         todoItemCell.todoItem = todoItem
     }
+    
+//    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+//        print("inserting")
+//    }
+
+//    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        return true
+//    }
+//    
+//    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+//        var todoItems = self.todoCategory?.todoItems!
+//        let itemToMove = todoItems![sourceIndexPath.row]
+//        todoItems!.removeAtIndex(sourceIndexPath.row)
+//        todoItems!.insert(itemToMove, atIndex: destinationIndexPath.row)
+//    }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {

@@ -11,13 +11,17 @@ import UIKit
 class PollCategory: Category {
 
     /* pollName, pollDescription, <Option>  */
-    var id : String
+    var id : String?
     var pollName : String?
     var pollDescription : String?
     var pollOptions : PollOption?
     
+    init() {
+        //no-op
+    }
+    
     init(pollCategoryDictionary : Dictionary<String, AnyObject>) {
-        id = pollCategoryDictionary["id"] as! String
+        id = pollCategoryDictionary["id"] as? String
         pollName = pollCategoryDictionary["pollName"] as? String
         pollDescription = pollCategoryDictionary["pollDescription"] as? String
         pollOptions = PollOption(pollOptionDictionary: pollCategoryDictionary["pollOptions"] as! Dictionary)

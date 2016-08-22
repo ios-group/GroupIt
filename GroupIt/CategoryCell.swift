@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol CategoryCellDelegate {
+    func onLongPress(category : Category)
+}
+
 class CategoryCell: UITableViewCell {
 
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var categoryTypeLabel: UILabel!
   
+    var delegate : CategoryCellDelegate?
+    
     var category : TodoCategory! {
         didSet{
             categoryName.text = category.getName()
@@ -33,10 +39,19 @@ class CategoryCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressCategoryCell))
+        longPressGestureRecognizer.delegate = self
+        self.addGestureRecognizer(longPressGestureRecognizer)
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
+    func onLongPressCategoryCell() {
+        print("on long press ... ")
+        self.delegate?.onLongPress(category)
+    }
 }

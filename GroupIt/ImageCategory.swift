@@ -11,12 +11,16 @@ import UIKit
 class ImageCategory: Category {
 
     /* imageName, imageDescription  */
-    var id : String
+    var id : String?
     var imageName : String?
     var imageDescription : String?
     
+    init() {
+        //no-op
+    }
+
     init(imageCategoryDictionary : Dictionary<String, AnyObject>) {
-        id = imageCategoryDictionary["id"] as! String
+        id = imageCategoryDictionary["id"] as? String
         imageName = imageCategoryDictionary["imageName"] as? String
         imageDescription = imageCategoryDictionary["imageDescription"] as? String
     }

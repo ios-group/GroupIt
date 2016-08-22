@@ -6,6 +6,7 @@ target 'GroupIt' do
   use_frameworks!
 
   pod 'Parse', '1.14.2'
+  pod 'HPReorderTableView', '~> 0.2'
   # Pods for GroupIt
 
   target 'GroupItTests' do

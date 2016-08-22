@@ -29,6 +29,7 @@
 		7BB760A21D643FED00D0EFD3 /* CategoryDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760A11D643FED00D0EFD3 /* CategoryDO.swift */; };
 		7BB760AA1D691D0A00D0EFD3 /* ParseContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760A91D691D0900D0EFD3 /* ParseContext.swift */; };
 		7BB760AC1D69B41800D0EFD3 /* TodoItemCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760AB1D69B41800D0EFD3 /* TodoItemCreateViewController.swift */; };
+		7BB760AE1D6A639400D0EFD3 /* CategoryCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760AD1D6A639400D0EFD3 /* CategoryCreateViewController.swift */; };
 		7BC1B3E51D5D67D4008DA8F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E41D5D67D4008DA8F8 /* User.swift */; };
 		7BC1B3E71D5D67E1008DA8F8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E61D5D67E1008DA8F8 /* Group.swift */; };
 		7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */; };
@@ -110,6 +111,7 @@
 		7BB760A41D65037200D0EFD3 /* GroupIt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GroupIt-Bridging-Header.h"; sourceTree = "<group>"; };
 		7BB760A91D691D0900D0EFD3 /* ParseContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseContext.swift; sourceTree = "<group>"; };
 		7BB760AB1D69B41800D0EFD3 /* TodoItemCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemCreateViewController.swift; sourceTree = "<group>"; };
+		7BB760AD1D6A639400D0EFD3 /* CategoryCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCreateViewController.swift; sourceTree = "<group>"; };
 		7BC1B3E41D5D67D4008DA8F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7BC1B3E61D5D67E1008DA8F8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollCategory.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				7BC1B4011D5D6E8B008DA8F8 /* GroupSetupViewController.swift */,
 				7BC1B4041D5D6EAF008DA8F8 /* GroupDetailsViewController.swift */,
 				347382481D624BC10015545E /* GroupViewController.swift */,
+				7BB760AD1D6A639400D0EFD3 /* CategoryCreateViewController.swift */,
 			);
 			name = Group;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */,
 				7BC1B47A1D5FD861008DA8F8 /* TodoCategoryManager.swift in Sources */,
 				7BB760AC1D69B41800D0EFD3 /* TodoItemCreateViewController.swift in Sources */,
+				7BB760AE1D6A639400D0EFD3 /* CategoryCreateViewController.swift in Sources */,
 				7BC1B3F21D5D68B8008DA8F8 /* Category.swift in Sources */,
 				7BC1B48A1D614369008DA8F8 /* TodoItemCell.swift in Sources */,
 				7BC1B40B1D5D6EF6008DA8F8 /* PollSetupViewController.swift in Sources */,
