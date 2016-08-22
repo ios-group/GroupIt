@@ -14,9 +14,9 @@ class GroupManager: NSObject {
     let groupDao = ParseDAO(className: Constants.GROUP_CLASSNAME)
     let groupMapper = GroupMapper()
     
-    func createGroup(group : Group, completion : (Bool, NSError?) -> ()) -> Void {
-        let pfObject = groupMapper.toPFObject(group)
-        groupDao.upsert(pfObject) { (created : Bool, error : NSError?) in
+    func upsertGroup(group : Group, completion : (Bool, NSError?) -> ()) -> Void {
+        let groupDO = self.groupMapper.toGroupDO(group)
+        groupDao.upsert(groupDO) { (created : Bool, error : NSError?) in
             completion(created, error)
         }
     }
@@ -29,17 +29,16 @@ class GroupManager: NSObject {
     
     
     func getAllGroups(completion : ([Group], NSError?) -> Void) {
-        
-        groupDao.getAll { (pfObjects : [PFObject]?, error : NSError?) in
-            completion(self.groupMapper.groups(pfObjects), error)
+        var groups : [Group] = []
+        groupDao.getAll { (groupPfObjects : [PFObject]?, error : NSError?) in
+            if error == nil {
+                if let groupPfObjects = groupPfObjects {
+                    for groupPfObject in groupPfObjects {
+                        groups.append(self.groupMapper.toGroup(groupPfObject as! GroupDO))
+                    }
+                }
+            }
+            completion(groups, error)
         }
     }
-
-    func getGroupsById(completion : ([Group], NSError?) -> Void) {
-        
-        groupDao.getAll { (pfObjects : [PFObject]?, error : NSError?) in
-            completion(self.groupMapper.groups(pfObjects), error)
-        }
-    }
-
 }

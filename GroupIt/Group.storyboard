@@ -127,6 +127,48 @@
             </objects>
             <point key="canvasLocation" x="1123" y="505"/>
         </scene>
+        <!--Group Create View Controller-->
+        <scene sceneID="3QU-q9-783">
+            <objects>
+                <viewController storyboardIdentifier="GroupCreateViewController" id="MkJ-2x-Xfv" customClass="GroupCreateViewController" customModule="GroupIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n8s-bY-1Jg"/>
+                        <viewControllerLayoutGuide type="bottom" id="aor-Iu-dBV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V4W-XW-Sw8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alO-PN-r9t">
+                                <rect key="frame" x="47" y="74" width="224" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErB-0i-OJT">
+                                <rect key="frame" x="201" y="175" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onSaveButtonTap:" destination="MkJ-2x-Xfv" eventType="touchUpInside" id="Ky3-Up-JMP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BA-K3-TDo">
+                                <rect key="frame" x="78" y="175" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancelButtonTap:" destination="MkJ-2x-Xfv" eventType="touchUpInside" id="NAf-Pk-iqZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="groupNameTextField" destination="alO-PN-r9t" id="czr-o4-3Ff"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXq-9u-ei9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="1193"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="o7n-0q-jDF"/>
