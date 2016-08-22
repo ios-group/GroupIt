@@ -30,6 +30,7 @@
 		7BB760AA1D691D0A00D0EFD3 /* ParseContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760A91D691D0900D0EFD3 /* ParseContext.swift */; };
 		7BB760AC1D69B41800D0EFD3 /* TodoItemCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760AB1D69B41800D0EFD3 /* TodoItemCreateViewController.swift */; };
 		7BB760AE1D6A639400D0EFD3 /* CategoryCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760AD1D6A639400D0EFD3 /* CategoryCreateViewController.swift */; };
+		7BB760B01D6A8E7100D0EFD3 /* GroupCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760AF1D6A8E7100D0EFD3 /* GroupCreateViewController.swift */; };
 		7BC1B3E51D5D67D4008DA8F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E41D5D67D4008DA8F8 /* User.swift */; };
 		7BC1B3E71D5D67E1008DA8F8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3E61D5D67E1008DA8F8 /* Group.swift */; };
 		7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */; };
@@ -112,6 +113,7 @@
 		7BB760A91D691D0900D0EFD3 /* ParseContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseContext.swift; sourceTree = "<group>"; };
 		7BB760AB1D69B41800D0EFD3 /* TodoItemCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemCreateViewController.swift; sourceTree = "<group>"; };
 		7BB760AD1D6A639400D0EFD3 /* CategoryCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCreateViewController.swift; sourceTree = "<group>"; };
+		7BB760AF1D6A8E7100D0EFD3 /* GroupCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCreateViewController.swift; sourceTree = "<group>"; };
 		7BC1B3E41D5D67D4008DA8F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7BC1B3E61D5D67E1008DA8F8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		7BC1B3EB1D5D683E008DA8F8 /* PollCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollCategory.swift; sourceTree = "<group>"; };
@@ -329,7 +331,7 @@
 				7BC1B4011D5D6E8B008DA8F8 /* GroupSetupViewController.swift */,
 				7BC1B4041D5D6EAF008DA8F8 /* GroupDetailsViewController.swift */,
 				347382481D624BC10015545E /* GroupViewController.swift */,
-				7BB760AD1D6A639400D0EFD3 /* CategoryCreateViewController.swift */,
+				7BB760AF1D6A8E7100D0EFD3 /* GroupCreateViewController.swift */,
 			);
 			name = Group;
 			sourceTree = "<group>";
@@ -337,6 +339,7 @@
 		7BC1B4061D5D6EBE008DA8F8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				7BB760AD1D6A639400D0EFD3 /* CategoryCreateViewController.swift */,
 				7BC1B40F1D5D6F48008DA8F8 /* Image */,
 				7BC1B40C1D5D6EFE008DA8F8 /* Todo */,
 				7BC1B4071D5D6ED1008DA8F8 /* Poll */,
@@ -731,6 +734,7 @@
 				7BC1B4111D5D6F65008DA8F8 /* ImageDetailsViewController.swift in Sources */,
 				053A672B1D63F59C0042465A /* GroupDataUtil.swift in Sources */,
 				347382491D624BC10015545E /* GroupViewController.swift in Sources */,
+				7BB760B01D6A8E7100D0EFD3 /* GroupCreateViewController.swift in Sources */,
 				7BC1B4801D604A60008DA8F8 /* TodoItemMapper.swift in Sources */,
 				7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */,
 				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,

@@ -18,6 +18,8 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func onAddButton() {
         print("adding a new group ... ")
+        let group = Group()
+        performSegueWithIdentifier(Constants.CREATE_GROUP_SEGUE, sender: group)
     }
 
     override func viewDidLoad() {
@@ -41,14 +43,33 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("GroupsCell", forIndexPath: indexPath) as! GroupsCell
-        cell.groupDetails = groups[indexPath.row]
-        return cell
+        let groupCell = tableView.dequeueReusableCellWithIdentifier("GroupsCell", forIndexPath: indexPath) as! GroupsCell
+        groupCell.group = groups[indexPath.row]
+        groupCell.delegate = self
+        return groupCell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let sender = tableView.cellForRowAtIndexPath(indexPath) as! GroupsCell
         performSegueWithIdentifier(Constants.READ_GROUPS_GROUP_SEGUE, sender: sender)
+    }
+
+    
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            print("deleting group ...")
+            let groupToDelete = self.groups[indexPath.row]
+            self.groups.removeAtIndex(indexPath.row)
+            groupManager.deleteGroupById((groupToDelete.groupId)!, completion: { (deleted : Bool, error : NSError?) in
+                if error == nil {
+                    print(deleted)
+                } else {
+                    print(error)
+                }
+            })
+            self.tableView.reloadData()
+        }
     }
 
     //================== GROUPS Library Operations =====================
@@ -74,7 +95,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         print("Inside createGroup()")
         let group = groupDataUtil.createGroup()
         
-        groupManager.createGroup(group) { (created: Bool, error: NSError?) in
+        groupManager.upsertGroup(group) { (created: Bool, error: NSError?) in
             if error == nil {
                 print("Group Created")
             } else {
@@ -100,6 +121,12 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         // Pass the selected object to the new view controller.
         
         print("prepare for segue")
+        if segue.identifier == Constants.CREATE_GROUP_SEGUE {
+            let groupCreateViewController = segue.destinationViewController as! GroupCreateViewController
+            groupCreateViewController.delegate = self
+            let group = sender as! Group
+            groupCreateViewController.group = group
+        }
         if segue.identifier == Constants.READ_GROUPS_GROUP_SEGUE {
             let groupViewController = segue.destinationViewController as! GroupViewController
             let cell = sender as! UITableViewCell
@@ -112,5 +139,46 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
                 groupViewController.tableView.reloadData()
             })
         }
+    }
+}
+
+extension GroupsViewController : GroupCreateDelegate {
+    func onSave(group: Group) {
+        print("saving group ..")
+        if group.groupId != nil {
+            findAndRemove(group)
+        }
+        self.groups.append(group)
+        self.tableView.reloadData()
+        groupManager.upsertGroup(group) { (saved : Bool, error : NSError?) in
+            if error == nil {
+                print(saved)
+            } else {
+                print(error)
+            }
+        }
+    }
+    
+    func findAndRemove(group : Group) {
+        let groupIndex = findIndex(group)
+        if let groupIndex = groupIndex {
+            self.groups.removeAtIndex(groupIndex)
+        }
+    }
+    
+    func findIndex(group : Group) -> Int? {
+        for i in 0 ..< groups.count {
+            let existingGroup = groups[i]
+            if existingGroup.groupId == group.groupId {
+                return i
+            }
+        }
+        return nil
+    }
+}
+
+extension GroupsViewController : GroupCellDelegate {
+    func onLongPress(group: Group) {
+        performSegueWithIdentifier(Constants.CREATE_GROUP_SEGUE, sender: group)
     }
 }

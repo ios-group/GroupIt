@@ -19,7 +19,11 @@ class Group: NSObject {
 //    var categories : [Category]
     var categories : [TodoCategory]?
     
-    init(groupDictionary : Dictionary<String, AnyObject>) {
+    override init() {
+        //no-op
+    }
+    
+    init(groupDictionary : Dictionary<String, AnyObject?>) {
         groupId = groupDictionary["groupId"] as? String
         groupName = groupDictionary["groupName"] as? String
         groupDescription = groupDictionary["groupDescription"] as? String

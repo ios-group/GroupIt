@@ -7,26 +7,41 @@
 //
 
 import UIKit
+protocol GroupCellDelegate {
+    func onLongPress(group : Group)
+}
 
 class GroupsCell: UITableViewCell {
 
     @IBOutlet weak var groupNameLabel: UILabel!
     
-    var groupDetails: Group! {
+    var delegate : GroupCellDelegate?
+    
+    var group: Group! {
         didSet{
-            groupNameLabel.text = groupDetails.groupName
+            groupNameLabel.text = group.groupName
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressGroupCell))
+        longPressGestureRecognizer.delegate = self
+        self.addGestureRecognizer(longPressGestureRecognizer)
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    func onLongPressGroupCell() {
+        print("on long press ... ")
+        self.delegate?.onLongPress(self.group!)
     }
 
 }

@@ -11,33 +11,20 @@ import Parse
 
 class GroupMapper: NSObject {
         
-    func toPFObject(group : Group) -> PFObject {
-        let groupPFObject = PFObject(className: Constants.GROUP_CLASSNAME)
-        groupPFObject.objectId = group.groupId
-        groupPFObject["groupName"] = group.groupName
-        groupPFObject["groupDescription"] = group.groupDescription
-
-        return groupPFObject
+    func toGroupDO(group : Group) -> GroupDO {
+        let groupDO = GroupDO()
+        groupDO.objectId = group.groupId
+        groupDO["groupName"] = group.groupName
+        return groupDO
     }
     
-    func groups(pfObjects : [PFObject]?) -> [Group] {
-        var groups : [Group] = []
-        if let pfObjects = pfObjects {
-            for pfObject in pfObjects {
-                groups.append(group(pfObject)!)
-            }
-        }
-        return groups
+    func toGroup(groupDO : GroupDO) -> Group {
+        var groupDictionary = Dictionary<String, AnyObject?>()
+        groupDictionary["groupId"] = groupDO.objectId
+        groupDictionary["groupName"] = groupDO["groupName"]
+        let group = Group(groupDictionary: groupDictionary)
+        return group
     }
-
-    func group(pfObject: PFObject?) -> Group? {
-        var groupDictionary : Dictionary<String, AnyObject> = [:]
-        if let pfObject = pfObject {
-            
-            groupDictionary["groupId"] = pfObject.objectId
-            groupDictionary["groupName"] = pfObject.objectForKey("groupName") as! String
-            groupDictionary["groupDescription"] = pfObject.objectForKey("groupDescription") as! String
-        }
-        return Group(groupDictionary: groupDictionary)
-    }
+  
+    
 }

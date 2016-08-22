@@ -20,6 +20,7 @@ class Constants: NSObject {
     static let GROUPS_VIEW_CONTROLLER_ID : String = "GroupsViewController"
     static let GROUPS_NAV_VIEW_CONTROLLER_ID : String = "GroupsNavViewController"
     
+    static let CREATE_GROUP_SEGUE = "createGroupSegue"
     
     // ======== Group ======
     static let GROUP_STORYBOARD_NAME : String = "Group"
