@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +24,15 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func onLoginButton(sender: AnyObject) {
+        //Need to add logic for verifying user
+        self.performSegueWithIdentifier(Constants.LOGIN_GROUPS_SEGUE, sender: self)
+    }
+    
+    @IBAction func onSignUpButton(sender: AnyObject) {
+        self.performSegueWithIdentifier(Constants.SIGNUP_USER_SEGUE, sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

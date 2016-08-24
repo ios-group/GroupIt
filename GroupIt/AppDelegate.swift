@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TodoItemDO.registerSubclass()
         TodoCategoryDO.registerSubclass()
         GroupDO.registerSubclass()
+        UserDO.registerSubclass()
     }
 
     func applicationWillResignActive(application: UIApplication) {

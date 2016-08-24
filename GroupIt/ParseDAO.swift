@@ -25,6 +25,12 @@ class ParseDAO: NSObject {
         }
     }
     
+    func createUser(pfUser :  PFUser, completion : (Bool, NSError?) -> Void) {
+        pfUser.signUpInBackgroundWithBlock { (created: Bool, error: NSError?) -> Void in
+            completion(created, error)
+        }
+    }
+    
     func deleteById(id : String, completion : (Bool, NSError?) -> ()) {
         getById(id) { (pfObject : PFObject?, error : NSError?) in
             if let pfObject = pfObject {

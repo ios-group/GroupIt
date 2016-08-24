@@ -12,6 +12,10 @@
 		053A67291D63F4140042465A /* GroupMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A67281D63F4140042465A /* GroupMapper.swift */; };
 		053A672B1D63F59C0042465A /* GroupDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A672A1D63F59C0042465A /* GroupDataUtil.swift */; };
 		053A672D1D654A530042465A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 053A672C1D654A530042465A /* Default-568h@2x.png */; };
+		05773FA61D6D25AD00E27ACE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05773FA51D6D25AD00E27ACE /* UserManager.swift */; };
+		05773FA81D6D25DC00E27ACE /* UserDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05773FA71D6D25DC00E27ACE /* UserDO.swift */; };
+		05773FAA1D6D280100E27ACE /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05773FA91D6D280100E27ACE /* UserMapper.swift */; };
+		05DD11691D6E561A0088DC1A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DD11681D6E561A0088DC1A /* Login.storyboard */; };
 		158C7F5F4F1DD68469E39F42 /* Pods_GroupItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50D317C894AF59C0EA22D22 /* Pods_GroupItTests.framework */; };
 		3419A5A11D63B6BD00508FF7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3419A5A01D63B6BD00508FF7 /* CategoryCell.swift */; };
 		347382491D624BC10015545E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347382481D624BC10015545E /* GroupViewController.swift */; };
@@ -47,7 +51,6 @@
 		7BC1B40B1D5D6EF6008DA8F8 /* PollSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B40A1D5D6EF6008DA8F8 /* PollSetupViewController.swift */; };
 		7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B40D1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift */; };
 		7BC1B4111D5D6F65008DA8F8 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4101D5D6F65008DA8F8 /* ImageDetailsViewController.swift */; };
-		7BC1B4141D5D6F8B008DA8F8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B4131D5D6F8B008DA8F8 /* Login.storyboard */; };
 		7BC1B4161D5D6FA3008DA8F8 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B4151D5D6FA3008DA8F8 /* Groups.storyboard */; };
 		7BC1B41A1D5D6FF0008DA8F8 /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B4191D5D6FF0008DA8F8 /* Group.storyboard */; };
 		7BC1B41C1D5D7011008DA8F8 /* PollCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */; };
@@ -87,6 +90,10 @@
 		053A67281D63F4140042465A /* GroupMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMapper.swift; sourceTree = "<group>"; };
 		053A672A1D63F59C0042465A /* GroupDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDataUtil.swift; sourceTree = "<group>"; };
 		053A672C1D654A530042465A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		05773FA51D6D25AD00E27ACE /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		05773FA71D6D25DC00E27ACE /* UserDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDO.swift; sourceTree = "<group>"; };
+		05773FA91D6D280100E27ACE /* UserMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		05DD11681D6E561A0088DC1A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		289274919171848AF31D3931 /* Pods-GroupItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupItTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupItTests/Pods-GroupItTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3419A5A01D63B6BD00508FF7 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		347382481D624BC10015545E /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +137,6 @@
 		7BC1B40A1D5D6EF6008DA8F8 /* PollSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollSetupViewController.swift; sourceTree = "<group>"; };
 		7BC1B40D1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetailsViewController.swift; sourceTree = "<group>"; };
 		7BC1B4101D5D6F65008DA8F8 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
-		7BC1B4131D5D6F8B008DA8F8 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		7BC1B4151D5D6FA3008DA8F8 /* Groups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		7BC1B4191D5D6FF0008DA8F8 /* Group.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Group.storyboard; sourceTree = "<group>"; };
 		7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PollCategory.storyboard; sourceTree = "<group>"; };
@@ -250,6 +256,7 @@
 				7BB7609B1D643C8900D0EFD3 /* TodoCategoryDO.swift */,
 				7BB7609F1D643FB900D0EFD3 /* GroupDO.swift */,
 				7BB760A11D643FED00D0EFD3 /* CategoryDO.swift */,
+				05773FA71D6D25DC00E27ACE /* UserDO.swift */,
 			);
 			name = DO;
 			sourceTree = "<group>";
@@ -376,7 +383,7 @@
 		7BC1B4121D5D6F6D008DA8F8 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				7BC1B4131D5D6F8B008DA8F8 /* Login.storyboard */,
+				05DD11681D6E561A0088DC1A /* Login.storyboard */,
 				7BC1B4151D5D6FA3008DA8F8 /* Groups.storyboard */,
 				7BC1B4191D5D6FF0008DA8F8 /* Group.storyboard */,
 				7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */,
@@ -392,6 +399,7 @@
 				7BC1B4791D5FD861008DA8F8 /* TodoCategoryManager.swift */,
 				7BC1B4831D6084BA008DA8F8 /* TodoItemManager.swift */,
 				053A67261D63F26A0042465A /* GroupManager.swift */,
+				05773FA51D6D25AD00E27ACE /* UserManager.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -402,6 +410,7 @@
 				7BC1B4771D5FCD86008DA8F8 /* TodoCategoryMapper.swift */,
 				7BC1B47F1D604A60008DA8F8 /* TodoItemMapper.swift */,
 				053A67281D63F4140042465A /* GroupMapper.swift */,
+				05773FA91D6D280100E27ACE /* UserMapper.swift */,
 			);
 			name = Mapper;
 			sourceTree = "<group>";
@@ -559,7 +568,7 @@
 				7BC1B4161D5D6FA3008DA8F8 /* Groups.storyboard in Resources */,
 				7BC1B4201D5D702A008DA8F8 /* ImageCategory.storyboard in Resources */,
 				7BA8B2F31D5C5A230015471D /* Main.storyboard in Resources */,
-				7BC1B4141D5D6F8B008DA8F8 /* Login.storyboard in Resources */,
+				05DD11691D6E561A0088DC1A /* Login.storyboard in Resources */,
 				7BC1B41E1D5D701E008DA8F8 /* TodoCategory.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -722,6 +731,7 @@
 				7BC1B4781D5FCD86008DA8F8 /* TodoCategoryMapper.swift in Sources */,
 				7BC1B3FA1D5D6DC5008DA8F8 /* SignUpViewController.swift in Sources */,
 				7BB7609C1D643C8900D0EFD3 /* TodoCategoryDO.swift in Sources */,
+				05773FA81D6D25DC00E27ACE /* UserDO.swift in Sources */,
 				7BC1B4841D6084BA008DA8F8 /* TodoItemManager.swift in Sources */,
 				7BC1B3F01D5D6870008DA8F8 /* ImageCategory.swift in Sources */,
 				0524A0D61D62EAEE00B6E438 /* GroupsCell.swift in Sources */,
@@ -737,9 +747,11 @@
 				7BB760B01D6A8E7100D0EFD3 /* GroupCreateViewController.swift in Sources */,
 				7BC1B4801D604A60008DA8F8 /* TodoItemMapper.swift in Sources */,
 				7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */,
+				05773FA61D6D25AD00E27ACE /* UserManager.swift in Sources */,
 				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,
 				7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */,
 				7BC1B47A1D5FD861008DA8F8 /* TodoCategoryManager.swift in Sources */,
+				05773FAA1D6D280100E27ACE /* UserMapper.swift in Sources */,
 				7BB760AC1D69B41800D0EFD3 /* TodoItemCreateViewController.swift in Sources */,
 				7BB760AE1D6A639400D0EFD3 /* CategoryCreateViewController.swift in Sources */,
 				7BC1B3F21D5D68B8008DA8F8 /* Category.swift in Sources */,
