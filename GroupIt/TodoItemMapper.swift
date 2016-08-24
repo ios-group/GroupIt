@@ -11,7 +11,7 @@ import Parse
 
 class TodoItemMapper: NSObject {
     
-    func toTodoItemDO(todoCategoryDO : TodoCategoryDO, todoItem : TodoItem) -> TodoItemDO {
+    func toTodoItemDO(todoCategoryDO : CategoryDO, todoItem : TodoItem) -> TodoItemDO {
         let todoItemDO = TodoItemDO()
         todoItemDO.objectId = todoItem.id
         todoItemDO["todoItemName"] = todoItem.todoItemName

@@ -29,8 +29,8 @@ class CategoryCreateViewController: UIViewController {
 
     func prepopulateData() {
         if let category = category {
-            categoryTypeLabel.text = category.getCategoryType().rawValue
-            categoryNameTextField.text = category.getName()
+            categoryTypeLabel.text = category.categoryType.rawValue
+            categoryNameTextField.text = category.categoryName
         }
     }
 
@@ -42,24 +42,29 @@ class CategoryCreateViewController: UIViewController {
     }
     
     func getUpdatedCategory() -> Category {
-        let categoryType : CategoryType = (self.category?.getCategoryType())!
-        switch categoryType {
-        case .TODO:
-            print("creating todo category ...")
-            let todoCategory = TodoCategory()
-            todoCategory.id = self.category?.getID()
-            todoCategory.todoName = categoryNameTextField.text
-            return todoCategory
-        case .POLL:
-            print("creating poll category ...")
-            let pollCategory = PollCategory()
-            return pollCategory
-        case .IMAGES:
-            print("creating image category ...")
-            let imageCategory = ImageCategory()
-            return imageCategory
-        }
+        let updatedCategory = Category(categoryType: self.category!.categoryType)
+        updatedCategory.categoryId = self.category?.categoryId
+        updatedCategory.categoryName = categoryNameTextField.text
+        return updatedCategory
     }
+//        let categoryType : CategoryType = (self.category?.categoryType)!
+//        switch categoryType {
+//        case .TODO:
+//            print("creating todo category ...")
+//            let todoCategory = TodoCategory()
+//            todoCategory.id = self.category?.categoryId
+//            todoCategory.todoName = categoryNameTextField.text
+//            return todoCategory
+//        case .POLL:
+//            print("creating poll category ...")
+//            let pollCategory = PollCategory()
+//            return pollCategory
+//        case .IMAGES:
+//            print("creating image category ...")
+//            let imageCategory = ImageCategory()
+//            return imageCategory
+//        }
+//    }
     
     @IBAction func onCancelButtonTap(sender: AnyObject) {
         print("cancelling category ...")

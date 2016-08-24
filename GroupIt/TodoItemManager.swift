@@ -17,15 +17,16 @@ class TodoItemManager: NSObject {
     let todoItemMapper = TodoItemMapper()
     let todoCategoryMapper = TodoCategoryMapper()
     
-    func upsertTodoItem(categoryId : String, todoItem : TodoItem, completion : (Bool, NSError?) -> ()) -> Void {
+    func upsertTodoItem(categoryId : String, todoItem : TodoItem, completion : (Bool, TodoItem?, NSError?) -> ()) -> Void {
         todoCategoryDao.getById(categoryId) { (todoCategoryPfObject : PFObject?, error : NSError?) in
             if error == nil {
-                let todoItemDO = self.todoItemMapper.toTodoItemDO(todoCategoryPfObject as! TodoCategoryDO, todoItem: todoItem)
-                self.todoItemDao.upsert(todoItemDO) { (created : Bool, error : NSError?) in
-                    completion(created, error)
+                let todoItemDO = self.todoItemMapper.toTodoItemDO(todoCategoryPfObject as! CategoryDO, todoItem: todoItem)
+                self.todoItemDao.upsert(todoItemDO) { (created : Bool, pfObject : PFObject?, error : NSError?) in
+                    let todoItem = self.todoItemMapper.toTodoItem(pfObject as! TodoItemDO)
+                    completion(created, todoItem, error)
                 }
             } else {
-                completion(false, error)
+                completion(false, nil, error)
             }
         }
     }

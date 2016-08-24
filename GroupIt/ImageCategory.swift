@@ -11,36 +11,60 @@ import UIKit
 class ImageCategory: Category {
 
     /* imageName, imageDescription  */
-    var id : String?
-    var imageName : String?
-    var imageDescription : String?
+//    var id : String?
+//    var imageCategoryName : String?
+//    var imageCategoryDescription : String?
+    var imageItems : [ImageItem]?
     
     init() {
-        //no-op
+        super.init(categoryType: .IMAGES)
     }
 
     init(imageCategoryDictionary : Dictionary<String, AnyObject>) {
-        id = imageCategoryDictionary["id"] as? String
-        imageName = imageCategoryDictionary["imageName"] as? String
-        imageDescription = imageCategoryDictionary["imageDescription"] as? String
+        super.init(categoryDictionary: imageCategoryDictionary)
+//        id = imageCategoryDictionary["id"] as? String
+//        imageCategoryName = imageCategoryDictionary["imageCategoryName"] as? String
+//        imageCategoryDescription = imageCategoryDictionary["imageCategoryDescription"] as? String
     }
     
-    var description: String {
+    override var description: String {
         get {
-            return self.imageName!
+            return "\(super.description), \(self.imageItems)"
         }
     }
     
-    func getCategoryType() -> CategoryType {
-        return CategoryType.IMAGES
+//    func getCategoryType() -> CategoryType {
+//        return CategoryType.IMAGES
+//    }
+//    
+//    func getID() -> String? {
+//        return id
+//    }
+//    
+//    func getName() -> String? {
+//        return imageCategoryName
+//    }
+
+}
+
+
+class ImageItem : NSObject {
+
+    var imageItemId : String?
+    var imageItemName : String?
+    var imageItemDescription : String?
+    var image : UIImage?
+    
+    init(imageItemDictionary : Dictionary<String, AnyObject?>) {
+        imageItemId = imageItemDictionary["imageItemId"] as? String
+        imageItemName = imageItemDictionary["imageItemName"] as? String
+        imageItemDescription = imageItemDictionary["imageItemDescription"] as? String
     }
     
-    func getID() -> String? {
-        return id
-    }
-    
-    func getName() -> String? {
-        return imageName
+    override var description: String {
+        get {
+            return "\(self.imageItemId!), \(self.imageItemName), \(self.imageItemDescription)"
+        }
     }
 
 }

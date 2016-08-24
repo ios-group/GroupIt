@@ -8,14 +8,31 @@
 
 import UIKit
 
-protocol Category: CustomStringConvertible {
+class Category: CustomStringConvertible {
     /**
      * categoryId, categoryType enum, categoryOwner
      */
-    func getID() -> String?
-    func getCategoryType() -> CategoryType
-    func getName() -> String?
     
+    var categoryId : String?
+    var categoryType : CategoryType
+    var categoryName : String?
+    var categoryDescription : String?
+    
+    init(categoryType : CategoryType) {
+        //assigning todo as default category.
+        self.categoryType = categoryType
+    }
+    
+    init(categoryDictionary : Dictionary<String, AnyObject?>) {
+        self.categoryId = categoryDictionary["categoryId"] as? String
+        self.categoryType = CategoryType.getCategoryType(categoryDictionary["categoryType"] as? String)
+        self.categoryName = categoryDictionary["categoryName"] as? String
+        self.categoryDescription = categoryDictionary["categoryDescription"] as? String
+    }
+    
+    var description: String {
+        return "\(categoryId), \(categoryName), \(categoryType)"
+    }    
 }
 
 enum CategoryType : String {
@@ -24,6 +41,19 @@ enum CategoryType : String {
     case POLL
     case IMAGES
     static let allValues = [TODO, POLL, IMAGES]
+    
+    static func getCategoryType(categoryTypeString : String?) -> CategoryType {
+        if let categoryTypeString = categoryTypeString {
+            if categoryTypeString == "TODO" {
+                return .TODO
+            } else if categoryTypeString == "POLL" {
+                return .POLL
+            } else if categoryTypeString == "IMAGES" {
+                return .IMAGES
+            }
+        }
+        return POLL
+    }
 }
 
 func getAllCategoryTypes() -> [CategoryType]{

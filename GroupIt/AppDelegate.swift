@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func registerParseSubclasses() {
         TodoItemDO.registerSubclass()
-        TodoCategoryDO.registerSubclass()
+        CategoryDO.registerSubclass()
         GroupDO.registerSubclass()
     }
 

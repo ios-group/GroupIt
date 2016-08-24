@@ -10,15 +10,17 @@ import UIKit
 
 class ImageDetailsViewController: UIViewController {
 
+    @IBOutlet weak var imagesCollectionView: UICollectionView!
+    
+    var imageCategory : ImageCategory?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        imagesCollectionView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -32,4 +34,18 @@ class ImageDetailsViewController: UIViewController {
     }
     */
 
+}
+
+extension ImageDetailsViewController : UICollectionViewDataSource {
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (imageCategory?.imageItems?.count)!
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let imageCell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.IMAGE_CELL_ID, forIndexPath:indexPath) as! ImageCell
+        let imageItem = imageCategory?.imageItems![indexPath.row]
+        imageCell.imageView.image = imageItem?.image
+        return imageCell
+    }
 }

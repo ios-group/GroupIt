@@ -14,10 +14,11 @@ class GroupManager: NSObject {
     let groupDao = ParseDAO(className: Constants.GROUP_CLASSNAME)
     let groupMapper = GroupMapper()
     
-    func upsertGroup(group : Group, completion : (Bool, NSError?) -> ()) -> Void {
+    func upsertGroup(group : Group, completion : (Bool, Group, NSError?) -> ()) -> Void {
         let groupDO = self.groupMapper.toGroupDO(group)
-        groupDao.upsert(groupDO) { (created : Bool, error : NSError?) in
-            completion(created, error)
+        groupDao.upsert(groupDO) { (created : Bool, pfObject : PFObject?, error : NSError?) in
+            let group = self.groupMapper.toGroup(pfObject as! GroupDO)
+            completion(created, group, error)
         }
     }
     
