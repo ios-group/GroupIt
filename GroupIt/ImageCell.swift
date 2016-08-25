@@ -11,5 +11,17 @@ import UIKit
 class ImageCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageItemNameLabel: UILabel!
     
+    var imageItem : ImageItem?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        imageItemNameLabel.text = imageItem?.imageItemName
+//        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressTodoItemCell))
+//        longPressGestureRecognizer.delegate = self
+//        self.addGestureRecognizer(longPressGestureRecognizer)
+    }
+
 }

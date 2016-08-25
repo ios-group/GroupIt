@@ -20,26 +20,33 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6z2-pE-1bV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xmn-Jz-LXc">
-                                    <size key="itemSize" width="92" height="89"/>
+                                    <size key="itemSize" width="144" height="118"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="pf1-Bi-YmZ" customClass="ImageCell" customModule="GroupIt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="89"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="118"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="92" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="144" height="118"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NdZ-SK-B2G">
-                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="89"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="118"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="imageName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8Y-xp-WeK">
+                                                    <rect key="frame" x="10" y="91" width="126" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
+                                            <outlet property="imageItemNameLabel" destination="Y8Y-xp-WeK" id="VHl-7B-ffi"/>
                                             <outlet property="imageView" destination="NdZ-SK-B2G" id="LyX-iN-SNu"/>
                                         </connections>
                                     </collectionViewCell>
@@ -50,11 +57,61 @@
                     </view>
                     <connections>
                         <outlet property="imagesCollectionView" destination="6z2-pE-1bV" id="V1S-8Y-McR"/>
+                        <segue destination="ufF-wQ-Erl" kind="modal" identifier="createImageItemSeque" id="8Ek-Mr-nKv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDq-9O-428" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="364"/>
+        </scene>
+        <!--Image Item Create View Controller-->
+        <scene sceneID="cRB-xN-lQC">
+            <objects>
+                <viewController storyboardIdentifier="ImageItemCreateViewController" id="ufF-wQ-Erl" customClass="ImageItemCreateViewController" customModule="GroupIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oju-lF-111"/>
+                        <viewControllerLayoutGuide type="bottom" id="cRR-z1-PpX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lsL-Ey-Ard">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6M-eM-XN9">
+                                <rect key="frame" x="133" y="133" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="onCameraButtonTap:" destination="ufF-wQ-Erl" eventType="touchUpInside" id="yqB-Kl-ziy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-cF-y7E">
+                                <rect key="frame" x="201" y="216" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onSaveButtonTap:" destination="ufF-wQ-Erl" eventType="touchUpInside" id="QRf-mh-2Gn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbo-Kh-jjb">
+                                <rect key="frame" x="79" y="216" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancelButtonTap:" destination="ufF-wQ-Erl" eventType="touchUpInside" id="czK-Ng-g76"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xod-wT-wk0">
+                                <rect key="frame" x="55" y="72" width="211" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageItemNameTextField" destination="xod-wT-wk0" id="cGD-0Z-HFU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bfq-Iz-83l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="568" y="364"/>
         </scene>
     </scenes>
 </document>

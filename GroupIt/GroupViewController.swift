@@ -215,21 +215,29 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
             categoryCreateViewController.delegate = self
         }
         if segue.identifier == Constants.READ_GROUP_TODO_CATEGORY_SEGUE {
-            let todoDetailsVeiwController = segue.destinationViewController as! TodoDetailsViewController
+            let todoDetailsViewController = segue.destinationViewController as! TodoDetailsViewController
             let category = sender as? Category
             todoItemManager.getAllTodoItemsByCategoryId((category?.categoryId)!, completion: { (todoItems : [TodoItem], error : NSError?) in
                 var categoryDictionary = self.categoryMapper.toDictionary(category!)
                 categoryDictionary["todoItems"] = todoItems
                 let todoCategory = TodoCategory(todoCategoryDictionary: categoryDictionary)
                 todoCategory.todoItems = todoItems
-                todoDetailsVeiwController.todoCategory = todoCategory
-                todoDetailsVeiwController.todoItemsTableView.reloadData()
+                todoDetailsViewController.todoCategory = todoCategory
+                todoDetailsViewController.todoItemsTableView.reloadData()
             })
         }
         if segue.identifier == Constants.GROUP_TO_IMAGE_CATEGORY_SEGUE {
             print("preparing segue from group to image category ... ")
-//            let imageDetailsViewController = segue.destinationViewController as! ImageDetailsViewController
-//            
+            let imageDetailsViewController = segue.destinationViewController as! ImageDetailsViewController
+            let category = sender as? Category
+            imageItemManager.getAllImageItemsByCategoryId((category?.categoryId)!, completion: { (imageItems : [ImageItem], error : NSError?) in
+                var categoryDictionary = self.categoryMapper.toDictionary(category!)
+                categoryDictionary["imageItems"] = imageItems
+                let imageCategory = ImageCategory(imageCategoryDictionary: categoryDictionary)
+                imageCategory.imageItems = imageItems
+                imageDetailsViewController.imageCategory = imageCategory
+                imageDetailsViewController.imagesCollectionView.reloadData()
+            })
         }
     }
 }

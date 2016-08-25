@@ -14,17 +14,18 @@ class ImageCategory: Category {
 //    var id : String?
 //    var imageCategoryName : String?
 //    var imageCategoryDescription : String?
-    var imageItems : [ImageItem]?
+    var imageItems : [ImageItem] = []
     
     init() {
         super.init(categoryType: .IMAGES)
     }
 
-    init(imageCategoryDictionary : Dictionary<String, AnyObject>) {
+    init(imageCategoryDictionary : Dictionary<String, AnyObject?>) {
         super.init(categoryDictionary: imageCategoryDictionary)
 //        id = imageCategoryDictionary["id"] as? String
 //        imageCategoryName = imageCategoryDictionary["imageCategoryName"] as? String
 //        imageCategoryDescription = imageCategoryDictionary["imageCategoryDescription"] as? String
+        imageItems = imageCategoryDictionary["imageItems"] as? [ImageItem] ?? []
     }
     
     override var description: String {
@@ -55,15 +56,20 @@ class ImageItem : NSObject {
     var imageItemDescription : String?
     var image : UIImage?
     
+    override init() {
+        //no-op
+    }
+
     init(imageItemDictionary : Dictionary<String, AnyObject?>) {
         imageItemId = imageItemDictionary["imageItemId"] as? String
         imageItemName = imageItemDictionary["imageItemName"] as? String
         imageItemDescription = imageItemDictionary["imageItemDescription"] as? String
+        image = imageItemDictionary["image"] as? UIImage
     }
     
     override var description: String {
         get {
-            return "\(self.imageItemId!), \(self.imageItemName), \(self.imageItemDescription)"
+            return "\(self.imageItemId), \(self.imageItemName), \(self.imageItemDescription)"
         }
     }
 

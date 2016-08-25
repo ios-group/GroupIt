@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ImageItemMapper: NSObject {
 
@@ -14,8 +15,9 @@ class ImageItemMapper: NSObject {
         let imageItemDO = ImageItemDO()
         imageItemDO.objectId = imageItem.imageItemId
         imageItemDO["imageItemName"] = imageItem.imageItemName
-        imageItemDO["imageItemDescription"] = imageItem.imageItemDescription
-//        imageItemDO["image"] = imageItem.image
+//        imageItemDO["imageItemDescription"] = imageItem.imageItemDescription
+        imageItemDO["image"] = toPfFile(imageItem.image)
+        imageItemDO["category"] = categoryDO
         return imageItemDO
     }
     
@@ -23,9 +25,38 @@ class ImageItemMapper: NSObject {
         var imageItemDictionary = Dictionary<String, AnyObject?>()
         imageItemDictionary["imageId"] = imageItemDO.objectId
         imageItemDictionary["imageItemName"] = imageItemDO["imageItemName"]
-        imageItemDictionary["imageItemDescription"] = imageItemDO["imageItemDescription"]
-        let todoItem = ImageItem(imageItemDictionary: imageItemDictionary)
-        return todoItem
+        imageItemDictionary["image"] = toUIImage(imageItemDO["image"] as? PFFile)
+//        imageItemDictionary["imageItemDescription"] = imageItemDO["imageItemDescription"]
+        let imageItem = ImageItem(imageItemDictionary: imageItemDictionary)
+        return imageItem
     }
 
+    func toPfFile(image : UIImage?) -> PFFile? {
+//        let imageData = UIImagePNGRepresentation(image!)
+        let imageData = UIImageJPEGRepresentation(image!, 0.5)
+        let imageFile = PFFile(name:"image.png", data: imageData!)
+        return imageFile
+    }
+    
+    func toUIImage(pfFile : PFFile?) -> UIImage? {
+        if let pfFile = pfFile {
+            let fileData = try! pfFile.getData()
+            return UIImage(data: fileData)
+        }
+        return nil
+    }
+
+//    func toUIImage(pfFile : PFFile?) -> UIImage? {
+//        if let pfFile = pfFile {
+//            pfFile.getDataInBackgroundWithBlock {
+//                (imageData: NSData?, error: NSError?) -> Void in
+//                if error == nil {
+//                    if let imageData = imageData {
+//                        return UIImage(data:imageData)
+//                    }
+//                }
+//            }
+//        }
+//        return nil
+//    }
 }

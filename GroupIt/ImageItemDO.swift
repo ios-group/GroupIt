@@ -13,6 +13,7 @@ class ImageItemDO: PFObject, PFSubclassing {
 
     @NSManaged var imageItemName : String?
     @NSManaged var imageItemDescription : String?
+    @NSManaged var image : PFFile?
     @NSManaged var category : CategoryDO?
     
     static func parseClassName() -> String {

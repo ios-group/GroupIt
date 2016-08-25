@@ -30,7 +30,6 @@
 		7BB760AC1D69B41800D0EFD3 /* TodoItemCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760AB1D69B41800D0EFD3 /* TodoItemCreateViewController.swift */; };
 		7BB760AE1D6A639400D0EFD3 /* CategoryCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760AD1D6A639400D0EFD3 /* CategoryCreateViewController.swift */; };
 		7BB760B01D6A8E7100D0EFD3 /* GroupCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760AF1D6A8E7100D0EFD3 /* GroupCreateViewController.swift */; };
-		7BB760B21D6CD4E400D0EFD3 /* ImageSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760B11D6CD4E400D0EFD3 /* ImageSetupViewController.swift */; };
 		7BB760B61D6CDACE00D0EFD3 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760B51D6CDACE00D0EFD3 /* ImageCell.swift */; };
 		7BB760B81D6CF99A00D0EFD3 /* ImageCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760B71D6CF99A00D0EFD3 /* ImageCategoryManager.swift */; };
 		7BB760BA1D6DA8FA00D0EFD3 /* ImageItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB760B91D6DA8FA00D0EFD3 /* ImageItemManager.swift */; };
@@ -66,6 +65,7 @@
 		7BC1B4801D604A60008DA8F8 /* TodoItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B47F1D604A60008DA8F8 /* TodoItemMapper.swift */; };
 		7BC1B4841D6084BA008DA8F8 /* TodoItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4831D6084BA008DA8F8 /* TodoItemManager.swift */; };
 		7BC1B48A1D614369008DA8F8 /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4891D614369008DA8F8 /* TodoItemCell.swift */; };
+		7BCA33201D6E789C00AFAC67 /* ImageItemCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCA331F1D6E789C00AFAC67 /* ImageItemCreateViewController.swift */; };
 		B19CF5170B69D9CDDFD075D5 /* Pods_GroupIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC21FD303961B1A68A9D833D /* Pods_GroupIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,7 +118,6 @@
 		7BB760AB1D69B41800D0EFD3 /* TodoItemCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemCreateViewController.swift; sourceTree = "<group>"; };
 		7BB760AD1D6A639400D0EFD3 /* CategoryCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCreateViewController.swift; sourceTree = "<group>"; };
 		7BB760AF1D6A8E7100D0EFD3 /* GroupCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCreateViewController.swift; sourceTree = "<group>"; };
-		7BB760B11D6CD4E400D0EFD3 /* ImageSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSetupViewController.swift; sourceTree = "<group>"; };
 		7BB760B51D6CDACE00D0EFD3 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		7BB760B71D6CF99A00D0EFD3 /* ImageCategoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCategoryManager.swift; sourceTree = "<group>"; };
 		7BB760B91D6DA8FA00D0EFD3 /* ImageItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItemManager.swift; sourceTree = "<group>"; };
@@ -154,6 +153,7 @@
 		7BC1B47F1D604A60008DA8F8 /* TodoItemMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemMapper.swift; sourceTree = "<group>"; };
 		7BC1B4831D6084BA008DA8F8 /* TodoItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemManager.swift; sourceTree = "<group>"; };
 		7BC1B4891D614369008DA8F8 /* TodoItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
+		7BCA331F1D6E789C00AFAC67 /* ImageItemCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItemCreateViewController.swift; sourceTree = "<group>"; };
 		8C223E4FFA3DC87DC3096863 /* Pods-GroupItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupItUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupItUITests/Pods-GroupItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A50D317C894AF59C0EA22D22 /* Pods_GroupItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC21FD303961B1A68A9D833D /* Pods_GroupIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -380,7 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				7BC1B4101D5D6F65008DA8F8 /* ImageDetailsViewController.swift */,
-				7BB760B11D6CD4E400D0EFD3 /* ImageSetupViewController.swift */,
+				7BCA331F1D6E789C00AFAC67 /* ImageItemCreateViewController.swift */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -750,9 +750,9 @@
 				7BC1B4111D5D6F65008DA8F8 /* ImageDetailsViewController.swift in Sources */,
 				053A672B1D63F59C0042465A /* GroupDataUtil.swift in Sources */,
 				7BB760B61D6CDACE00D0EFD3 /* ImageCell.swift in Sources */,
+				7BCA33201D6E789C00AFAC67 /* ImageItemCreateViewController.swift in Sources */,
 				347382491D624BC10015545E /* GroupViewController.swift in Sources */,
 				7BB760B01D6A8E7100D0EFD3 /* GroupCreateViewController.swift in Sources */,
-				7BB760B21D6CD4E400D0EFD3 /* ImageSetupViewController.swift in Sources */,
 				7BC1B4801D604A60008DA8F8 /* TodoItemMapper.swift in Sources */,
 				7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */,
 				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,
