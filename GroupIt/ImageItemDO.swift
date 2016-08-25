@@ -1,23 +1,23 @@
 //
-//  TodoItemDO.swift
+//  ImageItemDO.swift
 //  GroupIt
 //
-//  Created by Ankit Jasuja on 8/16/16.
+//  Created by Ankit Jasuja on 8/24/16.
 //  Copyright © 2016 iOS Group 5. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class TodoItemDO : PFObject, PFSubclassing {
+class ImageItemDO: PFObject, PFSubclassing {
 
-    @NSManaged var id : String?
-    @NSManaged var todoItemName : String?
-    var completed : Bool?
+    @NSManaged var imageItemName : String?
+    @NSManaged var imageItemDescription : String?
+    @NSManaged var image : PFFile?
     @NSManaged var category : CategoryDO?
     
     static func parseClassName() -> String {
-        return Constants.TODO_ITEM_CLASSNAME
+        return Constants.IMAGE_ITEM_CLASSNAME
     }
     
     override init() {

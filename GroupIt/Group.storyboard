@@ -33,14 +33,14 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfl-ii-Frm">
-                                                    <rect key="frame" x="15" y="29" width="237" height="11"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CategoryType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-JU-oz1">
                                                     <rect key="frame" x="14" y="40" width="238" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfl-ii-Frm">
+                                                    <rect key="frame" x="15" y="30" width="237" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -62,6 +62,7 @@
                         <segue destination="LGI-TN-gmE" kind="push" identifier="readGroupVCtoDoVCsegue" id="V35-sx-4dr"/>
                         <segue destination="LGI-TN-gmE" kind="push" identifier="setupGroupVCtoDoVCsegue" id="o7n-0q-jDF"/>
                         <segue destination="jQL-81-acv" kind="modal" identifier="createCategorySegue" id="hKt-Qg-96U"/>
+                        <segue destination="moS-WS-gKR" kind="push" identifier="groupToImageCategorySegue" id="XGn-eI-Ec2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWn-Nu-8ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -77,6 +78,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRw-9E-Zay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1091" y="-132"/>
+        </scene>
+        <!--ImageDetailsViewController-->
+        <scene sceneID="tzR-eJ-zQj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ImageCategory" referencedIdentifier="ImageDetailsViewController" id="moS-WS-gKR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1T0-jk-0Vd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wz0-dB-yIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094.5" y="-19"/>
         </scene>
         <!--Category Create View Controller-->
         <scene sceneID="rDq-aq-xNE">

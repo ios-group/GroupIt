@@ -11,22 +11,35 @@ import Parse
 
 class TodoCategoryMapper: NSObject {
 
-    func toTodoCategoryDO(groupDO : GroupDO, todoCategory : TodoCategory) -> TodoCategoryDO {
-        let todoCategoryDO = TodoCategoryDO()
-        todoCategoryDO.objectId = todoCategory.id
-        todoCategoryDO["todoName"] = todoCategory.todoName
+    func toTodoCategoryDO(groupDO : GroupDO, todoCategory : Category) -> CategoryDO {
+        let todoCategoryDO = CategoryDO()
+        todoCategoryDO.objectId = todoCategory.categoryId
+        todoCategoryDO["categoryName"] = todoCategory.categoryName
+        todoCategoryDO["categoryType"] = todoCategory.categoryType.rawValue
 //        todoCategoryDO["todoDescription"] = todoCategory.todoDescription
         todoCategoryDO["group"] = groupDO
         return todoCategoryDO
     }
     
-    func toTodoCategory(todoCategoryDO : TodoCategoryDO) -> TodoCategory {
+    func toTodoCategory(todoCategoryDO : CategoryDO) -> Category {
         var todoCategoryDictionary = Dictionary<String, AnyObject?>()
-        todoCategoryDictionary["id"] = todoCategoryDO.objectId
-        todoCategoryDictionary["todoName"] = todoCategoryDO.todoName
-        todoCategoryDictionary["todoDescription"] = todoCategoryDO.todoDescription
+        print("...\(todoCategoryDO["categoryType"])")
+        todoCategoryDictionary["categoryId"] = todoCategoryDO.objectId
+//        todoCategoryDictionary["categoryType"] = todoCategoryDO.objectId
+        todoCategoryDictionary["categoryName"] = todoCategoryDO.categoryName
+        todoCategoryDictionary["categoryType"] = todoCategoryDO.categoryType
+//        todoCategoryDictionary["categoryDescription"] = todoCategoryDO.categoryDescription
         todoCategoryDictionary["group"] = todoCategoryDO.group
-        let todoCategory = TodoCategory(todoCategoryDictionary: todoCategoryDictionary)
+        let todoCategory = Category(categoryDictionary: todoCategoryDictionary)
         return todoCategory
+    }
+    
+    func toDictionary(category : Category) -> Dictionary<String, AnyObject?> {
+        var categoryDictionary = Dictionary<String, AnyObject?>()
+        categoryDictionary["categoryId"] = category.categoryId
+        categoryDictionary["categoryType"] = category.categoryType.rawValue
+        categoryDictionary["categoryName"] = category.categoryName
+        categoryDictionary["categoryDescription"] = category.categoryDescription
+        return categoryDictionary
     }
 }

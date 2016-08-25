@@ -29,12 +29,12 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         
         todoItemsTableView.dataSource = self
         todoItemsTableView.delegate = self
-        todoItemsTableView.backgroundColor = UIColor.blackColor()
+//        todoItemsTableView.backgroundColor = UIColor.blackColor()
         
         let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
         self.navigationItem.rightBarButtonItem = addButton
 
-        self.title = todoCategory?.todoName
+        self.title = todoCategory?.categoryName
         
 //        performCRUD()
 //        performCRUDTodoItem()
@@ -72,7 +72,7 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 //    }
 
     private func getAllTodos() {
-        todoCategoryManager.getAllTodoCategories { (todoCategories : [TodoCategory], error : NSError?) in
+        todoCategoryManager.getAllTodoCategories { (todoCategories : [Category], error : NSError?) in
             if error == nil {
                 for todoCategory in todoCategories {
                     print(todoCategory)
@@ -91,19 +91,19 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 //        }
 //    }
     
-    private func getTodoById() {
-        let id = "aODllSOFRu"
-        todoCategoryManager.getTodoCategoryById(id) { (todoCategory : TodoCategory?, error : NSError?) in
-            if error == nil {
-                print(todoCategory!)
-                self.todoCategory = todoCategory
-                self.performCRUDTodoItem()
-                self.todoItemsTableView.reloadData()
-            } else {
-                print(error!)
-            }
-        }
-    }
+//    private func getTodoById() {
+//        let id = "aODllSOFRu"
+//        todoCategoryManager.getTodoCategoryById(id) { (todoCategory : Category?, error : NSError?) in
+//            if error == nil {
+//                print(todoCategory!)
+//                self.todoCategory = todoCategory
+//                self.performCRUDTodoItem()
+//                self.todoItemsTableView.reloadData()
+//            } else {
+//                print(error!)
+//            }
+//        }
+//    }
     
     private func deleteTodoById() {
         let id = "72NzRUilsc"
@@ -130,7 +130,7 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     private func createTodoItem() {
         let todoItem = todoCategoryDataUtil.createTodoItem("todo-item-added")
         let categoryId = "b6RZfzOYcu" //todoCategory.id!
-            todoItemManager.upsertTodoItem(categoryId, todoItem: todoItem, completion: { (created : Bool, error : NSError?) in
+        todoItemManager.upsertTodoItem(categoryId, todoItem: todoItem, completion: { (created : Bool, todoItem : TodoItem?, error : NSError?) in
                 if error == nil {
                     print(created)
                 } else {
@@ -208,7 +208,7 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         let todoItemCell = tableView.cellForRowAtIndexPath(indexPath) as! TodoItemCell
         let todoItem = (todoCategory?.todoItems[indexPath.row])! as TodoItem
         todoItem.completed = !todoItem.completed
-        todoItemManager.upsertTodoItem((todoCategory?.getID())!, todoItem: todoItem) { (updated : Bool, error : NSError?) in
+        todoItemManager.upsertTodoItem((todoCategory?.categoryId)!, todoItem: todoItem) { (updated : Bool, todoItem : TodoItem?, error : NSError?) in
             if error != nil {
                 print(error)
             } else {
@@ -265,11 +265,11 @@ extension TodoDetailsViewController : TodoItemCreateDelegate {
             //update todoitem flow
             findAndRemove(todoItem)
         }
-        self.todoCategory?.todoItems.append(todoItem)
-        self.todoItemsTableView.reloadData()
-        todoItemManager.upsertTodoItem((self.todoCategory?.getID())!, todoItem: todoItem) { (created : Bool, error : NSError?) in
+        todoItemManager.upsertTodoItem((self.todoCategory?.categoryId)!, todoItem: todoItem) { (created : Bool, todoItem: TodoItem?, error : NSError?) in
             if error == nil {
                 print("created ... \(todoItem)")
+                self.todoCategory?.todoItems.append(todoItem!)
+                self.todoItemsTableView.reloadData()
             } else {
                 print(error)
             }

@@ -20,22 +20,27 @@ class CategoryCell: UITableViewCell {
   
     var delegate : CategoryCellDelegate?
     
-    var category : TodoCategory! {
-        didSet{
-            categoryName.text = category.getName()
-            idLabel.text = category.getID()
-            
-            switch category.getCategoryType() {
-            case .IMAGES:
-                categoryTypeLabel.text = "Images"
-            case .POLL:
-                categoryTypeLabel.text = "Poll"
-            case .TODO:
-                categoryTypeLabel.text = "ToDo"
-            }
-            
-        }
-    }
+    var category : Category?
+    
+//    var category : Category! {
+//        didSet{
+//            categoryName.text = category.categoryName
+//            idLabel.text = category.categoryId
+//            
+//            switch category.categoryType {
+//            case .IMAGES:
+//                categoryTypeLabel.text = "Images"
+//                break
+//            case .POLL:
+//                categoryTypeLabel.text = "Poll"
+//                break
+//            case .TODO:
+//                categoryTypeLabel.text = "ToDo"
+//                break
+//            }
+//            
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,6 +57,6 @@ class CategoryCell: UITableViewCell {
     
     func onLongPressCategoryCell() {
         print("on long press ... ")
-        self.delegate?.onLongPress(category)
+        self.delegate?.onLongPress(category!)
     }
 }

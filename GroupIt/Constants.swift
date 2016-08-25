@@ -14,7 +14,7 @@ class Constants: NSObject {
     
     static let parseAppId : String = "groupit2"
     static let parseServer : String = "https://groupit2.herokuapp.com/parse"
-    
+
     // ======== Groups ======
     static let GROUPS_STORYBOARD_NAME : String = "Groups"
     static let GROUPS_VIEW_CONTROLLER_ID : String = "GroupsViewController"
@@ -43,10 +43,17 @@ class Constants: NSObject {
     // ======== PollCategory ======
     
     // ======== ImageCategory ======
+    static let IMAGE_CELL_ID = "ImageCell"
+    static let IMAGE_DETAILS_VIEW_CONTROLLER = "ImageDetailsViewController"
+    static let IMAGE_SETUP_VIEW_CONTROLLER = "ImageSetupViewController"
+    static let IMAGE_ITEM_CLASSNAME : String = "ImageItem"
     
+    static let CREATE_IMAGE_ITEM_SEQUE = "createImageItemSeque"
     
     // ======== Segues ======
     static let READ_GROUP_TODO_CATEGORY_SEGUE : String = "readGroupVCtoDoVCsegue"
     static let SETUP_GROUP_TODO_CATEGORY_SEGUE : String = "setupGroupVCtoDoVCsegue"
     static let READ_GROUPS_GROUP_SEGUE : String = "readGroupsVCtoGroupVCsegue"
+    
+    static let GROUP_TO_IMAGE_CATEGORY_SEGUE : String = "groupToImageCategorySegue"
 }

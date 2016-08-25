@@ -90,19 +90,6 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             }
         })
     }
-
-    private func createGroup() {
-        print("Inside createGroup()")
-        let group = groupDataUtil.createGroup()
-        
-        groupManager.upsertGroup(group) { (created: Bool, error: NSError?) in
-            if error == nil {
-                print("Group Created")
-            } else {
-                print(error)
-            }
-        }
-    }
     
     private func deleteGroupById(groupId : String) {
         print("Inside deleteGroupById()")
@@ -133,8 +120,8 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             let indexPath = tableView.indexPathForCell(cell)
             let group = groups[(indexPath?.row)!]
             groupViewController.group = group
-            todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (categories : [TodoCategory], error : NSError?) in
-                group.categories = categories
+            todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (todoCategories : [Category], error : NSError?) in
+                group.categories = todoCategories
                 groupViewController.group = group
                 groupViewController.tableView.reloadData()
             })
@@ -148,11 +135,11 @@ extension GroupsViewController : GroupCreateDelegate {
         if group.groupId != nil {
             findAndRemove(group)
         }
-        self.groups.append(group)
-        self.tableView.reloadData()
-        groupManager.upsertGroup(group) { (saved : Bool, error : NSError?) in
+        groupManager.upsertGroup(group) { (saved : Bool, group: Group, error : NSError?) in
             if error == nil {
                 print(saved)
+                self.groups.append(group)
+                self.tableView.reloadData()
             } else {
                 print(error)
             }
