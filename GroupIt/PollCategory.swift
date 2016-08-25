@@ -11,38 +11,21 @@ import UIKit
 class PollCategory: Category {
 
     /* pollName, pollDescription, <Option>  */
-    var id : String?
-    var pollName : String?
-    var pollDescription : String?
     var pollOptions : PollOption?
     
     init() {
-        //no-op
+        super.init(categoryType: .POLL)
     }
     
     init(pollCategoryDictionary : Dictionary<String, AnyObject>) {
-        id = pollCategoryDictionary["id"] as? String
-        pollName = pollCategoryDictionary["pollName"] as? String
-        pollDescription = pollCategoryDictionary["pollDescription"] as? String
+        super.init(categoryDictionary: pollCategoryDictionary)
         pollOptions = PollOption(pollOptionDictionary: pollCategoryDictionary["pollOptions"] as! Dictionary)
     }
     
-    var description: String {
+    override var description: String {
         get {
-            return self.pollName!
+            return "\(super.description), \(self.pollOptions!)"
         }
-    }
-    
-    func getCategoryType() -> CategoryType {
-        return CategoryType.POLL
-    }
-    
-    func getID() -> String? {
-        return id
-    }
-    
-    func getName() -> String? {
-        return pollName
     }
 }
 

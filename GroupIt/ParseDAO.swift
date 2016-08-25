@@ -19,9 +19,9 @@ class ParseDAO: NSObject {
 
     // =============== Write ====================
 
-    func upsert(pfObject :  PFObject, completion : (Bool, NSError?) -> Void) {
+    func upsert(pfObject :  PFObject, completion : (Bool, PFObject?, NSError?) -> Void) {
         pfObject.saveInBackgroundWithBlock { (created: Bool, error: NSError?) -> Void in
-            completion(created, error)
+            completion(created, pfObject, error)
         }
     }
     
@@ -51,6 +51,7 @@ class ParseDAO: NSObject {
         let pfQuery = PFQuery(className: className)
         pfQuery.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
+            print("")
             completion(objects, error)
         }
     }

@@ -12,32 +12,21 @@ import Swift
 class TodoCategory: Category {
     
     /* todoName, todoDescription, <todoItem>  */
-    var id : String?
-    var todoName : String?
-    var todoDescription : String?
+//    var id : String?
+//    var todoName : String?
+//    var todoDescription : String?
     var todoItems : [TodoItem]! = []
     
     init() {
-        // no-op
+        super.init(categoryType: .TODO)
     }
     
     init(todoCategoryDictionary : Dictionary<String, AnyObject?>) {
-        id = todoCategoryDictionary["id"] as? String
-        todoName = todoCategoryDictionary["todoName"] as? String
-        todoDescription = todoCategoryDictionary["todoDescription"] as? String
+        super.init(categoryDictionary: todoCategoryDictionary)
+//        id = todoCategoryDictionary["id"] as? String
+//        todoName = todoCategoryDictionary["todoName"] as? String
+//        todoDescription = todoCategoryDictionary["todoDescription"] as? String
         todoItems = todoCategoryDictionary["todoItems"] as? [TodoItem] ?? []
-    }
-    
-    func getID() -> String? {
-        return id
-    }
-    
-    func getCategoryType() -> CategoryType {
-        return CategoryType.TODO
-    }
-    
-    func getName() -> String? {
-        return todoName
     }
     
     func addTodoItem(todoItem : TodoItem) {
@@ -72,9 +61,9 @@ class TodoCategory: Category {
     }
 
     
-    var description: String {
+    override var description: String {
         get {
-            return "\(self.id), \(self.todoName!), \(self.todoDescription!), \(self.todoItems)"
+            return "\(super.description), \(self.todoItems)"
         }
     }
 }
