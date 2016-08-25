@@ -21,8 +21,21 @@ class UserManager: NSObject {
         userDO.username = user.username
         userDO.email = user.email
         userDO.password = user.password
-        userDao.createUser(userDO) { (created : Bool, error : NSError?) in
+        userDao.signUpUser(userDO) { (created : Bool, error : NSError?) in
             completion(created, error)
+        }
+    }
+    
+    func loginUser(username: String, password: String, completion: (User?, NSError?) -> Void) {
+        
+        var user1 = User()
+        userDao.loginUser(username, password: password) { (user : PFUser?, error: NSError?) in
+            if error == nil {
+                if let user = user {
+                    user1 = self.userMapper.toUser(user as! UserDO)
+                }
+            }
+            completion(user1, error)
         }
     }
 }

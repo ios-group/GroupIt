@@ -25,12 +25,6 @@ class ParseDAO: NSObject {
         }
     }
     
-    func createUser(pfUser :  PFUser, completion : (Bool, NSError?) -> Void) {
-        pfUser.signUpInBackgroundWithBlock { (created: Bool, error: NSError?) -> Void in
-            completion(created, error)
-        }
-    }
-    
     func deleteById(id : String, completion : (Bool, NSError?) -> ()) {
         getById(id) { (pfObject : PFObject?, error : NSError?) in
             if let pfObject = pfObject {
@@ -94,4 +88,19 @@ class ParseDAO: NSObject {
         }
     }
     
+    // ================= User Related ==============================
+    
+    func signUpUser(pfUser :  PFUser, completion : (Bool, NSError?) -> Void) {
+        pfUser.signUpInBackgroundWithBlock { (created: Bool, error: NSError?) -> Void in
+            completion(created, error)
+        }
+    }
+    
+    func loginUser(username: String, password: String, completion : (PFUser?, NSError?) -> Void) {
+       
+        PFUser.logInWithUsernameInBackground(username, password: password) {
+            (user: PFUser?, error: NSError?) -> Void in
+                completion(user, error)
+        }
+    }
 }

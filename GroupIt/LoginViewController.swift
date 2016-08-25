@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
+    var userManager = UserManager()
+    var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,21 @@ class LoginViewController: UIViewController {
     
     @IBAction func onLoginButton(sender: AnyObject) {
         //Need to add logic for verifying user
-        self.performSegueWithIdentifier(Constants.LOGIN_GROUPS_SEGUE, sender: self)
+        
+        let username = usernameTextField.text
+        let password = passwordTextField.text
+        
+        userManager.loginUser(username!, password: password!) { (user: User?, error: NSError?) in
+            if error == nil {
+                print("logged in User!!!")
+                self.user = user!
+                self.performSegueWithIdentifier(Constants.LOGIN_GROUPS_SEGUE, sender: self)
+            }else {
+              //Login Failed
+                print("Login Failed Please try again")
+                print(error)
+            }
+        }
     }
     
     @IBAction func onSignUpButton(sender: AnyObject) {
