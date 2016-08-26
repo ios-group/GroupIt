@@ -10,13 +10,13 @@ import UIKit
 import Parse
 
 class CategoryDO : PFObject, PFSubclassing {
-
+    
     @NSManaged var categoryId : String?
     @NSManaged var categoryName : String?
     @NSManaged var categoryDescription : String?
     @NSManaged var categoryType : String?
     @NSManaged var group : GroupDO?
-
+    
     static func parseClassName() -> String {
         return Constants.TODO_CATEGORY_CLASSNAME
     }
