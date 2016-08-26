@@ -37,6 +37,9 @@ class LoginViewController: UIViewController {
             if error == nil {
                 print("logged in User!!!")
                 self.user = user!
+                //Set the currentUser in NSUserDefaults for session control
+                User.currentUser = user!
+                print(User.currentUser?.email)
                 self.performSegueWithIdentifier(Constants.LOGIN_GROUPS_SEGUE, sender: self)
             }else {
               //Login Failed

@@ -33,7 +33,9 @@ class Constants: NSObject {
     // ======== Login ======
     static let SIGNUP_USER_SEGUE = "loginSignUpSegue"
     static let LOGIN_GROUPS_SEGUE = "loginGroupsSegue"
-    
+    static let LOGIN_STORYBOARD_NAME : String = "Login"
+    static let LOGIN_VIEW_CONTROLLER_ID : String = "LoginViewController"
+
     // ======== SignUp ======
     static let SIGNUP_GROUPS_SEGUE = "signUpGroupsSegue"
     

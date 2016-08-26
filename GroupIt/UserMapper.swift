@@ -22,13 +22,13 @@ class UserMapper: NSObject {
     }
 
     func toUser(userDO : UserDO) -> User {
-        var userDictionary = Dictionary<String, AnyObject?>()
+        var userDictionary = Dictionary<String, AnyObject>()
         userDictionary["userId"] = userDO.objectId
         userDictionary["username"] = userDO.username
         userDictionary["email"] = userDO.email
         userDictionary["password"] = userDO.password
         
-        let user = User(groupDictionary: userDictionary)
+        let user = User(userDictionary: userDictionary)
         return user
     }
 }
