@@ -31,7 +31,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="groupName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZ2-mi-qAF">
                                                     <rect key="frame" x="27" y="8" width="245" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -45,7 +45,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Groups" id="UFi-fd-OBm"/>
+                    <navigationItem key="navigationItem" title="Groups" id="UFi-fd-OBm">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="zag-IN-3gL">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="GDD-bD-PAM" id="RjT-4e-cRa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="8uX-tE-YmK" id="bkp-ZN-pVE"/>
                         <segue destination="gDO-gh-tvO" kind="push" identifier="readGroupsVCtoGroupVCsegue" id="d4X-iX-gRi"/>

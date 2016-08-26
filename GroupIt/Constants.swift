@@ -30,6 +30,15 @@ class Constants: NSObject {
     static let GROUP_CLASSNAME : String = "Group"
     static let CREATE_CATEGORY_SEQUE = "createCategorySegue"
     
+    // ======== Login ======
+    static let SIGNUP_USER_SEGUE = "loginSignUpSegue"
+    static let LOGIN_GROUPS_SEGUE = "loginGroupsSegue"
+    static let LOGIN_STORYBOARD_NAME : String = "Login"
+    static let LOGIN_VIEW_CONTROLLER_ID : String = "LoginViewController"
+
+    // ======== SignUp ======
+    static let SIGNUP_GROUPS_SEGUE = "signUpGroupsSegue"
+    
     // ======== TodoCategory ======
     static let TODO_ITEM_CLASSNAME : String = "TodoItem"
     static let TODO_CATEGORY_CLASSNAME : String = "TodoCategory"
@@ -40,6 +49,9 @@ class Constants: NSObject {
     
     static let CREATE_TODO_ITEM_SEQUE = "createTodoItemSeque"
 
+    // ======== User ======
+    static let USER_CLASSNAME : String = "User"
+    
     // ======== PollCategory ======
     
     // ======== ImageCategory ======

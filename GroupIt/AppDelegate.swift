@@ -30,6 +30,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = Constants.parseServer
             })
         )
+        
+        // ============= check for current logged in user ==============
+        if User.currentUser != nil {
+            print("There is a current user")
+            let storyboard = UIStoryboard(name: Constants.GROUPS_STORYBOARD_NAME, bundle: nil)
+            let groupsViewController = storyboard.instantiateViewControllerWithIdentifier(Constants.GROUPS_NAV_VIEW_CONTROLLER_ID) as! UINavigationController
+            
+            window!.rootViewController = groupsViewController
+        }
+        
+        //Go to LoginViewController when logoutNotification is set
+        NSNotificationCenter.defaultCenter().addObserverForName(User.userDidLogoutNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (NSNotification) in
+            
+            let storyboard = UIStoryboard(name: Constants.LOGIN_STORYBOARD_NAME, bundle: nil)
+            let loginViewController = storyboard.instantiateViewControllerWithIdentifier(Constants.LOGIN_VIEW_CONTROLLER_ID)
+            self.window?.rootViewController = loginViewController
+        }
         return true
     }
     
@@ -38,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ImageItemDO.registerSubclass()
         CategoryDO.registerSubclass()
         GroupDO.registerSubclass()
+        UserDO.registerSubclass()
     }
 
     func applicationWillResignActive(application: UIApplication) {

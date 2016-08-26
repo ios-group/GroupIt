@@ -37,6 +37,10 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         getAllGroups()
     }
     
+    @IBAction func onLogoutButton(sender: AnyObject) {
+        User.currentUser = nil
+        NSNotificationCenter.defaultCenter().postNotificationName(User.userDidLogoutNotification, object: nil)
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.groups.count ?? 0
@@ -53,8 +57,6 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         let sender = tableView.cellForRowAtIndexPath(indexPath) as! GroupsCell
         performSegueWithIdentifier(Constants.READ_GROUPS_GROUP_SEGUE, sender: sender)
     }
-
-    
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
