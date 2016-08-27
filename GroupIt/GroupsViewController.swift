@@ -93,6 +93,20 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         })
     }
     
+    private func deleteAllGroups() {
+        print("Inside deleteAllGroups()")
+        
+        groupManager.deleteAllGroups { (error: NSError?) in
+            if error == nil {
+                print("ALl groups deleted")
+                self.groups = []
+                self.tableView.reloadData()
+            }else{
+                print(error)
+            }
+        }
+    }
+    
     private func deleteGroupById(groupId : String) {
         print("Inside deleteGroupById()")
         groupManager.deleteGroupById(groupId) { (deleted : Bool, error : NSError?) in

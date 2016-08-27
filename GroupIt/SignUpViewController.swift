@@ -41,7 +41,8 @@ class SignUpViewController: UIViewController {
             if error == nil {
                 print(saved)
                 self.user = user
-                self.performSegueWithIdentifier(Constants.SIGNUP_GROUPS_SEGUE, sender: self)
+                self.dismissViewControllerAnimated(true, completion: {})
+                //self.performSegueWithIdentifier(Constants.SIGNUP_GROUPS_SEGUE, sender: self)
             } else {
                 print(error)
             }

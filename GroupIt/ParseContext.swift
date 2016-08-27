@@ -16,6 +16,7 @@ class ParseContext: NSObject {
     var innerPredicateFormat : String?
     var limit : Int?
     var skip : Int?
+    var includeKeyParams : [String] = []
 
     init(className : String) {
         self.className = className
