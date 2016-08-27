@@ -15,6 +15,7 @@ protocol GroupCreateDelegate {
 class GroupCreateViewController: UIViewController {
 
     @IBOutlet weak var groupNameTextField: UITextField!
+    @IBOutlet weak var groupDescriptionTextField: UITextField!
     
     var group : Group?
     var delegate : GroupCreateDelegate?
@@ -41,6 +42,9 @@ class GroupCreateViewController: UIViewController {
         let group = Group()
         group.groupId = self.group?.groupId
         group.groupName = self.groupNameTextField.text
+        //print("Setting current groupOwner in Create Group!")
+        group.groupDescription = self.groupDescriptionTextField.text
+        group.groupOwner = User.currentUser!
         return group
     }
     

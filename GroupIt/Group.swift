@@ -17,7 +17,7 @@ class Group: NSObject {
     var groupName : String?
     var groupDescription : String?
     var categories : [Category]?
-//    var categories : [TodoCategory]?
+    var groupOwner : User?
     
     override init() {
         //no-op
@@ -28,5 +28,6 @@ class Group: NSObject {
         groupName = groupDictionary["groupName"] as? String
         groupDescription = groupDictionary["groupDescription"] as? String
         categories = groupDictionary["categories"] as? [Category] ?? []
+        groupOwner = groupDictionary["groupOwner"] as? User!
     }
 }
