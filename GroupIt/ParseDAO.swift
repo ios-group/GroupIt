@@ -56,6 +56,19 @@ class ParseDAO: NSObject {
         }
     }
     
+    func getAllWithIncludeKeys(parseContext : ParseContext, completion : ([PFObject]?, NSError?) -> Void) {
+        let pfQuery = PFQuery(className: parseContext.className)
+        
+        if parseContext.includeKeyParams.count != 0 {
+            pfQuery.includeKeys(parseContext.includeKeyParams)
+        }
+        
+        pfQuery.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            completion(objects, error)
+        }
+    }
+    
     func getAllByForeignKey(completion : ([PFObject]?, NSError?) -> Void) {
         let pfQueryInner = PFQuery(className: Constants.TODO_CATEGORY_CLASSNAME)
         pfQueryInner.whereKey("objectId", equalTo: "b6RZfzOYc")

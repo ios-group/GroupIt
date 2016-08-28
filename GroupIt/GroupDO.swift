@@ -14,6 +14,7 @@ class GroupDO : PFObject, PFSubclassing {
     @NSManaged var id : String?
     @NSManaged var groupName : String?
     @NSManaged var groupDescription : String?
+    @NSManaged var groupOwner : UserDO
 
     static func parseClassName() -> String {
         return Constants.GROUP_CLASSNAME

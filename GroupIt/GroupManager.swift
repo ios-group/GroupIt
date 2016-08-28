@@ -15,6 +15,7 @@ class GroupManager: NSObject {
     let groupMapper = GroupMapper()
     
     func upsertGroup(group : Group, completion : (Bool, Group, NSError?) -> ()) -> Void {
+        print("Inside upsertGroup")
         let groupDO = self.groupMapper.toGroupDO(group)
         groupDao.upsert(groupDO) { (created : Bool, pfObject : PFObject?, error : NSError?) in
             let group = self.groupMapper.toGroup(pfObject as! GroupDO)
@@ -28,10 +29,13 @@ class GroupManager: NSObject {
         }
     }
     
-    
     func getAllGroups(completion : ([Group], NSError?) -> Void) {
         var groups : [Group] = []
-        groupDao.getAll { (groupPfObjects : [PFObject]?, error : NSError?) in
+        
+        let parseContext = ParseContext(className: Constants.GROUP_CLASSNAME)
+        parseContext.includeKeyParams.append("groupOwner")
+        
+        groupDao.getAllWithIncludeKeys(parseContext) { (groupPfObjects : [PFObject]?, error : NSError?) in
             if error == nil {
                 if let groupPfObjects = groupPfObjects {
                     for groupPfObject in groupPfObjects {
@@ -40,6 +44,23 @@ class GroupManager: NSObject {
                 }
             }
             completion(groups, error)
+        }
+        
+//        groupDao.getAll { (groupPfObjects : [PFObject]?, error : NSError?) in
+//            if error == nil {
+//                if let groupPfObjects = groupPfObjects {
+//                    for groupPfObject in groupPfObjects {
+//                        groups.append(self.groupMapper.toGroup(groupPfObject as! GroupDO))
+//                    }
+//                }
+//            }
+//            completion(groups, error)
+//        }
+    }
+    
+    func deleteAllGroups(completion : (NSError?) -> Void) {
+        groupDao.deleteAll { (error: NSError?) in
+            completion(error)
         }
     }
 }
