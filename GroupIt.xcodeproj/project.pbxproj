@@ -19,8 +19,13 @@
 		05DD11691D6E561A0088DC1A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DD11681D6E561A0088DC1A /* Login.storyboard */; };
 		158C7F5F4F1DD68469E39F42 /* Pods_GroupItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50D317C894AF59C0EA22D22 /* Pods_GroupItTests.framework */; };
 		3419A5A11D63B6BD00508FF7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3419A5A01D63B6BD00508FF7 /* CategoryCell.swift */; };
-		347382491D624BC10015545E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347382481D624BC10015545E /* GroupViewController.swift */; };
+		347382491D624BC10015545E /* GroupCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347382481D624BC10015545E /* GroupCategoriesViewController.swift */; };
 		5CBA2512DF1117376544DB12 /* Pods_GroupItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62437C027773D917379FA288 /* Pods_GroupItUITests.framework */; };
+		7B8CA2871D73EE7D007D3D1C /* GroupMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2861D73EE7D007D3D1C /* GroupMembersViewController.swift */; };
+		7B8CA2891D73EF26007D3D1C /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2881D73EF26007D3D1C /* GroupMemberCell.swift */; };
+		7B8CA28D1D73EFD6007D3D1C /* GroupMember.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8CA28C1D73EFD6007D3D1C /* GroupMember.storyboard */; };
+		7B8CA2911D742D8C007D3D1C /* GroupTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2901D742D8C007D3D1C /* GroupTabBarView.swift */; };
+		7B8CA2931D743469007D3D1C /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8CA2921D743469007D3D1C /* Group.storyboard */; };
 		7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B2ED1D5C5A230015471D /* AppDelegate.swift */; };
 		7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B2EF1D5C5A230015471D /* ViewController.swift */; };
 		7BA8B2F31D5C5A230015471D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA8B2F11D5C5A230015471D /* Main.storyboard */; };
@@ -56,7 +61,7 @@
 		7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B40D1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift */; };
 		7BC1B4111D5D6F65008DA8F8 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC1B4101D5D6F65008DA8F8 /* ImageDetailsViewController.swift */; };
 		7BC1B4161D5D6FA3008DA8F8 /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B4151D5D6FA3008DA8F8 /* Groups.storyboard */; };
-		7BC1B41A1D5D6FF0008DA8F8 /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B4191D5D6FF0008DA8F8 /* Group.storyboard */; };
+		7BC1B41A1D5D6FF0008DA8F8 /* GroupCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B4191D5D6FF0008DA8F8 /* GroupCategory.storyboard */; };
 		7BC1B41C1D5D7011008DA8F8 /* PollCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */; };
 		7BC1B41E1D5D701E008DA8F8 /* TodoCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41D1D5D701E008DA8F8 /* TodoCategory.storyboard */; };
 		7BC1B4201D5D702A008DA8F8 /* ImageCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC1B41F1D5D702A008DA8F8 /* ImageCategory.storyboard */; };
@@ -102,9 +107,14 @@
 		05DD11681D6E561A0088DC1A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		289274919171848AF31D3931 /* Pods-GroupItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupItTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupItTests/Pods-GroupItTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3419A5A01D63B6BD00508FF7 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		347382481D624BC10015545E /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		347382481D624BC10015545E /* GroupCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCategoriesViewController.swift; sourceTree = "<group>"; };
 		381A715E0EEF71F56A63154D /* Pods-GroupIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupIt/Pods-GroupIt.debug.xcconfig"; sourceTree = "<group>"; };
 		62437C027773D917379FA288 /* Pods_GroupItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8CA2861D73EE7D007D3D1C /* GroupMembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMembersViewController.swift; sourceTree = "<group>"; };
+		7B8CA2881D73EF26007D3D1C /* GroupMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
+		7B8CA28C1D73EFD6007D3D1C /* GroupMember.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GroupMember.storyboard; sourceTree = "<group>"; };
+		7B8CA2901D742D8C007D3D1C /* GroupTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTabBarView.swift; sourceTree = "<group>"; };
+		7B8CA2921D743469007D3D1C /* Group.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Group.storyboard; sourceTree = "<group>"; };
 		7BA8B2EA1D5C5A230015471D /* GroupIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA8B2ED1D5C5A230015471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA8B2EF1D5C5A230015471D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +157,7 @@
 		7BC1B40D1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetailsViewController.swift; sourceTree = "<group>"; };
 		7BC1B4101D5D6F65008DA8F8 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		7BC1B4151D5D6FA3008DA8F8 /* Groups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
-		7BC1B4191D5D6FF0008DA8F8 /* Group.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Group.storyboard; sourceTree = "<group>"; };
+		7BC1B4191D5D6FF0008DA8F8 /* GroupCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GroupCategory.storyboard; sourceTree = "<group>"; };
 		7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PollCategory.storyboard; sourceTree = "<group>"; };
 		7BC1B41D1D5D701E008DA8F8 /* TodoCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoCategory.storyboard; sourceTree = "<group>"; };
 		7BC1B41F1D5D702A008DA8F8 /* ImageCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageCategory.storyboard; sourceTree = "<group>"; };
@@ -278,6 +288,8 @@
 				0524A0D51D62EAEE00B6E438 /* GroupsCell.swift */,
 				3419A5A01D63B6BD00508FF7 /* CategoryCell.swift */,
 				7BB760B51D6CDACE00D0EFD3 /* ImageCell.swift */,
+				7B8CA2881D73EF26007D3D1C /* GroupMemberCell.swift */,
+				7B8CA2901D742D8C007D3D1C /* GroupTabBarView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -348,8 +360,9 @@
 			children = (
 				7BC1B4011D5D6E8B008DA8F8 /* GroupSetupViewController.swift */,
 				7BC1B4041D5D6EAF008DA8F8 /* GroupDetailsViewController.swift */,
-				347382481D624BC10015545E /* GroupViewController.swift */,
+				347382481D624BC10015545E /* GroupCategoriesViewController.swift */,
 				7BB760AF1D6A8E7100D0EFD3 /* GroupCreateViewController.swift */,
+				7B8CA2861D73EE7D007D3D1C /* GroupMembersViewController.swift */,
 			);
 			name = Group;
 			sourceTree = "<group>";
@@ -397,10 +410,12 @@
 			children = (
 				05DD11681D6E561A0088DC1A /* Login.storyboard */,
 				7BC1B4151D5D6FA3008DA8F8 /* Groups.storyboard */,
-				7BC1B4191D5D6FF0008DA8F8 /* Group.storyboard */,
+				7B8CA2921D743469007D3D1C /* Group.storyboard */,
+				7BC1B4191D5D6FF0008DA8F8 /* GroupCategory.storyboard */,
 				7BC1B41B1D5D7011008DA8F8 /* PollCategory.storyboard */,
 				7BC1B41D1D5D701E008DA8F8 /* TodoCategory.storyboard */,
 				7BC1B41F1D5D702A008DA8F8 /* ImageCategory.storyboard */,
+				7B8CA28C1D73EFD6007D3D1C /* GroupMember.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -574,13 +589,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8CA2931D743469007D3D1C /* Group.storyboard in Resources */,
 				7BC1B41C1D5D7011008DA8F8 /* PollCategory.storyboard in Resources */,
 				7BA8B2F81D5C5A230015471D /* LaunchScreen.storyboard in Resources */,
-				7BC1B41A1D5D6FF0008DA8F8 /* Group.storyboard in Resources */,
+				7BC1B41A1D5D6FF0008DA8F8 /* GroupCategory.storyboard in Resources */,
 				053A672D1D654A530042465A /* Default-568h@2x.png in Resources */,
 				7BA8B2F51D5C5A230015471D /* Assets.xcassets in Resources */,
 				7BC1B4161D5D6FA3008DA8F8 /* Groups.storyboard in Resources */,
 				7BC1B4201D5D702A008DA8F8 /* ImageCategory.storyboard in Resources */,
+				7B8CA28D1D73EFD6007D3D1C /* GroupMember.storyboard in Resources */,
 				7BA8B2F31D5C5A230015471D /* Main.storyboard in Resources */,
 				05DD11691D6E561A0088DC1A /* Login.storyboard in Resources */,
 				7BC1B41E1D5D701E008DA8F8 /* TodoCategory.storyboard in Resources */,
@@ -732,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BC1B4761D5FC986008DA8F8 /* ParseDAO.swift in Sources */,
+				7B8CA2871D73EE7D007D3D1C /* GroupMembersViewController.swift in Sources */,
 				7BC1B3F71D5D6DAA008DA8F8 /* LoginViewController.swift in Sources */,
 				7BC1B4741D5FC630008DA8F8 /* Constants.swift in Sources */,
 				7BB760AA1D691D0A00D0EFD3 /* ParseContext.swift in Sources */,
@@ -760,13 +778,15 @@
 				7BB760B61D6CDACE00D0EFD3 /* ImageCell.swift in Sources */,
 				7BCA33201D6E789C00AFAC67 /* ImageItemCreateViewController.swift in Sources */,
 				05A9A7511D6FB5F1001F4029 /* CategoryDO.swift in Sources */,
-				347382491D624BC10015545E /* GroupViewController.swift in Sources */,
+				347382491D624BC10015545E /* GroupCategoriesViewController.swift in Sources */,
 				7BB760B01D6A8E7100D0EFD3 /* GroupCreateViewController.swift in Sources */,
+				7B8CA2911D742D8C007D3D1C /* GroupTabBarView.swift in Sources */,
 				7BC1B4801D604A60008DA8F8 /* TodoItemMapper.swift in Sources */,
 				7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */,
 				05773FA61D6D25AD00E27ACE /* UserManager.swift in Sources */,
 				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,
 				7BB760B81D6CF99A00D0EFD3 /* ImageCategoryManager.swift in Sources */,
+				7B8CA2891D73EF26007D3D1C /* GroupMemberCell.swift in Sources */,
 				7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */,
 				7BC1B47A1D5FD861008DA8F8 /* TodoCategoryManager.swift in Sources */,
 				05773FAA1D6D280100E27ACE /* UserMapper.swift in Sources */,

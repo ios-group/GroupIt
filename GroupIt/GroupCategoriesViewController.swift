@@ -8,9 +8,12 @@
 
 import UIKit
 
-class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GroupCategoriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+//    @IBOutlet weak var groupTabBarView: GroupTabBarView!
+    
     let todoCategoryManager = TodoCategoryManager()
     let todoItemManager = TodoItemManager()
     let categoryDataUtil = TodoCategoryDataUtil()
@@ -23,6 +26,11 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     var group : Group?
     
     let id = "2VhIUxULKz"
+    
+//    var groupCategoriesViewController : GroupViewController?
+//    var groupMembersViewController : GroupMembersViewController?
+//    var tabBarViewControllers = [groupCategoriesViewController, groupMembersViewController]
+//
     
     func makeNetworkCallToRefreshTheTableView(){
         todoCategoryManager.getAllTodoCategories({ (todoCategories : [Category], error : NSError?) in
@@ -66,6 +74,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewDidLoad() {
+        print("loading group view")
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
@@ -73,8 +82,29 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.title = group?.groupName
         let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
         self.navigationItem.rightBarButtonItem = addButton
+
+//        groupTabBarView.backgroundColor = UIColor(red: 7/255, green: 152/255, blue: 253/255, alpha: 0.5)
+        
         self.tableView.reloadData()
     }
+
+    
+    @IBAction func onCategoriesButtonTap(sender: AnyObject) {
+        print("categories tab selected ...")
+    }
+    
+    
+    @IBAction func onUsersButtonTap(sender: AnyObject) {
+        print("users tab selected ...")
+    }
+    
+//    func oncategoriesTabAction() {
+//        print("categories tab selected ...")
+//    }
+//    
+//    func usersTabAction() {
+//        print("users tab selected ...")
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -242,7 +272,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 }
 
-extension GroupViewController : CategoryCreateDelegate {
+extension GroupCategoriesViewController : CategoryCreateDelegate {
     func onSave(category : Category) {
         if (category.categoryId != nil) {
             findAndRemove(category)
@@ -284,10 +314,9 @@ extension GroupViewController : CategoryCreateDelegate {
 
 }
 
-extension GroupViewController : CategoryCellDelegate {
+extension GroupCategoriesViewController : CategoryCellDelegate {
     func onLongPress(category : Category) {
         performSegueWithIdentifier(Constants.CREATE_CATEGORY_SEQUE, sender: category)
     }
 }
-
 

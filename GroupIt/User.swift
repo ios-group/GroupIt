@@ -19,6 +19,7 @@ class User: NSObject {
     var email : String?
     var password : String?
     var dictionary : Dictionary<String, AnyObject>?
+    var groups : [Group]?
     
     //Notification for Logout - Observer 
     static let userDidLogoutNotification = "UserDidLogout"
@@ -35,6 +36,7 @@ class User: NSObject {
         username = userDictionary["username"] as? String
         email = userDictionary["email"] as? String
         password = userDictionary["password"] as? String
+        groups = userDictionary["groups"] as? [Group]
     }
     
     static var _currentUser: User?

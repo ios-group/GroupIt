@@ -21,14 +21,22 @@ class Constants: NSObject {
     static let GROUPS_NAV_VIEW_CONTROLLER_ID : String = "GroupsNavViewController"
     
     static let CREATE_GROUP_SEGUE = "createGroupSegue"
+    static let GROUP_DETAILS_SEGUE = "groupDetailsSegue"
+    
+    // ======== Group Member ======
+    static let GROUP_MEMBER_STORYBOARD_NAME = "GroupMember"
+    static let GROUP_MEMBER_VIEW_CONTROLLER_ID = "GroupMembersViewController"
     
     // ======== Group ======
-    static let GROUP_STORYBOARD_NAME : String = "Group"
+    static let GROUP_CATEGORY_STORYBOARD_NAME : String = "GroupCategory"
+    static let GROUP_CATEGORY_VIEW_CONTROLLER_ID : String = "GroupCategoriesViewController"
     static let GROUP_VIEW_CONTROLLER_ID : String = "GroupViewController"
     static let GROUP_NAV_VIEW_CONTROLLER_ID : String = "GroupViewNavViewController"
     
     static let GROUP_CLASSNAME : String = "Group"
     static let CREATE_CATEGORY_SEQUE = "createCategorySegue"
+    
+    static let GROUP_MEMBER_CELL_ID = "GroupMemberCell"
     
     // ======== Login ======
     static let SIGNUP_USER_SEGUE = "loginSignUpSegue"

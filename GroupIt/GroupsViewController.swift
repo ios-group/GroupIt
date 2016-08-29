@@ -55,7 +55,8 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let sender = tableView.cellForRowAtIndexPath(indexPath) as! GroupsCell
-        performSegueWithIdentifier(Constants.READ_GROUPS_GROUP_SEGUE, sender: sender)
+        performSegueWithIdentifier(Constants.GROUP_DETAILS_SEGUE, sender: sender)
+//        performSegueWithIdentifier(Constants.READ_GROUPS_GROUP_SEGUE, sender: sender)
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -131,7 +132,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             groupCreateViewController.group = group
         }
         if segue.identifier == Constants.READ_GROUPS_GROUP_SEGUE {
-            let groupViewController = segue.destinationViewController as! GroupViewController
+            let groupViewController = segue.destinationViewController as! GroupCategoriesViewController
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let group = groups[(indexPath?.row)!]
@@ -140,6 +141,18 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
                 group.categories = todoCategories
                 groupViewController.group = group
                 groupViewController.tableView.reloadData()
+            })
+        }
+        if segue.identifier == Constants.GROUP_DETAILS_SEGUE {
+            print("preparing group details segue...")
+            let groupDetailsViewController = segue.destinationViewController as! GroupDetailsViewController
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let group = groups[(indexPath?.row)!]
+            groupDetailsViewController.group = group
+            todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (todoCategories : [Category], error : NSError?) in
+                group.categories = todoCategories
+                groupDetailsViewController.group = group
             })
         }
     }
