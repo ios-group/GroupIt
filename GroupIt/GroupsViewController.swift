@@ -12,6 +12,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
 
     let groupManager = GroupManager()
     let todoCategoryManager = TodoCategoryManager()
+    let groupMemberManager = GroupMemberManager()
     let groupDataUtil = GroupDataUtil()
     var groups: [Group] = []
     @IBOutlet weak var tableView: UITableView!
@@ -34,7 +35,9 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationItem.rightBarButtonItem = addButton
 
         //get all the groups for
-        getAllGroups()
+//        getAllGroups()
+        let userId = (User.currentUser?.userId)!
+        getGroupsByUser(userId)
     }
     
     @IBAction func onLogoutButton(sender: AnyObject) {
@@ -92,6 +95,17 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
                 print(error)
             }
         })
+    }
+    
+    private func getGroupsByUser(userId : String) {
+        groupMemberManager.getAllGroupsByUserId(userId) { (groups : [Group], error : NSError?) in
+            if error == nil {
+                self.groups = groups
+                self.tableView.reloadData()
+            } else {
+                print(error)
+            }
+        }
     }
     
     private func deleteAllGroups() {
@@ -152,6 +166,10 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             groupDetailsViewController.group = group
             todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (todoCategories : [Category], error : NSError?) in
                 group.categories = todoCategories
+                groupDetailsViewController.group = group
+            })
+            groupMemberManager.getAllMembersByGroupId(group.groupId!, completion: { (groupMembers : [User], error : NSError?) in
+                group.groupMembers = groupMembers
                 groupDetailsViewController.group = group
             })
         }

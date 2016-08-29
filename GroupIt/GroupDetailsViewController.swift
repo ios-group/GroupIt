@@ -61,6 +61,11 @@ class GroupDetailsViewController: UIViewController {
     @IBAction func onUsersBarItemTap(sender: AnyObject) {
         print("users tab selected ...")
         addChildViewController(groupMembersViewController)
+        
+        groupMembersViewController.group = self.group
+        groupMembersViewController.view.frame = contentView.frame
+        contentView.addSubview(groupMembersViewController.view)
+        groupMembersViewController.didMoveToParentViewController(self)
     }
 
     /*

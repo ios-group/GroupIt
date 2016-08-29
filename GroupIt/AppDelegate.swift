@@ -56,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CategoryDO.registerSubclass()
         GroupDO.registerSubclass()
         UserDO.registerSubclass()
+        GroupUserRelationDO.registerSubclass()
     }
 
     func applicationWillResignActive(application: UIApplication) {

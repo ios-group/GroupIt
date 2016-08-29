@@ -27,6 +27,8 @@ class Constants: NSObject {
     static let GROUP_MEMBER_STORYBOARD_NAME = "GroupMember"
     static let GROUP_MEMBER_VIEW_CONTROLLER_ID = "GroupMembersViewController"
     
+    static let GROUP_USER_RELATION_CLASSNAME = "GroupUserRelation"
+    
     // ======== Group ======
     static let GROUP_CATEGORY_STORYBOARD_NAME : String = "GroupCategory"
     static let GROUP_CATEGORY_VIEW_CONTROLLER_ID : String = "GroupCategoriesViewController"
@@ -58,7 +60,7 @@ class Constants: NSObject {
     static let CREATE_TODO_ITEM_SEQUE = "createTodoItemSeque"
 
     // ======== User ======
-    static let USER_CLASSNAME : String = "User"
+    static let USER_CLASSNAME : String = "_User"
     
     // ======== PollCategory ======
     

@@ -84,11 +84,18 @@ class ParseDAO: NSObject {
 
     func getAllByForeignKey(parseContext : ParseContext, completion : ([PFObject]?, NSError?) -> Void) {
         let innerPredicate = NSPredicate(format: parseContext.innerPredicateFormat!)
-        let pfQueryInnner = PFQuery(className: parseContext.innerClassName!, predicate: innerPredicate)
+        let pfQueryInner = PFQuery(className: parseContext.innerClassName!, predicate: innerPredicate)
+        if (parseContext.innerIncludeKeyParams.count != 0) {
+            pfQueryInner.includeKeys(parseContext.innerIncludeKeyParams)
+        }
         
-        let predicate = NSPredicate(format: parseContext.predicateFormat!, pfQueryInnner)
+        let predicate = NSPredicate(format: parseContext.predicateFormat!, pfQueryInner)
         let pfQuery = PFQuery(className: parseContext.className, predicate: predicate)
         
+        if parseContext.includeKeyParams.count != 0 {
+            pfQuery.includeKeys(parseContext.includeKeyParams)
+        }
+
         pfQuery.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             completion(objects, error)

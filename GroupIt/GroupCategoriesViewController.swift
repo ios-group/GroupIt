@@ -19,7 +19,6 @@ class GroupCategoriesViewController: UIViewController, UITableViewDataSource, UI
     let categoryDataUtil = TodoCategoryDataUtil()
     let categoryMapper = TodoCategoryMapper()
     
-    let imageCategoryManager = ImageCategoryManager()
     let imageItemManager = ImageItemManager()
 //    var toDoCategories : [TodoCategory]?
     
