@@ -67,6 +67,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             print("deleting group ...")
             let groupToDelete = self.groups[indexPath.row]
             self.groups.removeAtIndex(indexPath.row)
+            groupMemberManager.deleteRelationsByGroupId(groupToDelete.groupId!)
             groupManager.deleteGroupById((groupToDelete.groupId)!, completion: { (deleted : Bool, error : NSError?) in
                 if error == nil {
                     print(deleted)

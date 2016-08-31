@@ -53,8 +53,9 @@ class GroupMemberManager: NSObject {
                 if let groupMemberPfObjects = groupMemberPfObjects {
                     for groupMemberPfObject in groupMemberPfObjects {
                         let groupUserRelationDO = groupMemberPfObject as! GroupUserRelationDO
-//                        groupMembers.append(self.userMapper.toUser(groupUserRelationDO.user!))
-                        groups.append(self.groupMapper.toGroup(groupUserRelationDO.group!))
+                        if let group = groupUserRelationDO.group {
+                            groups.append(self.groupMapper.toGroup(group))
+                        }
                     }
                 }
             }
@@ -75,21 +76,29 @@ class GroupMemberManager: NSObject {
         }
     }
     
-    
-//    func createRelation(group: Group, user : User, completion : (Bool, NSError?) -> Void) {
-//        let groupUserRelationDO = GroupUserRelationDO()
-//        groupUserRelationDO.group = groupMapper.toGroupDO(group)
-//        groupUserRelationDO.user = userMapper.toUserDO(user)
-//        userManager.loginUser(user.username!, password: user.password!) { (user : User?, error : NSError?) in
-//            if error == nil {
-//                self.groupUserRelationDao.upsert(groupUserRelationDO) { (created : Bool, groupUserRelationDO : PFObject?, error:
-//                    NSError?) in
-//                    completion(created, error)
-//                }
-//            } else {
-//                completion(false, error)
-//            }
-//        }
-//    }
+    func deleteRelationsByGroupId(groupId : String) {
+        let parseContext = ParseContext(className: Constants.GROUP_USER_RELATION_CLASSNAME)
+        parseContext.className = Constants.GROUP_USER_RELATION_CLASSNAME
+        parseContext.predicateFormat = "group IN %@"
+        parseContext.innerClassName = Constants.GROUP_CLASSNAME
+        parseContext.innerPredicateFormat = "objectId = '\(groupId)'"
+        parseContext.includeKeyParams = ["user"]
+        groupUserRelationDao.getAllByForeignKey(parseContext) { (groupMemberPfObjects : [PFObject]?, error : NSError?) in
+            if error == nil {
+                if let groupMemberPfObjects = groupMemberPfObjects {
+                    for groupMemberPfObject in groupMemberPfObjects {
+                        let groupUserRelationDO = groupMemberPfObject as! GroupUserRelationDO
+                        self.groupUserRelationDao.deleteById(groupUserRelationDO.objectId!, completion: { (deleted: Bool, error : NSError?) in
+                            if error == nil {
+                                print(deleted)
+                            } else {
+                                print(error)
+                            }
+                        })
+                    }
+                }
+            }
+        }
 
+    }
 }
