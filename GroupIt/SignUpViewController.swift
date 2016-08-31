@@ -14,15 +14,28 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var fullNameField: UITextField!
-   
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
     var user : User?
     let userManager = UserManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        beautify()
     }
+    
+    func beautify(){
+        let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundImage.image = UIImage(named: "bg-image-2")
+        self.view.insertSubview(backgroundImage, atIndex: 0)
+        fullNameField.setBottomBorder()
+        passwordField.setBottomBorder()
+        emailField.setBottomBorder()
+        signUpButton.setButtonBorder()
+        cancelButton.setButtonBorder()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,6 +62,10 @@ class SignUpViewController: UIViewController {
         }
     }
 
+    @IBAction func onCancelButton(sender: AnyObject) {
+        print("on cancel signUp ... ")
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
     
     // MARK: - Navigation
 
@@ -63,6 +80,4 @@ class SignUpViewController: UIViewController {
 //        }
         
     }
-    
-
 }
