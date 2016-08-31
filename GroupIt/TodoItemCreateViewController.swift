@@ -48,6 +48,7 @@ class TodoItemCreateViewController: UIViewController {
         todoItem.id = self.todoItem?.id
         todoItem.todoItemName = todoItemNameTextField.text
         todoItem.completed = false
+        todoItem.user = User.currentUser
         return todoItem
     }
     

@@ -54,6 +54,7 @@ class TodoItemManager: NSObject {
     func getAllTodoItemsByCategoryId(categoryId : String, completion : ([TodoItem], NSError?) -> Void) {
         var todoItems : [TodoItem] = []
         let parseContext = ParseContext(className: Constants.TODO_ITEM_CLASSNAME)
+        parseContext.includeKeyParams = ["user"]
         parseContext.className = Constants.TODO_ITEM_CLASSNAME
         parseContext.predicateFormat = "category IN %@"
         parseContext.innerClassName = Constants.TODO_CATEGORY_CLASSNAME

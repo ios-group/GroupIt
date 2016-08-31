@@ -16,6 +16,7 @@ import UIKit
 class TodoItemCell: UITableViewCell {
 
     @IBOutlet weak var todoItemNameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     var todoItem : TodoItem?
     var delegate : TodoItemCellDelegate?
