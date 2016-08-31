@@ -56,26 +56,37 @@
                         <outlet property="tableView" destination="8uX-tE-YmK" id="bkp-ZN-pVE"/>
                         <segue destination="gDO-gh-tvO" kind="push" identifier="readGroupsVCtoGroupVCsegue" id="d4X-iX-gRi"/>
                         <segue destination="rRI-yw-ejc" kind="modal" identifier="createGroupSegue" id="Qme-nd-eES"/>
+                        <segue destination="CaI-ud-A0m" kind="push" identifier="groupDetailsSegue" id="9x7-QD-Lwm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6Q-U0-zFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="553" y="-7"/>
         </scene>
-        <!--GroupViewController-->
+        <!--GroupDetailsViewController-->
+        <scene sceneID="gPg-ti-kR2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Group" referencedIdentifier="GroupDetailsViewController" id="CaI-ud-A0m" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lC4-em-hot"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3so-fb-ZQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913.5" y="-185"/>
+        </scene>
+        <!--GroupCategoriesViewController-->
         <scene sceneID="n6e-oa-HFY">
             <objects>
-                <viewControllerPlaceholder storyboardName="Group" referencedIdentifier="GroupViewController" id="gDO-gh-tvO" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="GroupCategory" referencedIdentifier="GroupCategoriesViewController" id="gDO-gh-tvO" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="nsq-Ru-2ct"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GL1-yu-eK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918.5" y="-90"/>
+            <point key="canvasLocation" x="927.5" y="-42"/>
         </scene>
         <!--GroupCreateViewController-->
         <scene sceneID="JZr-mt-9gb">
             <objects>
-                <viewControllerPlaceholder storyboardName="Group" referencedIdentifier="GroupCreateViewController" id="rRI-yw-ejc" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="GroupCategory" referencedIdentifier="GroupCreateViewController" id="rRI-yw-ejc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oww-iH-Yqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="938.5" y="79"/>

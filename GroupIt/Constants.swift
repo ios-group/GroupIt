@@ -21,14 +21,26 @@ class Constants: NSObject {
     static let GROUPS_NAV_VIEW_CONTROLLER_ID : String = "GroupsNavViewController"
     
     static let CREATE_GROUP_SEGUE = "createGroupSegue"
+    static let GROUP_DETAILS_SEGUE = "groupDetailsSegue"
+    
+    // ======== Group Member ======
+    static let GROUP_MEMBER_STORYBOARD_NAME = "GroupMember"
+    static let GROUP_MEMBER_VIEW_CONTROLLER_ID = "GroupMembersViewController"
+    
+    static let GROUP_USER_RELATION_CLASSNAME = "GroupUserRelation"
+    static let GROUP_MEMBER_ADD_CELL_ID = "GroupMemberAddCell"
+    static let GROUP_MEMBERS_ADD_SEGUE = "groupMembersAddSegue"
     
     // ======== Group ======
-    static let GROUP_STORYBOARD_NAME : String = "Group"
+    static let GROUP_CATEGORY_STORYBOARD_NAME : String = "GroupCategory"
+    static let GROUP_CATEGORY_VIEW_CONTROLLER_ID : String = "GroupCategoriesViewController"
     static let GROUP_VIEW_CONTROLLER_ID : String = "GroupViewController"
     static let GROUP_NAV_VIEW_CONTROLLER_ID : String = "GroupViewNavViewController"
     
     static let GROUP_CLASSNAME : String = "Group"
     static let CREATE_CATEGORY_SEQUE = "createCategorySegue"
+    
+    static let GROUP_MEMBER_CELL_ID = "GroupMemberCell"
     
     // ======== Login ======
     static let SIGNUP_USER_SEGUE = "loginSignUpSegue"
@@ -50,7 +62,7 @@ class Constants: NSObject {
     static let CREATE_TODO_ITEM_SEQUE = "createTodoItemSeque"
 
     // ======== User ======
-    static let USER_CLASSNAME : String = "User"
+    static let USER_CLASSNAME : String = "_User"
     
     // ======== PollCategory ======
     

@@ -14,6 +14,21 @@ class UserManager: NSObject {
     let userDao = ParseDAO(className: Constants.USER_CLASSNAME)
     let userMapper = UserMapper()
     
+    func getAllUsers(completion : ([User]?, NSError?) -> ()) {
+        var users : [User] = []
+        userDao.getAll { (userPfObjects : [PFObject]?, error : NSError?) in
+            if error == nil {
+                if let userPfObjects = userPfObjects {
+                    for userPfObject in userPfObjects {
+                        users.append(self.userMapper.toUser(userPfObject as! UserDO))
+                    }
+                }
+            }
+            completion(users, error)
+        }
+    }
+    
+    
     func upsertUser(user : User, completion : (Bool, NSError?) -> ()) -> Void {
         
         let userDO = UserDO()

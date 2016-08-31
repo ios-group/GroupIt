@@ -12,6 +12,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
 
     let groupManager = GroupManager()
     let todoCategoryManager = TodoCategoryManager()
+    let groupMemberManager = GroupMemberManager()
     let groupDataUtil = GroupDataUtil()
     var groups: [Group] = []
     @IBOutlet weak var tableView: UITableView!
@@ -34,7 +35,9 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationItem.rightBarButtonItem = addButton
 
         //get all the groups for
-        getAllGroups()
+//        getAllGroups()
+        let userId = (User.currentUser?.userId)!
+        getGroupsByUser(userId)
     }
     
     @IBAction func onLogoutButton(sender: AnyObject) {
@@ -55,7 +58,8 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let sender = tableView.cellForRowAtIndexPath(indexPath) as! GroupsCell
-        performSegueWithIdentifier(Constants.READ_GROUPS_GROUP_SEGUE, sender: sender)
+        performSegueWithIdentifier(Constants.GROUP_DETAILS_SEGUE, sender: sender)
+//        performSegueWithIdentifier(Constants.READ_GROUPS_GROUP_SEGUE, sender: sender)
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -63,6 +67,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             print("deleting group ...")
             let groupToDelete = self.groups[indexPath.row]
             self.groups.removeAtIndex(indexPath.row)
+            groupMemberManager.deleteRelationsByGroupId(groupToDelete.groupId!)
             groupManager.deleteGroupById((groupToDelete.groupId)!, completion: { (deleted : Bool, error : NSError?) in
                 if error == nil {
                     print(deleted)
@@ -91,6 +96,17 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
                 print(error)
             }
         })
+    }
+    
+    private func getGroupsByUser(userId : String) {
+        groupMemberManager.getAllGroupsByUserId(userId) { (groups : [Group], error : NSError?) in
+            if error == nil {
+                self.groups = groups
+                self.tableView.reloadData()
+            } else {
+                print(error)
+            }
+        }
     }
     
     private func deleteAllGroups() {
@@ -131,7 +147,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             groupCreateViewController.group = group
         }
         if segue.identifier == Constants.READ_GROUPS_GROUP_SEGUE {
-            let groupViewController = segue.destinationViewController as! GroupViewController
+            let groupViewController = segue.destinationViewController as! GroupCategoriesViewController
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let group = groups[(indexPath?.row)!]
@@ -140,6 +156,24 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
                 group.categories = todoCategories
                 groupViewController.group = group
                 groupViewController.tableView.reloadData()
+            })
+        }
+        if segue.identifier == Constants.GROUP_DETAILS_SEGUE {
+            print("preparing group details segue...")
+            let groupDetailsViewController = segue.destinationViewController as! GroupDetailsViewController
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let group = groups[(indexPath?.row)!]
+            groupDetailsViewController.group = group
+            todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (todoCategories : [Category], error : NSError?) in
+                group.categories = todoCategories
+                groupDetailsViewController.group = group
+                groupDetailsViewController.refresh()
+            })
+            groupMemberManager.getAllMembersByGroupId(group.groupId!, completion: { (groupMembers : [User], error : NSError?) in
+                group.groupMembers = groupMembers
+                groupDetailsViewController.group = group
+                groupDetailsViewController.refresh()
             })
         }
     }
@@ -151,11 +185,21 @@ extension GroupsViewController : GroupCreateDelegate {
         if group.groupId != nil {
             findAndRemove(group)
         }
-        groupManager.upsertGroup(group) { (saved : Bool, group: Group, error : NSError?) in
+//        groupManager.upsertGroup(group) { (saved : Bool, group: Group, error : NSError?) in
+//            if error == nil {
+//                print(saved)
+//                self.groups.append(group)
+//                self.tableView.reloadData()
+//            } else {
+//                print(error)
+//            }
+//        }
+        let currentUser = User.currentUser
+        groupMemberManager.createRelation(group, user: currentUser!) { (created : Bool, group : Group, user: User, error : NSError?) in
             if error == nil {
-                print(saved)
                 self.groups.append(group)
                 self.tableView.reloadData()
+                print("\(currentUser) added to \(group.groupName)")
             } else {
                 print(error)
             }

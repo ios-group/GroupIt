@@ -29,7 +29,7 @@ class GroupMapper: NSObject {
         groupDictionary["groupId"] = groupDO.objectId
         groupDictionary["groupName"] = groupDO["groupName"]
         groupDictionary["groupDescription"] = groupDO.groupDescription
-        groupDictionary["groupOwner"] =    self.userMapper.toUser(groupDO.groupOwner)
+        groupDictionary["groupOwner"] = self.userMapper.toUser(groupDO.groupOwner)
         let group = Group(groupDictionary: groupDictionary)
         
         return group

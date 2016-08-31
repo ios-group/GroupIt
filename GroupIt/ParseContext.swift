@@ -12,11 +12,14 @@ class ParseContext: NSObject {
 
     var className : String!
     var predicateFormat : String?
+    var includeKeyParams : [String] = []
+
     var innerClassName : String?
     var innerPredicateFormat : String?
+    var innerIncludeKeyParams : [String] = []
+    
     var limit : Int?
     var skip : Int?
-    var includeKeyParams : [String] = []
 
     init(className : String) {
         self.className = className
