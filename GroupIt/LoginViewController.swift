@@ -13,13 +13,26 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+
     var userManager = UserManager()
     var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        beautify()
+    }
+    
+    func beautify(){
+        let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundImage.image = UIImage(named: "bg-image-2")
+        self.view.insertSubview(backgroundImage, atIndex: 0)
+        
+        usernameTextField.setBottomBorder()
+        passwordTextField.setBottomBorder()
+        loginButton.setButtonBorder()
+        signUpButton.setButtonBorder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,5 +75,4 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
