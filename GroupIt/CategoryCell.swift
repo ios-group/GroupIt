@@ -44,6 +44,7 @@ class CategoryCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.accessoryType = .DisclosureIndicator
         
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressCategoryCell))
         longPressGestureRecognizer.delegate = self

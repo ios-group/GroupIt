@@ -25,6 +25,7 @@ class GroupsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.accessoryType = .DisclosureIndicator
         // Initialization code
         
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressGroupCell))
