@@ -28,6 +28,8 @@ class Constants: NSObject {
     static let GROUP_MEMBER_VIEW_CONTROLLER_ID = "GroupMembersViewController"
     
     static let GROUP_USER_RELATION_CLASSNAME = "GroupUserRelation"
+    static let GROUP_MEMBER_ADD_CELL_ID = "GroupMemberAddCell"
+    static let GROUP_MEMBERS_ADD_SEGUE = "groupMembersAddSegue"
     
     // ======== Group ======
     static let GROUP_CATEGORY_STORYBOARD_NAME : String = "GroupCategory"

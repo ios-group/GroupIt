@@ -78,12 +78,14 @@ class GroupCategoriesViewController: UIViewController, UITableViewDataSource, UI
         tableView.delegate = self
         tableView.dataSource = self
         
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        
         self.title = group?.groupName
         let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
         self.navigationItem.rightBarButtonItem = addButton
 
 //        groupTabBarView.backgroundColor = UIColor(red: 7/255, green: 152/255, blue: 253/255, alpha: 0.5)
-        
         self.tableView.reloadData()
     }
 

@@ -19,9 +19,17 @@ class GroupDetailsViewController: UIViewController {
     var tabBarViewControllers : [UIViewController]!
 
     var group : Group?
+    var isCategoriesTabSelected : Bool = true
     
     func onAddButton() {
         print("adding ...")
+        if (isCategoriesTabSelected) {
+            print("adding category ...")
+            groupCategoriesViewController.onAddButton()
+        } else {
+            print("adding user ...")
+            groupMembersViewController.onAddButton()
+        }
     }
     
     override func viewDidLoad() {
@@ -40,14 +48,27 @@ class GroupDetailsViewController: UIViewController {
 
         tabBarViewControllers = [groupCategoriesViewController, groupMembersViewController]
         // Do any additional setup after loading the view.
+        onCategoriesBarItemTap(self)
+        
     }
 
+    func refresh() {
+        print("refreshing ...")
+        if (isCategoriesTabSelected) {
+            print("refreshing category ...")
+            groupCategoriesViewController.tableView.reloadData()
+        } else {
+            print("refreshing user ...")
+            groupMembersViewController.groupMembersTableView.reloadData()
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func onCategoriesBarItemTap(sender: AnyObject) {
+        isCategoriesTabSelected = true
         print("categories tab selected ...")
         addChildViewController(groupCategoriesViewController)
         
@@ -59,6 +80,7 @@ class GroupDetailsViewController: UIViewController {
     
     
     @IBAction func onUsersBarItemTap(sender: AnyObject) {
+        isCategoriesTabSelected = false
         print("users tab selected ...")
         addChildViewController(groupMembersViewController)
         
@@ -68,6 +90,7 @@ class GroupDetailsViewController: UIViewController {
         groupMembersViewController.didMoveToParentViewController(self)
     }
 
+    
     /*
     // MARK: - Navigation
 

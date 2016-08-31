@@ -15,12 +15,28 @@ class GroupMembersViewController: UIViewController {
     
     var group : Group?
     
+    let userManager = UserManager()
+    
+    func onAddButton() {
+        print("adding a new member ... ")
+        self.performSegueWithIdentifier(Constants.GROUP_MEMBERS_ADD_SEGUE, sender: group)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         groupMembersTableView.dataSource = self
         groupMembersTableView.delegate = self
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let segueIdentifier = segue.identifier
+        if segueIdentifier == Constants.GROUP_MEMBERS_ADD_SEGUE {
+            print("preparing for group members add segue ...")
+            let groupMembersAddViewController = segue.destinationViewController as! GroupMembersAddViewController
+            groupMembersAddViewController.group = sender as? Group
+        }
     }
     
 }

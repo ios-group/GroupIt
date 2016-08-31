@@ -12,6 +12,7 @@ import Parse
 class GroupMemberManager: NSObject {
     let groupUserRelationDao = ParseDAO(className: Constants.GROUP_USER_RELATION_CLASSNAME)
     
+    let userManager = UserManager()
     let userMapper = UserMapper()
     let groupMapper = GroupMapper()
     
@@ -60,5 +61,35 @@ class GroupMemberManager: NSObject {
             completion(groups, error)
         }
     }
+
+    func createRelation(group: Group, user : User, completion : (Bool, Group, User, NSError?) -> Void) {
+        let groupUserRelationDO = GroupUserRelationDO()
+        groupUserRelationDO.group = groupMapper.toGroupDO(group)
+        groupUserRelationDO.user = userMapper.toUserDO(user)
+        groupUserRelationDao.upsert(groupUserRelationDO) { (created : Bool, pfObject : PFObject?, error:
+            NSError?) in
+            let groupUserRelationDO = pfObject as! GroupUserRelationDO
+            let group = self.groupMapper.toGroup(groupUserRelationDO.group!)
+            let user = self.userMapper.toUser(groupUserRelationDO.user!)
+            completion(created, group, user, error)
+        }
+    }
+    
+    
+//    func createRelation(group: Group, user : User, completion : (Bool, NSError?) -> Void) {
+//        let groupUserRelationDO = GroupUserRelationDO()
+//        groupUserRelationDO.group = groupMapper.toGroupDO(group)
+//        groupUserRelationDO.user = userMapper.toUserDO(user)
+//        userManager.loginUser(user.username!, password: user.password!) { (user : User?, error : NSError?) in
+//            if error == nil {
+//                self.groupUserRelationDao.upsert(groupUserRelationDO) { (created : Bool, groupUserRelationDO : PFObject?, error:
+//                    NSError?) in
+//                    completion(created, error)
+//                }
+//            } else {
+//                completion(false, error)
+//            }
+//        }
+//    }
 
 }

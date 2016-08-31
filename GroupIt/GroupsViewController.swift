@@ -167,10 +167,12 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (todoCategories : [Category], error : NSError?) in
                 group.categories = todoCategories
                 groupDetailsViewController.group = group
+                groupDetailsViewController.refresh()
             })
             groupMemberManager.getAllMembersByGroupId(group.groupId!, completion: { (groupMembers : [User], error : NSError?) in
                 group.groupMembers = groupMembers
                 groupDetailsViewController.group = group
+                groupDetailsViewController.refresh()
             })
         }
     }
@@ -182,11 +184,21 @@ extension GroupsViewController : GroupCreateDelegate {
         if group.groupId != nil {
             findAndRemove(group)
         }
-        groupManager.upsertGroup(group) { (saved : Bool, group: Group, error : NSError?) in
+//        groupManager.upsertGroup(group) { (saved : Bool, group: Group, error : NSError?) in
+//            if error == nil {
+//                print(saved)
+//                self.groups.append(group)
+//                self.tableView.reloadData()
+//            } else {
+//                print(error)
+//            }
+//        }
+        let currentUser = User.currentUser
+        groupMemberManager.createRelation(group, user: currentUser!) { (created : Bool, group : Group, user: User, error : NSError?) in
             if error == nil {
-                print(saved)
                 self.groups.append(group)
                 self.tableView.reloadData()
+                print("\(currentUser) added to \(group.groupName)")
             } else {
                 print(error)
             }

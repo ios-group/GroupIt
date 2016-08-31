@@ -28,7 +28,8 @@
 		7B8CA2931D743469007D3D1C /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8CA2921D743469007D3D1C /* Group.storyboard */; };
 		7B8CA2951D74B2A5007D3D1C /* GroupMemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2941D74B2A5007D3D1C /* GroupMemberManager.swift */; };
 		7B8CA2971D74B60A007D3D1C /* GroupUserRelationDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2961D74B60A007D3D1C /* GroupUserRelationDO.swift */; };
-		7B8CA2991D74B660007D3D1C /* GroupUserRelationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2981D74B660007D3D1C /* GroupUserRelationMapper.swift */; };
+		7B8CA29B1D75023C007D3D1C /* GroupMembersAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA29A1D75023C007D3D1C /* GroupMembersAddViewController.swift */; };
+		7B8CA29D1D7508E3007D3D1C /* GroupMemberAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA29C1D7508E3007D3D1C /* GroupMemberAddCell.swift */; };
 		7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B2ED1D5C5A230015471D /* AppDelegate.swift */; };
 		7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B2EF1D5C5A230015471D /* ViewController.swift */; };
 		7BA8B2F31D5C5A230015471D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA8B2F11D5C5A230015471D /* Main.storyboard */; };
@@ -120,7 +121,8 @@
 		7B8CA2921D743469007D3D1C /* Group.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Group.storyboard; sourceTree = "<group>"; };
 		7B8CA2941D74B2A5007D3D1C /* GroupMemberManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberManager.swift; sourceTree = "<group>"; };
 		7B8CA2961D74B60A007D3D1C /* GroupUserRelationDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupUserRelationDO.swift; sourceTree = "<group>"; };
-		7B8CA2981D74B660007D3D1C /* GroupUserRelationMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupUserRelationMapper.swift; sourceTree = "<group>"; };
+		7B8CA29A1D75023C007D3D1C /* GroupMembersAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMembersAddViewController.swift; sourceTree = "<group>"; };
+		7B8CA29C1D7508E3007D3D1C /* GroupMemberAddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberAddCell.swift; sourceTree = "<group>"; };
 		7BA8B2EA1D5C5A230015471D /* GroupIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA8B2ED1D5C5A230015471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA8B2EF1D5C5A230015471D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				7BB760B51D6CDACE00D0EFD3 /* ImageCell.swift */,
 				7B8CA2881D73EF26007D3D1C /* GroupMemberCell.swift */,
 				7B8CA2901D742D8C007D3D1C /* GroupTabBarView.swift */,
+				7B8CA29C1D7508E3007D3D1C /* GroupMemberAddCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				347382481D624BC10015545E /* GroupCategoriesViewController.swift */,
 				7BB760AF1D6A8E7100D0EFD3 /* GroupCreateViewController.swift */,
 				7B8CA2861D73EE7D007D3D1C /* GroupMembersViewController.swift */,
+				7B8CA29A1D75023C007D3D1C /* GroupMembersAddViewController.swift */,
 			);
 			name = Group;
 			sourceTree = "<group>";
@@ -449,7 +453,6 @@
 				053A67281D63F4140042465A /* GroupMapper.swift */,
 				05773FA91D6D280100E27ACE /* UserMapper.swift */,
 				7BB760BB1D6DA91900D0EFD3 /* ImageItemMapper.swift */,
-				7B8CA2981D74B660007D3D1C /* GroupUserRelationMapper.swift */,
 			);
 			name = Mapper;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				7BB760AA1D691D0A00D0EFD3 /* ParseContext.swift in Sources */,
 				053A67291D63F4140042465A /* GroupMapper.swift in Sources */,
 				7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */,
+				7B8CA29B1D75023C007D3D1C /* GroupMembersAddViewController.swift in Sources */,
 				7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */,
 				7BC1B4091D5D6EE2008DA8F8 /* PollDetailsViewController.swift in Sources */,
 				7BB760A01D643FB900D0EFD3 /* GroupDO.swift in Sources */,
@@ -797,6 +801,7 @@
 				7BB760B81D6CF99A00D0EFD3 /* ImageCategoryManager.swift in Sources */,
 				7B8CA2891D73EF26007D3D1C /* GroupMemberCell.swift in Sources */,
 				7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */,
+				7B8CA29D1D7508E3007D3D1C /* GroupMemberAddCell.swift in Sources */,
 				7BC1B47A1D5FD861008DA8F8 /* TodoCategoryManager.swift in Sources */,
 				05773FAA1D6D280100E27ACE /* UserMapper.swift in Sources */,
 				7BB760AC1D69B41800D0EFD3 /* TodoItemCreateViewController.swift in Sources */,
@@ -804,7 +809,6 @@
 				7BB760AE1D6A639400D0EFD3 /* CategoryCreateViewController.swift in Sources */,
 				7BC1B3F21D5D68B8008DA8F8 /* Category.swift in Sources */,
 				7BC1B48A1D614369008DA8F8 /* TodoItemCell.swift in Sources */,
-				7B8CA2991D74B660007D3D1C /* GroupUserRelationMapper.swift in Sources */,
 				7BC1B40B1D5D6EF6008DA8F8 /* PollSetupViewController.swift in Sources */,
 				7BB760BE1D6DAAAA00D0EFD3 /* ImageItemDO.swift in Sources */,
 				3419A5A11D63B6BD00508FF7 /* CategoryCell.swift in Sources */,

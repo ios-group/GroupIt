@@ -49,6 +49,7 @@ class ParseDAO: NSObject {
     
     func getAll(completion : ([PFObject]?, NSError?) -> Void) {
         let pfQuery = PFQuery(className: className)
+        pfQuery.includeKey("password")
         pfQuery.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             print("")
