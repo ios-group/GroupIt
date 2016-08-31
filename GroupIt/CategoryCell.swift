@@ -15,7 +15,6 @@ protocol CategoryCellDelegate {
 class CategoryCell: UITableViewCell {
 
     @IBOutlet weak var categoryName: UILabel!
-    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var categoryTypeLabel: UILabel!
   
     var delegate : CategoryCellDelegate?
@@ -44,6 +43,7 @@ class CategoryCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.accessoryType = .DisclosureIndicator
         
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressCategoryCell))
         longPressGestureRecognizer.delegate = self

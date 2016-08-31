@@ -21,6 +21,8 @@
 		3419A5A11D63B6BD00508FF7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3419A5A01D63B6BD00508FF7 /* CategoryCell.swift */; };
 		347382491D624BC10015545E /* GroupCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347382481D624BC10015545E /* GroupCategoriesViewController.swift */; };
 		5CBA2512DF1117376544DB12 /* Pods_GroupItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62437C027773D917379FA288 /* Pods_GroupItUITests.framework */; };
+		7B3ED05C1D76BEB000C1BFCF /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3ED05B1D76BEB000C1BFCF /* ColorUtil.swift */; };
+		7B3ED05E1D76D51000C1BFCF /* FontTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3ED05D1D76D51000C1BFCF /* FontTheme.swift */; };
 		7B8CA2871D73EE7D007D3D1C /* GroupMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2861D73EE7D007D3D1C /* GroupMembersViewController.swift */; };
 		7B8CA2891D73EF26007D3D1C /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2881D73EF26007D3D1C /* GroupMemberCell.swift */; };
 		7B8CA28D1D73EFD6007D3D1C /* GroupMember.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8CA28C1D73EFD6007D3D1C /* GroupMember.storyboard */; };
@@ -30,6 +32,7 @@
 		7B8CA2971D74B60A007D3D1C /* GroupUserRelationDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2961D74B60A007D3D1C /* GroupUserRelationDO.swift */; };
 		7B8CA29B1D75023C007D3D1C /* GroupMembersAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA29A1D75023C007D3D1C /* GroupMembersAddViewController.swift */; };
 		7B8CA29D1D7508E3007D3D1C /* GroupMemberAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA29C1D7508E3007D3D1C /* GroupMemberAddCell.swift */; };
+		7B8CA2A41D7669D3007D3D1C /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2A31D7669D3007D3D1C /* ColorTheme.swift */; };
 		7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B2ED1D5C5A230015471D /* AppDelegate.swift */; };
 		7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8B2EF1D5C5A230015471D /* ViewController.swift */; };
 		7BA8B2F31D5C5A230015471D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA8B2F11D5C5A230015471D /* Main.storyboard */; };
@@ -114,6 +117,8 @@
 		347382481D624BC10015545E /* GroupCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCategoriesViewController.swift; sourceTree = "<group>"; };
 		381A715E0EEF71F56A63154D /* Pods-GroupIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroupIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroupIt/Pods-GroupIt.debug.xcconfig"; sourceTree = "<group>"; };
 		62437C027773D917379FA288 /* Pods_GroupItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B3ED05B1D76BEB000C1BFCF /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		7B3ED05D1D76D51000C1BFCF /* FontTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTheme.swift; sourceTree = "<group>"; };
 		7B8CA2861D73EE7D007D3D1C /* GroupMembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMembersViewController.swift; sourceTree = "<group>"; };
 		7B8CA2881D73EF26007D3D1C /* GroupMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
 		7B8CA28C1D73EFD6007D3D1C /* GroupMember.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GroupMember.storyboard; sourceTree = "<group>"; };
@@ -123,6 +128,7 @@
 		7B8CA2961D74B60A007D3D1C /* GroupUserRelationDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupUserRelationDO.swift; sourceTree = "<group>"; };
 		7B8CA29A1D75023C007D3D1C /* GroupMembersAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMembersAddViewController.swift; sourceTree = "<group>"; };
 		7B8CA29C1D7508E3007D3D1C /* GroupMemberAddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberAddCell.swift; sourceTree = "<group>"; };
+		7B8CA2A31D7669D3007D3D1C /* ColorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		7BA8B2EA1D5C5A230015471D /* GroupIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA8B2ED1D5C5A230015471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA8B2EF1D5C5A230015471D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +220,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B8CA2A21D7669C1007D3D1C /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				7B8CA2A31D7669D3007D3D1C /* ColorTheme.swift */,
+				7B3ED05D1D76D51000C1BFCF /* FontTheme.swift */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
 		7BA8B2E11D5C5A230015471D = {
 			isa = PBXGroup;
 			children = (
@@ -341,8 +356,10 @@
 		7BC1B3F31D5D6AA0008DA8F8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7B8CA2A21D7669C1007D3D1C /* Theme */,
 				7BC1B47C1D5FEBBC008DA8F8 /* Data */,
 				7BC1B4731D5FC630008DA8F8 /* Constants.swift */,
+				7B3ED05B1D76BEB000C1BFCF /* ColorUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -565,6 +582,7 @@
 				TargetAttributes = {
 					7BA8B2E91D5C5A230015471D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8VQP9589X8;
 					};
 					7BA8B2FD1D5C5A230015471D = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -766,6 +784,7 @@
 				7BC1B4741D5FC630008DA8F8 /* Constants.swift in Sources */,
 				7BB760AA1D691D0A00D0EFD3 /* ParseContext.swift in Sources */,
 				053A67291D63F4140042465A /* GroupMapper.swift in Sources */,
+				7B3ED05C1D76BEB000C1BFCF /* ColorUtil.swift in Sources */,
 				7BA8B2F01D5C5A230015471D /* ViewController.swift in Sources */,
 				7B8CA29B1D75023C007D3D1C /* GroupMembersAddViewController.swift in Sources */,
 				7BA8B2EE1D5C5A230015471D /* AppDelegate.swift in Sources */,
@@ -785,6 +804,7 @@
 				7BB760BC1D6DA91900D0EFD3 /* ImageItemMapper.swift in Sources */,
 				7BC1B3FF1D5D6E25008DA8F8 /* GroupsViewController.swift in Sources */,
 				7BC1B3E71D5D67E1008DA8F8 /* Group.swift in Sources */,
+				7B3ED05E1D76D51000C1BFCF /* FontTheme.swift in Sources */,
 				7BC1B4051D5D6EAF008DA8F8 /* GroupDetailsViewController.swift in Sources */,
 				7BC1B4111D5D6F65008DA8F8 /* ImageDetailsViewController.swift in Sources */,
 				053A672B1D63F59C0042465A /* GroupDataUtil.swift in Sources */,
@@ -797,6 +817,7 @@
 				7BC1B4801D604A60008DA8F8 /* TodoItemMapper.swift in Sources */,
 				7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */,
 				05773FA61D6D25AD00E27ACE /* UserManager.swift in Sources */,
+				7B8CA2A41D7669D3007D3D1C /* ColorTheme.swift in Sources */,
 				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,
 				7BB760B81D6CF99A00D0EFD3 /* ImageCategoryManager.swift in Sources */,
 				7B8CA2891D73EF26007D3D1C /* GroupMemberCell.swift in Sources */,

@@ -25,6 +25,9 @@ class GroupsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.accessoryType = .DisclosureIndicator
+        self.backgroundColor = ColorTheme.GROUPS_TABLE_BACKGROUND_COLOR
+
         // Initialization code
         
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPressGroupCell))

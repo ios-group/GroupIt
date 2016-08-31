@@ -22,16 +22,25 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         print("adding a new todo item ... ")
         performSegueWithIdentifier(Constants.CREATE_TODO_ITEM_SEQUE, sender: nil)
     }
+    
+    func beautify() {
+        todoItemsTableView.backgroundView = UIImageView(image: UIImage(named: "bg-image-2.png"))
+//        todoItemsTableView.separatorStyle = .None
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.todoItemsTableView.editing = true
         
+        beautify()
+        
         todoItemsTableView.dataSource = self
         todoItemsTableView.delegate = self
-//        todoItemsTableView.backgroundColor = UIColor.blackColor()
         
-        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
+        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Done, target: self, action: #selector(onAddButton))
+        addButton.tintColor = UIColor.blackColor()
+        
         self.navigationItem.rightBarButtonItem = addButton
 
         self.title = todoCategory?.categoryName
@@ -40,6 +49,10 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 //        performCRUDTodoItem()
     }
     
+    func refresh() {
+        self.title = todoCategory?.categoryName
+        self.todoItemsTableView.reloadData()
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let segueIdentifier = segue.identifier
         if segueIdentifier == Constants.CREATE_TODO_ITEM_SEQUE {
@@ -199,6 +212,9 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 //            todoItemCell.backgroundColor = UIColor.greenColor()
         }
         todoItemCell.delegate = self
+        todoItemCell.tintColor = UIColor.whiteColor()
+        todoItemCell.backgroundColor = UIColor.clearColor()
+//        todoItemCell.backgroundColor = ColorUtil.getCellColor(indexPath.row)
         return todoItemCell
     }
         

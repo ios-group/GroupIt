@@ -23,9 +23,16 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         performSegueWithIdentifier(Constants.CREATE_GROUP_SEGUE, sender: group)
     }
 
+    func beautify() {
+        tableView.backgroundView = UIImageView(image: UIImage(named: "bg-image-2.png"))
+        tableView.separatorStyle = .None
+    }
+    
     override func viewDidLoad() {
-        print("Inside GroupsViewController")
         super.viewDidLoad()
+        print("Inside GroupsViewController")
+
+        beautify()
         
         //instantiate tableview details
         tableView.delegate = self
@@ -53,10 +60,12 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         let groupCell = tableView.dequeueReusableCellWithIdentifier("GroupsCell", forIndexPath: indexPath) as! GroupsCell
         groupCell.group = groups[indexPath.row]
         groupCell.delegate = self
+        groupCell.backgroundColor = UIColor.clearColor()
         return groupCell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let sender = tableView.cellForRowAtIndexPath(indexPath) as! GroupsCell
         performSegueWithIdentifier(Constants.GROUP_DETAILS_SEGUE, sender: sender)
 //        performSegueWithIdentifier(Constants.READ_GROUPS_GROUP_SEGUE, sender: sender)
