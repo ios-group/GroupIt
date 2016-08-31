@@ -15,7 +15,6 @@ protocol CategoryCellDelegate {
 class CategoryCell: UITableViewCell {
 
     @IBOutlet weak var categoryName: UILabel!
-    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var categoryTypeLabel: UILabel!
   
     var delegate : CategoryCellDelegate?

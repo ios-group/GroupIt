@@ -72,9 +72,14 @@ class GroupCategoriesViewController: UIViewController, UITableViewDataSource, UI
         
     }
     
+    func beautify() {
+        tableView.backgroundView = UIImageView(image: UIImage(named: "bg-image-2.png"))
+        tableView.separatorStyle = .None
+    }
+
     override func viewDidLoad() {
-        print("loading group view")
         super.viewDidLoad()
+        beautify()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -119,11 +124,11 @@ class GroupCategoriesViewController: UIViewController, UITableViewDataSource, UI
         let category = self.group?.categories![indexPath.row]
         populateCategoryCell(cell, category: category!)
         cell.delegate = self
+        cell.backgroundColor = UIColor.clearColor()
         return cell
     }
     
     func populateCategoryCell(categoryCell : CategoryCell, category : Category) {
-        categoryCell.idLabel.text = category.categoryId
         categoryCell.categoryName.text = category.categoryName
         categoryCell.categoryTypeLabel.text = category.categoryType.rawValue
         categoryCell.category = category
@@ -254,7 +259,7 @@ class GroupCategoriesViewController: UIViewController, UITableViewDataSource, UI
                 let todoCategory = TodoCategory(todoCategoryDictionary: categoryDictionary)
                 todoCategory.todoItems = todoItems
                 todoDetailsViewController.todoCategory = todoCategory
-                todoDetailsViewController.todoItemsTableView.reloadData()
+                todoDetailsViewController.refresh()
             })
         }
         if segue.identifier == Constants.GROUP_TO_IMAGE_CATEGORY_SEGUE {
@@ -267,7 +272,7 @@ class GroupCategoriesViewController: UIViewController, UITableViewDataSource, UI
                 let imageCategory = ImageCategory(imageCategoryDictionary: categoryDictionary)
                 imageCategory.imageItems = imageItems
                 imageDetailsViewController.imageCategory = imageCategory
-                imageDetailsViewController.imagesCollectionView.reloadData()
+                imageDetailsViewController.refresh()
             })
         }
     }

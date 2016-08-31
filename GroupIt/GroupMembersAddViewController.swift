@@ -20,9 +20,15 @@ class GroupMembersAddViewController: UIViewController {
     var users : [User]?
     var usersToAdd : [User]?
     
+    
+    func beautify() {
+        groupMembersToAddTableView.backgroundView = UIImageView(image: UIImage(named: "bg-image-2.png"))
+        groupMembersToAddTableView.separatorStyle = .None
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        beautify()
         groupMembersToAddTableView.dataSource = self
         groupMembersToAddTableView.delegate = self
 
@@ -52,6 +58,7 @@ extension GroupMembersAddViewController : UITableViewDataSource, UITableViewDele
         let user = users![indexPath.row]
         populateCell(groupMemberAddCell, groupMember: user)
         groupMemberAddCell.delegate = self
+        groupMemberAddCell.backgroundColor = UIColor.clearColor()
         return groupMemberAddCell
     }
     

@@ -21,18 +21,28 @@ class ImageDetailsViewController: UIViewController {
         performSegueWithIdentifier(Constants.CREATE_IMAGE_ITEM_SEQUE, sender: nil)
     }
 
+    func beautify() {
+        self.imagesCollectionView.backgroundView = UIImageView(image: UIImage(named: "bg-image-2.png"))
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagesCollectionView.dataSource = self
         imagesCollectionView.backgroundColor = UIColor.whiteColor()
         
+        beautify()
         let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
         self.navigationItem.rightBarButtonItem = addButton
         
         self.title = imageCategory?.categoryName
     }
 
+    func refresh() {
+        self.title = imageCategory?.categoryName
+        self.imagesCollectionView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -77,6 +87,8 @@ extension ImageDetailsViewController : UICollectionViewDataSource {
         let imageItem = imageCategory?.imageItems[indexPath.row]
         imageCell.imageView.image = imageItem?.image
         imageCell.imageItemNameLabel.text = imageItem?.imageItemName
+        imageCell.backgroundColor = UIColor.clearColor()
+        
         return imageCell
     }
 }

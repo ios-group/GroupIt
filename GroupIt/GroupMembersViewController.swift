@@ -22,9 +22,14 @@ class GroupMembersViewController: UIViewController {
         self.performSegueWithIdentifier(Constants.GROUP_MEMBERS_ADD_SEGUE, sender: group)
     }
     
+    func beautify() {
+        groupMembersTableView.backgroundView = UIImageView(image: UIImage(named: "bg-image-2.png"))
+        groupMembersTableView.separatorStyle = .None
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        beautify()
         groupMembersTableView.dataSource = self
         groupMembersTableView.delegate = self
         
@@ -51,6 +56,7 @@ extension GroupMembersViewController : UITableViewDataSource, UITableViewDelegat
         let groupMemberCell = tableView.dequeueReusableCellWithIdentifier(Constants.GROUP_MEMBER_CELL_ID) as! GroupMemberCell
         let groupMember = group?.groupMembers![indexPath.row]
         populateCell(groupMemberCell, groupMember: groupMember!)
+        groupMemberCell.backgroundColor = UIColor.clearColor()
         return groupMemberCell
     }
     

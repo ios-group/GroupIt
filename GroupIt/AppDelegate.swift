@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        setAppTheme()
         registerParseSubclasses()
         
         // ============= instantiate parse ==============
@@ -49,6 +50,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
+    
+    func setAppTheme() {
+        UINavigationBar.appearance().barTintColor = ColorTheme.NAV_BAR_COLOR
+        UINavigationBar.appearance().tintColor = UIColor.blackColor()
+    }
+    
     
     func registerParseSubclasses() {
         TodoItemDO.registerSubclass()

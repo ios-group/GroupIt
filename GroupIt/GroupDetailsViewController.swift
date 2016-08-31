@@ -10,6 +10,7 @@ import UIKit
 
 class GroupDetailsViewController: UIViewController {
 
+    @IBOutlet weak var tabBarView: GroupTabBarView!
     
     @IBOutlet weak var contentView: UIView!
     
@@ -32,9 +33,15 @@ class GroupDetailsViewController: UIViewController {
         }
     }
     
+    func beautify() {
+        tabBarView.backgroundColor = ColorTheme.NAV_BAR_COLOR
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        beautify()
+        
         self.title = group?.groupName
         let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
         self.navigationItem.rightBarButtonItem = addButton
