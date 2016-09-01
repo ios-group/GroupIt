@@ -53,6 +53,7 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         self.title = todoCategory?.categoryName
         self.todoItemsTableView.reloadData()
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let segueIdentifier = segue.identifier
         if segueIdentifier == Constants.CREATE_TODO_ITEM_SEQUE {
@@ -204,6 +205,7 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         let todoItem = todoCategory!.todoItems[indexPath.row]
         todoItemCell.todoItem = todoItem
         todoItemCell.todoItemNameLabel.text = todoCategory!.todoItems[indexPath.row].todoItemName
+        todoItemCell.userNameLabel.text = todoItem.user?.username
         if (!todoItem.completed) {
             todoItemCell.accessoryType = .None
 //            todoItemCell.backgroundColor = UIColor.redColor()

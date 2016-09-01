@@ -16,18 +16,30 @@ class TodoItemCreateViewController: UIViewController {
 
     
     @IBOutlet weak var todoItemNameTextField: UITextField!
-    
-    
     @IBOutlet weak var todoItemDescriptionTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var delegate : TodoItemCreateDelegate?
-    
-    
     var todoItem : TodoItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        beautify()
         prepopulateData()
+    }
+    
+    func beautify() {
+        let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundImage.image = UIImage(named: "bg-image-2")
+        self.view.insertSubview(backgroundImage, atIndex: 0)
+
+        TextFieldTheme.beautifyTextField(todoItemNameTextField, placeHolder: "name")
+        TextFieldTheme.beautifyTextField(todoItemDescriptionTextField, placeHolder: "description")
+
+        ButtonTheme.beautifyButton(saveButton)
+        ButtonTheme.beautifyButton(cancelButton)
+        
     }
     
     func prepopulateData() {
@@ -48,6 +60,7 @@ class TodoItemCreateViewController: UIViewController {
         todoItem.id = self.todoItem?.id
         todoItem.todoItemName = todoItemNameTextField.text
         todoItem.completed = false
+        todoItem.user = User.currentUser
         return todoItem
     }
     

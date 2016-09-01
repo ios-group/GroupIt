@@ -11,12 +11,15 @@ import Parse
 
 class TodoItemMapper: NSObject {
     
+    let userMapper = UserMapper()
+    
     func toTodoItemDO(todoCategoryDO : CategoryDO, todoItem : TodoItem) -> TodoItemDO {
         let todoItemDO = TodoItemDO()
         todoItemDO.objectId = todoItem.id
         todoItemDO["todoItemName"] = todoItem.todoItemName
         todoItemDO["completed"] = todoItem.completed
         todoItemDO["category"] = todoCategoryDO
+        todoItemDO["user"] = userMapper.toUserDO(todoItem.user!)
         return todoItemDO
     }
 
@@ -26,6 +29,7 @@ class TodoItemMapper: NSObject {
         todoItemDictionary["todoItemName"] = todoItemDO["todoItemName"]
         todoItemDictionary["completed"] = todoItemDO["completed"]
         todoItemDictionary["category"] = todoItemDO["category"]
+        todoItemDictionary["user"] = userMapper.toUser(todoItemDO["user"] as! UserDO)
         let todoItem = TodoItem(todoItemDictionary: todoItemDictionary)
         return todoItem
     }
