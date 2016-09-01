@@ -24,6 +24,8 @@
 		5CBA2512DF1117376544DB12 /* Pods_GroupItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62437C027773D917379FA288 /* Pods_GroupItUITests.framework */; };
 		7B3ED05C1D76BEB000C1BFCF /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3ED05B1D76BEB000C1BFCF /* ColorUtil.swift */; };
 		7B3ED05E1D76D51000C1BFCF /* FontTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3ED05D1D76D51000C1BFCF /* FontTheme.swift */; };
+		7B3ED0601D77A8B300C1BFCF /* TextFieldTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3ED05F1D77A8B300C1BFCF /* TextFieldTheme.swift */; };
+		7B3ED0621D77AC9F00C1BFCF /* ButtonTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3ED0611D77AC9F00C1BFCF /* ButtonTheme.swift */; };
 		7B8CA2871D73EE7D007D3D1C /* GroupMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2861D73EE7D007D3D1C /* GroupMembersViewController.swift */; };
 		7B8CA2891D73EF26007D3D1C /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CA2881D73EF26007D3D1C /* GroupMemberCell.swift */; };
 		7B8CA28D1D73EFD6007D3D1C /* GroupMember.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8CA28C1D73EFD6007D3D1C /* GroupMember.storyboard */; };
@@ -121,6 +123,8 @@
 		62437C027773D917379FA288 /* Pods_GroupItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroupItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3ED05B1D76BEB000C1BFCF /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		7B3ED05D1D76D51000C1BFCF /* FontTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTheme.swift; sourceTree = "<group>"; };
+		7B3ED05F1D77A8B300C1BFCF /* TextFieldTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTheme.swift; sourceTree = "<group>"; };
+		7B3ED0611D77AC9F00C1BFCF /* ButtonTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTheme.swift; sourceTree = "<group>"; };
 		7B8CA2861D73EE7D007D3D1C /* GroupMembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMembersViewController.swift; sourceTree = "<group>"; };
 		7B8CA2881D73EF26007D3D1C /* GroupMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
 		7B8CA28C1D73EFD6007D3D1C /* GroupMember.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GroupMember.storyboard; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 			children = (
 				7B8CA2A31D7669D3007D3D1C /* ColorTheme.swift */,
 				7B3ED05D1D76D51000C1BFCF /* FontTheme.swift */,
+				7B3ED05F1D77A8B300C1BFCF /* TextFieldTheme.swift */,
+				7B3ED0611D77AC9F00C1BFCF /* ButtonTheme.swift */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -820,6 +826,7 @@
 				7B8CA2911D742D8C007D3D1C /* GroupTabBarView.swift in Sources */,
 				7BC1B4801D604A60008DA8F8 /* TodoItemMapper.swift in Sources */,
 				7BC1B40E1D5D6F3D008DA8F8 /* TodoDetailsViewController.swift in Sources */,
+				7B3ED0601D77A8B300C1BFCF /* TextFieldTheme.swift in Sources */,
 				05773FA61D6D25AD00E27ACE /* UserManager.swift in Sources */,
 				7B8CA2A41D7669D3007D3D1C /* ColorTheme.swift in Sources */,
 				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,
@@ -827,6 +834,7 @@
 				7B8CA2891D73EF26007D3D1C /* GroupMemberCell.swift in Sources */,
 				7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */,
 				7B8CA29D1D7508E3007D3D1C /* GroupMemberAddCell.swift in Sources */,
+				7B3ED0621D77AC9F00C1BFCF /* ButtonTheme.swift in Sources */,
 				7BC1B47A1D5FD861008DA8F8 /* TodoCategoryManager.swift in Sources */,
 				05773FAA1D6D280100E27ACE /* UserMapper.swift in Sources */,
 				7BB760AC1D69B41800D0EFD3 /* TodoItemCreateViewController.swift in Sources */,
