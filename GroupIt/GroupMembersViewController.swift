@@ -9,7 +9,6 @@
 import UIKit
 
 class GroupMembersViewController: UIViewController {
-
     
     @IBOutlet weak var groupMembersTableView: UITableView!
     
@@ -33,6 +32,11 @@ class GroupMembersViewController: UIViewController {
         groupMembersTableView.dataSource = self
         groupMembersTableView.delegate = self
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        groupMembersTableView.contentInset.top = topLayoutGuide.length
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

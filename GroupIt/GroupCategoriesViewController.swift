@@ -94,6 +94,10 @@ class GroupCategoriesViewController: UIViewController, UITableViewDataSource, UI
         self.tableView.reloadData()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.contentInset.top = topLayoutGuide.length
+    }
     
     @IBAction func onCategoriesButtonTap(sender: AnyObject) {
         print("categories tab selected ...")
