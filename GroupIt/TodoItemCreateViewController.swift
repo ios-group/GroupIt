@@ -25,6 +25,8 @@ class TodoItemCreateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        todoItemNameTextField.delegate = self
+        todoItemDescriptionTextField.delegate = self
         beautify()
         prepopulateData()
     }
@@ -48,6 +50,7 @@ class TodoItemCreateViewController: UIViewController {
         }
     }
     
+    
     @IBAction func onSaveButtonTap(sender: AnyObject) {
         print("saving todo item ... ")
         let updatedTodoItem = getUpdatedTodoItem()
@@ -67,5 +70,13 @@ class TodoItemCreateViewController: UIViewController {
     @IBAction func onCancelButtonTap(sender: AnyObject) {
         print("cancelling todo item creation ... ")
         self.dismissViewControllerAnimated(true, completion: {})
+    }
+}
+
+extension TodoItemCreateViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -22,6 +22,8 @@ class GroupCreateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        groupNameTextField.delegate = self
+        groupDescriptionTextField.delegate = self
         prepopulateData()
     }
     
@@ -53,4 +55,12 @@ class GroupCreateViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
+}
+
+extension GroupCreateViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
