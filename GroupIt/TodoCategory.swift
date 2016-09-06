@@ -73,6 +73,7 @@ class TodoItem : NSObject {
     var id : String?
     var todoItemName : String?
     var completed : Bool
+    var user : User?
     
     override init() {
         self.completed = false
@@ -82,6 +83,7 @@ class TodoItem : NSObject {
         id = todoItemDictionary["id"] as? String
         todoItemName = todoItemDictionary["todoItemName"] as? String
         completed = todoItemDictionary["completed"] as? Bool ?? false
+        user = todoItemDictionary["user"] as? User
     }
     
     override var description: String {

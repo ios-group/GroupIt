@@ -15,6 +15,7 @@ class TodoItemDO : PFObject, PFSubclassing {
     @NSManaged var todoItemName : String?
     var completed : Bool?
     @NSManaged var category : CategoryDO?
+    @NSManaged var user : UserDO?
     
     static func parseClassName() -> String {
         return Constants.TODO_ITEM_CLASSNAME

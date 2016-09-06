@@ -15,14 +15,30 @@ protocol ImageItemCreateDelegate {
 class ImageItemCreateViewController: UIViewController {
 
     @IBOutlet weak var imageItemNameTextField: UITextField!
+    @IBOutlet weak var uploadPhotoButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var delegate : ImageItemCreateDelegate?
     
     var imageItem : ImageItem?
     
+    func beautify() {
+        let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundImage.image = UIImage(named: "bg-image-2")
+        self.view.insertSubview(backgroundImage, atIndex: 0)
+
+        TextFieldTheme.beautifyTextField(imageItemNameTextField, placeHolder: "name")
+
+        ButtonTheme.beautifyButton(uploadPhotoButton)
+        ButtonTheme.beautifyButton(saveButton)
+        ButtonTheme.beautifyButton(cancelButton)
+    }
+
     override func viewDidLoad() {
         print("create image view controller ... ")
         super.viewDidLoad()
+        beautify()
         prepopulateData()
     }
 
@@ -77,7 +93,6 @@ extension ImageItemCreateViewController : UIImagePickerControllerDelegate, UINav
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // Get the image captured by the UIImagePickerController
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         // Do something with the images (based on your use case)
         if imageItem == nil {
