@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Groups-->
@@ -18,84 +17,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="126" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8uX-tE-YmK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8uX-tE-YmK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupsCell" rowHeight="126" id="dJf-SF-z0b" customClass="GroupsCell" customModule="GroupIt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="126"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupsCell" rowHeight="64" id="dJf-SF-z0b" customClass="GroupsCell" customModule="GroupIt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dJf-SF-z0b" id="7Oh-Rj-4uW">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="groupName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZ2-mi-qAF">
-                                                    <rect key="frame" x="72" y="8" width="64" height="24"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
+                                                    <rect key="frame" x="70" y="8" width="73" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" red="0.1378672141" green="0.67182436769999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q5P-AQ-85R">
-                                                    <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                                    <rect key="frame" x="8" y="8" width="48" height="48"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="8JV-gU-KFt"/>
-                                                        <constraint firstAttribute="width" constant="50" id="t77-vi-qn3"/>
+                                                        <constraint firstAttribute="height" constant="48" id="Elp-Lh-pZP"/>
+                                                        <constraint firstAttribute="width" constant="48" id="yGK-65-hWc"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this contains group description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfU-qF-SjU">
-                                                    <rect key="frame" x="72" y="34" width="173" height="24"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mw-av-lWR">
-                                                    <rect key="frame" x="267" y="99" width="12" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="13"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNM-a7-wWt">
-                                                    <rect key="frame" x="284" y="99" width="26" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="13"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="151" y="36" width="22" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-hz-70y">
-                                                    <rect key="frame" x="192" y="99" width="12" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="13"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="70" y="36" width="10" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibc-V4-iOK">
-                                                    <rect key="frame" x="209" y="99" width="50" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="13"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="85" y="36" width="43" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mw-av-lWR">
+                                                    <rect key="frame" x="136" y="36" width="10" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="EZ2-mi-qAF" firstAttribute="top" secondItem="7Oh-Rj-4uW" secondAttribute="top" constant="8" id="7yR-3d-Gog"/>
-                                                <constraint firstItem="kfU-qF-SjU" firstAttribute="top" secondItem="EZ2-mi-qAF" secondAttribute="bottom" constant="2" id="8dr-FN-GpF"/>
-                                                <constraint firstItem="q5P-AQ-85R" firstAttribute="leading" secondItem="7Oh-Rj-4uW" secondAttribute="leading" constant="8" id="B9W-DX-CTb"/>
-                                                <constraint firstItem="ibc-V4-iOK" firstAttribute="leading" secondItem="hYT-hz-70y" secondAttribute="trailing" constant="5" id="EdH-Ba-qh0"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="kfU-qF-SjU" secondAttribute="trailing" constant="10" id="Egs-8n-wR0"/>
-                                                <constraint firstAttribute="bottom" secondItem="ibc-V4-iOK" secondAttribute="bottom" constant="6" id="Gzz-ff-iN5"/>
-                                                <constraint firstAttribute="bottom" secondItem="8mw-av-lWR" secondAttribute="bottom" constant="6" id="IcC-4c-uSc"/>
-                                                <constraint firstAttribute="bottom" secondItem="MNM-a7-wWt" secondAttribute="bottom" constant="6" id="UeA-OK-Ipf"/>
-                                                <constraint firstAttribute="trailing" secondItem="MNM-a7-wWt" secondAttribute="trailing" constant="10" id="Wcs-BN-WhR"/>
-                                                <constraint firstItem="kfU-qF-SjU" firstAttribute="leading" secondItem="q5P-AQ-85R" secondAttribute="trailing" constant="14" id="YSf-tO-4jf"/>
-                                                <constraint firstItem="ibc-V4-iOK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kfU-qF-SjU" secondAttribute="bottom" constant="8" id="bXU-eQ-cSd"/>
-                                                <constraint firstItem="EZ2-mi-qAF" firstAttribute="leading" secondItem="q5P-AQ-85R" secondAttribute="trailing" constant="14" id="grW-NC-l8F"/>
-                                                <constraint firstAttribute="bottom" secondItem="hYT-hz-70y" secondAttribute="bottom" constant="6" id="l9S-OH-7co"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EZ2-mi-qAF" secondAttribute="trailing" constant="10" id="ms0-4B-E1b"/>
-                                                <constraint firstItem="MNM-a7-wWt" firstAttribute="leading" secondItem="8mw-av-lWR" secondAttribute="trailing" constant="5" id="rQj-DB-vUv"/>
-                                                <constraint firstItem="q5P-AQ-85R" firstAttribute="top" secondItem="7Oh-Rj-4uW" secondAttribute="top" constant="8" id="reA-3f-6Xt"/>
-                                                <constraint firstItem="8mw-av-lWR" firstAttribute="leading" secondItem="ibc-V4-iOK" secondAttribute="trailing" constant="8" id="x4S-Jk-9of"/>
+                                                <constraint firstItem="q5P-AQ-85R" firstAttribute="leading" secondItem="7Oh-Rj-4uW" secondAttribute="leading" constant="8" id="0nB-Fb-OIu"/>
+                                                <constraint firstAttribute="bottom" secondItem="q5P-AQ-85R" secondAttribute="bottom" constant="7.5" id="0oC-e2-g5v"/>
+                                                <constraint firstItem="8mw-av-lWR" firstAttribute="top" secondItem="EZ2-mi-qAF" secondAttribute="bottom" constant="4" id="17h-Oc-ljK"/>
+                                                <constraint firstItem="EZ2-mi-qAF" firstAttribute="top" secondItem="7Oh-Rj-4uW" secondAttribute="top" constant="8" id="9SG-yX-soe"/>
+                                                <constraint firstItem="hYT-hz-70y" firstAttribute="leading" secondItem="q5P-AQ-85R" secondAttribute="trailing" constant="14" id="GUx-ut-pFO"/>
+                                                <constraint firstItem="ibc-V4-iOK" firstAttribute="leading" secondItem="hYT-hz-70y" secondAttribute="trailing" constant="5" id="LCL-Un-FHj"/>
+                                                <constraint firstItem="EZ2-mi-qAF" firstAttribute="leading" secondItem="q5P-AQ-85R" secondAttribute="trailing" constant="14" id="Sui-Es-Yaj"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EZ2-mi-qAF" secondAttribute="trailing" constant="10" id="Th3-kd-5Qs"/>
+                                                <constraint firstItem="hYT-hz-70y" firstAttribute="top" secondItem="EZ2-mi-qAF" secondAttribute="bottom" constant="4" id="UNr-4k-y7Q"/>
+                                                <constraint firstItem="MNM-a7-wWt" firstAttribute="top" secondItem="7Oh-Rj-4uW" secondAttribute="top" constant="36" id="VL7-Z8-Tl9"/>
+                                                <constraint firstItem="MNM-a7-wWt" firstAttribute="leading" secondItem="8mw-av-lWR" secondAttribute="trailing" constant="5" id="dHp-8U-nl9"/>
+                                                <constraint firstItem="8mw-av-lWR" firstAttribute="leading" secondItem="ibc-V4-iOK" secondAttribute="trailing" constant="8" id="dp4-hP-YnD"/>
+                                                <constraint firstItem="q5P-AQ-85R" firstAttribute="top" secondItem="7Oh-Rj-4uW" secondAttribute="top" constant="8" id="ij6-wB-RlD"/>
+                                                <constraint firstItem="ibc-V4-iOK" firstAttribute="top" secondItem="EZ2-mi-qAF" secondAttribute="bottom" constant="4" id="xTy-Af-h4G"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="groupDescriptionLabel" destination="kfU-qF-SjU" id="U8F-LT-S5I"/>
                                             <outlet property="groupImageView" destination="q5P-AQ-85R" id="MO6-Wk-eQP"/>
                                             <outlet property="groupNameLabel" destination="EZ2-mi-qAF" id="J43-OV-Tba"/>
                                             <outlet property="noOfCategoriesLabel" destination="hYT-hz-70y" id="oJ2-Le-hFr"/>
