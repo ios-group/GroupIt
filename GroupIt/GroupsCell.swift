@@ -15,11 +15,27 @@ class GroupsCell: UITableViewCell {
 
     @IBOutlet weak var groupNameLabel: UILabel!
     
+    @IBOutlet weak var noOfUsersLabel: UILabel!
+    @IBOutlet weak var noOfCategoriesLabel: UILabel!
+    @IBOutlet weak var groupImageView: UIImageView!
+    
     var delegate : GroupCellDelegate?
     
     var group: Group! {
         didSet{
             groupNameLabel.text = group.groupName
+            
+            if group.groupMembers?.count != 0  {
+                noOfUsersLabel.text = String (group.groupMembers!.count)
+            }else {
+                noOfUsersLabel.text = "0"
+            }
+            
+            if group.categories?.count != 0 {
+                noOfCategoriesLabel.text = String (group.categories!.count)
+            }else {
+                noOfCategoriesLabel.text = "0"
+            }
         }
     }
     
