@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eai-Cg-Ndl" id="n21-hI-235">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CategoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mp-hV-eP5">
@@ -104,35 +104,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xz1-8K-qKG">
-                                <rect key="frame" x="44" y="61" width="226" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I74-e3-dpu">
                                 <rect key="frame" x="196" y="191" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onSaveButtonTap:" destination="jQL-81-acv" eventType="touchUpInside" id="Mqv-dv-ldf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYD-JY-ehN">
                                 <rect key="frame" x="82" y="191" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onCancelButtonTap:" destination="jQL-81-acv" eventType="touchUpInside" id="3qC-Bw-Ro3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-Mg-fkW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-Mg-fkW">
                                 <rect key="frame" x="44" y="119" width="233" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="Jcb-Sv-CoT"/>
+                                    <constraint firstAttribute="height" constant="30" id="iDc-7Z-g2m"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xz1-8K-qKG">
+                                <rect key="frame" x="44" y="55" width="28" height="29"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Clf-Mg-fkW" firstAttribute="top" secondItem="xz1-8K-qKG" secondAttribute="bottom" constant="35" id="SSD-6O-Yvx"/>
+                            <constraint firstItem="Clf-Mg-fkW" firstAttribute="leading" secondItem="xz1-8K-qKG" secondAttribute="leading" id="SVZ-eM-25l"/>
+                            <constraint firstItem="xz1-8K-qKG" firstAttribute="top" secondItem="srO-HF-sfa" secondAttribute="bottom" constant="35" id="ZhA-5O-SQ3"/>
+                            <constraint firstItem="xz1-8K-qKG" firstAttribute="leading" secondItem="8dX-ZP-nqh" secondAttribute="leading" constant="44" id="yGD-Gi-nnw"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xz1-8K-qKG" secondAttribute="trailing" constant="10" id="z4e-Ve-ITS"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryCancelButton" destination="tYD-JY-ehN" id="N5J-xt-AqD"/>
+                        <outlet property="categoryCreateButton" destination="I74-e3-dpu" id="mmw-95-d0n"/>
                         <outlet property="categoryNameTextField" destination="Clf-Mg-fkW" id="gWx-s5-ULK"/>
                         <outlet property="categoryTypeLabel" destination="xz1-8K-qKG" id="KAH-GD-u30"/>
                     </connections>
@@ -153,36 +179,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alO-PN-r9t">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alO-PN-r9t">
                                 <rect key="frame" x="47" y="74" width="224" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GVt-DP-rbJ"/>
+                                    <constraint firstAttribute="width" constant="224" id="s4t-qF-Uhm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErB-0i-OJT">
                                 <rect key="frame" x="201" y="175" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onSaveButtonTap:" destination="MkJ-2x-Xfv" eventType="touchUpInside" id="Ky3-Up-JMP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BA-K3-TDo">
                                 <rect key="frame" x="78" y="175" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onCancelButtonTap:" destination="MkJ-2x-Xfv" eventType="touchUpInside" id="NAf-Pk-iqZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqB-e2-86q">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqB-e2-86q">
                                 <rect key="frame" x="47" y="125" width="224" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4iI-Fr-NSH"/>
+                                    <constraint firstAttribute="width" constant="224" id="x3y-66-TGr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WqB-e2-86q" firstAttribute="top" secondItem="alO-PN-r9t" secondAttribute="bottom" constant="21" id="CmB-YU-Zgf"/>
+                            <constraint firstItem="alO-PN-r9t" firstAttribute="leading" secondItem="V4W-XW-Sw8" secondAttribute="leading" constant="47" id="dxI-g9-CfN"/>
+                            <constraint firstItem="WqB-e2-86q" firstAttribute="leading" secondItem="alO-PN-r9t" secondAttribute="leading" id="hD9-5d-RQx"/>
+                            <constraint firstItem="alO-PN-r9t" firstAttribute="top" secondItem="n8s-bY-1Jg" secondAttribute="bottom" constant="54" id="lRd-DZ-ah4"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="groupCancelButton" destination="0BA-K3-TDo" id="8cU-Tb-XMe"/>
                         <outlet property="groupDescriptionTextField" destination="WqB-e2-86q" id="DYl-FF-1Bd"/>
                         <outlet property="groupNameTextField" destination="alO-PN-r9t" id="czr-o4-3Ff"/>
+                        <outlet property="groupSaveButton" destination="ErB-0i-OJT" id="jzg-Nj-zSt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXq-9u-ei9" userLabel="First Responder" sceneMemberID="firstResponder"/>

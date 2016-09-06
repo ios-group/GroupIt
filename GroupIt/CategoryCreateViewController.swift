@@ -18,15 +18,28 @@ class CategoryCreateViewController: UIViewController {
     var category : Category?
     var delegate : CategoryCreateDelegate?
     
+    @IBOutlet weak var categoryCreateButton: UIButton!
     @IBOutlet weak var categoryTypeLabel: UILabel!
+    @IBOutlet weak var categoryCancelButton: UIButton!
     
     @IBOutlet weak var categoryNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        beautify()
         prepopulateData()
     }
 
+    func beautify(){
+        let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundImage.image = UIImage(named: "bg-image-2")
+        self.view.insertSubview(backgroundImage, atIndex: 0)
+        
+        categoryNameTextField.setBottomBorder()
+        categoryCreateButton.setButtonBorder()
+        categoryCancelButton.setButtonBorder()
+    }
+    
     func prepopulateData() {
         if let category = category {
             categoryTypeLabel.text = category.categoryType.rawValue

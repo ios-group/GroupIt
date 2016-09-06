@@ -16,14 +16,29 @@ class GroupCreateViewController: UIViewController {
 
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var groupDescriptionTextField: UITextField!
+    @IBOutlet weak var groupCancelButton: UIButton!
+    @IBOutlet weak var groupSaveButton: UIButton!
     
     var group : Group?
     var delegate : GroupCreateDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        beautify()
         prepopulateData()
     }
+    
+    func beautify(){
+        let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundImage.image = UIImage(named: "bg-image-2")
+        self.view.insertSubview(backgroundImage, atIndex: 0)
+        
+        groupNameTextField.setBottomBorder()
+        groupDescriptionTextField.setBottomBorder()
+        groupSaveButton.setButtonBorder()
+        groupCancelButton.setButtonBorder()
+    }
+    
     
     func prepopulateData() {
         if let group = group {
