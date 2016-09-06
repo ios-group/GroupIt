@@ -59,6 +59,9 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let groupCell = tableView.dequeueReusableCellWithIdentifier("GroupsCell", forIndexPath: indexPath) as! GroupsCell
         groupCell.group = groups[indexPath.row]
+        groupCell.groupImageView.image = GroupImageUtil.getGroupImage(indexPath.row)
+        
+        
         groupCell.delegate = self
         groupCell.backgroundColor = UIColor.clearColor()
         return groupCell
@@ -112,9 +115,29 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
             if error == nil {
                 self.groups = groups
                 self.tableView.reloadData()
+                self.getCategoriesByGroup()
+                self.getUsersByGroup()
             } else {
                 print(error)
             }
+        }
+    }
+    
+    private func getCategoriesByGroup() {
+        for group in self.groups {
+            todoCategoryManager.getAllTodoCategoriesByGroupId(group.groupId!, completion: { (categories : [Category], error : NSError?) in
+                group.categories = categories
+                self.tableView.reloadData()
+            })
+        }
+    }
+    
+    private func getUsersByGroup() {
+        for group in self.groups {
+            groupMemberManager.getAllMembersByGroupId(group.groupId!, completion: { (groupMembers : [User], error : NSError?) in
+                group.groupMembers = groupMembers
+                self.tableView.reloadData()
+            })
         }
     }
     

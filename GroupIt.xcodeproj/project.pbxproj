@@ -15,6 +15,7 @@
 		05773FA61D6D25AD00E27ACE /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05773FA51D6D25AD00E27ACE /* UserManager.swift */; };
 		05773FA81D6D25DC00E27ACE /* UserDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05773FA71D6D25DC00E27ACE /* UserDO.swift */; };
 		05773FAA1D6D280100E27ACE /* UserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05773FA91D6D280100E27ACE /* UserMapper.swift */; };
+		05A233681D7F5897009588DC /* GroupImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A233671D7F5897009588DC /* GroupImageUtil.swift */; };
 		05A9A7511D6FB5F1001F4029 /* CategoryDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A9A7501D6FB5F1001F4029 /* CategoryDO.swift */; };
 		05B3DE151D7786DF009F37BE /* ExtensionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3DE141D7786DF009F37BE /* ExtensionUtil.swift */; };
 		05DD11691D6E561A0088DC1A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DD11681D6E561A0088DC1A /* Login.storyboard */; };
@@ -113,6 +114,7 @@
 		05773FA51D6D25AD00E27ACE /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		05773FA71D6D25DC00E27ACE /* UserDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDO.swift; sourceTree = "<group>"; };
 		05773FA91D6D280100E27ACE /* UserMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMapper.swift; sourceTree = "<group>"; };
+		05A233671D7F5897009588DC /* GroupImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupImageUtil.swift; sourceTree = "<group>"; };
 		05A9A7501D6FB5F1001F4029 /* CategoryDO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDO.swift; sourceTree = "<group>"; };
 		05B3DE141D7786DF009F37BE /* ExtensionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUtil.swift; sourceTree = "<group>"; };
 		05DD11681D6E561A0088DC1A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				7BC1B4731D5FC630008DA8F8 /* Constants.swift */,
 				7B3ED05B1D76BEB000C1BFCF /* ColorUtil.swift */,
 				05B3DE141D7786DF009F37BE /* ExtensionUtil.swift */,
+				05A233671D7F5897009588DC /* GroupImageUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 				05773FA61D6D25AD00E27ACE /* UserManager.swift in Sources */,
 				7B8CA2A41D7669D3007D3D1C /* ColorTheme.swift in Sources */,
 				7BC1B3EC1D5D683E008DA8F8 /* PollCategory.swift in Sources */,
+				05A233681D7F5897009588DC /* GroupImageUtil.swift in Sources */,
 				7BB760B81D6CF99A00D0EFD3 /* ImageCategoryManager.swift in Sources */,
 				7B8CA2891D73EF26007D3D1C /* GroupMemberCell.swift in Sources */,
 				7BC1B4021D5D6E8B008DA8F8 /* GroupSetupViewController.swift in Sources */,
