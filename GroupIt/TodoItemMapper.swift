@@ -19,7 +19,9 @@ class TodoItemMapper: NSObject {
         todoItemDO["todoItemName"] = todoItem.todoItemName
         todoItemDO["completed"] = todoItem.completed
         todoItemDO["category"] = todoCategoryDO
-        todoItemDO["user"] = userMapper.toUserDO(todoItem.user!)
+        if (User.currentUser?.userId == todoItem.user?.userId) {
+            todoItemDO["user"] = userMapper.toUserDO(todoItem.user!)
+        }
         return todoItemDO
     }
 
@@ -29,7 +31,10 @@ class TodoItemMapper: NSObject {
         todoItemDictionary["todoItemName"] = todoItemDO["todoItemName"]
         todoItemDictionary["completed"] = todoItemDO["completed"]
         todoItemDictionary["category"] = todoItemDO["category"]
-        todoItemDictionary["user"] = userMapper.toUser(todoItemDO["user"] as! UserDO)
+        let userDO = todoItemDO["user"] as? UserDO
+        if let userDO = userDO {
+            todoItemDictionary["user"] = userMapper.toUser(userDO)
+        }
         let todoItem = TodoItem(todoItemDictionary: todoItemDictionary)
         return todoItem
     }
