@@ -20,8 +20,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovb-pf-3UD" customClass="GroupTabBarView" customModule="GroupIt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="528" width="320" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrB-fR-fSd">
-                                        <rect key="frame" x="39" y="16" width="75" height="29"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrB-fR-fSd">
+                                        <rect key="frame" x="39" y="16" width="75" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="RJa-WD-546"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <state key="normal" title="Categories">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,8 +33,11 @@
                                             <action selector="onCategoriesBarItemTap:" destination="cpe-XE-GXc" eventType="touchUpInside" id="O2p-A4-Szm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cW8-Wr-7hu">
-                                        <rect key="frame" x="226" y="17" width="36" height="27"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cW8-Wr-7hu">
+                                        <rect key="frame" x="232" y="17" width="36" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="ej2-kS-zZi"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <state key="normal" title="Users">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,17 +46,29 @@
                                             <action selector="onUsersBarItemTap:" destination="cpe-XE-GXc" eventType="touchUpInside" id="isp-vz-fhF"/>
                                         </connections>
                                     </button>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="group-user-1" translatesAutoresizingMaskIntoConstraints="NO" id="uWI-ce-4N3" userLabel="userImageView">
-                                        <rect key="frame" x="231" y="0.0" width="24" height="24"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group-user-1" translatesAutoresizingMaskIntoConstraints="NO" id="uWI-ce-4N3" userLabel="userImageView">
+                                        <rect key="frame" x="238" y="0.0" width="24" height="24"/>
                                     </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="categories-1" translatesAutoresizingMaskIntoConstraints="NO" id="R8a-15-Nir" userLabel="categoriesImageView">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="categories-1" translatesAutoresizingMaskIntoConstraints="NO" id="R8a-15-Nir" userLabel="categoriesImageView">
                                         <rect key="frame" x="64" y="0.0" width="24" height="24"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="i6M-7W-agt" appends="YES" id="jwC-8h-j3q"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="cW8-Wr-7hu" firstAttribute="top" secondItem="ovb-pf-3UD" secondAttribute="top" constant="17" id="5aL-Y8-JnU"/>
+                                    <constraint firstItem="R8a-15-Nir" firstAttribute="centerX" secondItem="FrB-fR-fSd" secondAttribute="centerX" id="IBj-pc-Xdh"/>
+                                    <constraint firstAttribute="trailing" secondItem="cW8-Wr-7hu" secondAttribute="trailing" constant="52" id="Ojt-Jw-ekW"/>
                                     <constraint firstAttribute="height" constant="40" id="OsL-S2-5hJ"/>
+                                    <constraint firstItem="R8a-15-Nir" firstAttribute="top" secondItem="ovb-pf-3UD" secondAttribute="top" id="Qv3-ia-MJ6"/>
+                                    <constraint firstItem="uWI-ce-4N3" firstAttribute="centerX" secondItem="cW8-Wr-7hu" secondAttribute="centerX" id="aq2-tQ-LeJ"/>
+                                    <constraint firstItem="uWI-ce-4N3" firstAttribute="top" secondItem="ovb-pf-3UD" secondAttribute="top" id="lSc-8a-UZr"/>
+                                    <constraint firstItem="FrB-fR-fSd" firstAttribute="leading" secondItem="ovb-pf-3UD" secondAttribute="leading" constant="39" id="nsP-i2-cVB"/>
+                                    <constraint firstItem="FrB-fR-fSd" firstAttribute="top" secondItem="ovb-pf-3UD" secondAttribute="top" constant="16" id="zOG-7Y-gs3"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQx-r4-l4E">
@@ -70,11 +88,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoriesImageView" destination="R8a-15-Nir" id="rsd-Ae-OhG"/>
                         <outlet property="contentView" destination="HQx-r4-l4E" id="3d3-Kt-PFd"/>
                         <outlet property="tabBarView" destination="ovb-pf-3UD" id="rNN-Jr-Txw"/>
+                        <outlet property="usersImageView" destination="uWI-ce-4N3" id="JhH-Rf-qbh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IB-Hm-SzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="i6M-7W-agt">
+                    <connections>
+                        <action selector="onCategoriesPanGestureTap:" destination="cpe-XE-GXc" id="6L2-Ax-zqT"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="434"/>
         </scene>

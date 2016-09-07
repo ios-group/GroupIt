@@ -8,11 +8,15 @@
 
 import UIKit
 
-class GroupDetailsViewController: UIViewController {
+class GroupDetailsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tabBarView: GroupTabBarView!
     
     @IBOutlet weak var contentView: UIView!
+    
+    @IBOutlet weak var categoriesImageView: UIImageView!
+    
+    @IBOutlet weak var usersImageView: UIImageView!
     
     var groupCategoriesViewController : GroupCategoriesViewController!
     var groupMembersViewController : GroupMembersViewController!
@@ -57,6 +61,17 @@ class GroupDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         onCategoriesBarItemTap(self)
         
+        
+        self.categoriesImageView.userInteractionEnabled = true
+        let categoriesTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onCategoriesBarItemTap))
+        categoriesTapGestureRecognizer.delegate = self
+        self.categoriesImageView.addGestureRecognizer(categoriesTapGestureRecognizer)
+
+        self.usersImageView.userInteractionEnabled = true
+        let usersTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onUsersBarItemTap))
+        usersTapGestureRecognizer.delegate = self
+        self.usersImageView.addGestureRecognizer(usersTapGestureRecognizer)
+
     }
 
     func addNavBarButton() {
@@ -81,6 +96,11 @@ class GroupDetailsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func onCategoriesPanGestureTap(sender: UIPanGestureRecognizer) {
+        print("categories gesture ...")
     }
     
     @IBAction func onCategoriesBarItemTap(sender: AnyObject) {
