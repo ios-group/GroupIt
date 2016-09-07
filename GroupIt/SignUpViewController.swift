@@ -29,6 +29,9 @@ class SignUpViewController: UIViewController {
         let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
         backgroundImage.image = UIImage(named: "bg-image-2")
         self.view.insertSubview(backgroundImage, atIndex: 0)
+        passwordField.delegate = self
+        emailField.delegate = self
+        fullNameField.delegate = self
         fullNameField.setBottomBorder()
         passwordField.setBottomBorder()
         emailField.setBottomBorder()
@@ -79,5 +82,13 @@ class SignUpViewController: UIViewController {
 //            let groupsViewController = segue.destinationViewController as! GroupsViewController
 //        }
         
+    }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

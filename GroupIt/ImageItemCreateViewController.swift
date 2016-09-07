@@ -38,6 +38,7 @@ class ImageItemCreateViewController: UIViewController {
     override func viewDidLoad() {
         print("create image view controller ... ")
         super.viewDidLoad()
+        imageItemNameTextField.delegate = self
         beautify()
         prepopulateData()
     }
@@ -105,3 +106,14 @@ extension ImageItemCreateViewController : UIImagePickerControllerDelegate, UINav
     }
 
 }
+
+extension ImageItemCreateViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+
+

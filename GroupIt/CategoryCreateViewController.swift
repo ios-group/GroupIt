@@ -26,6 +26,7 @@ class CategoryCreateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoryNameTextField.delegate = self
         beautify()
         prepopulateData()
     }
@@ -38,6 +39,8 @@ class CategoryCreateViewController: UIViewController {
         categoryNameTextField.setBottomBorder()
         categoryCreateButton.setButtonBorder()
         categoryCancelButton.setButtonBorder()
+        
+        TextFieldTheme.beautifyTextField(categoryNameTextField, placeHolder: "")
     }
     
     func prepopulateData() {
@@ -85,3 +88,12 @@ class CategoryCreateViewController: UIViewController {
     }
     
 }
+
+extension CategoryCreateViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+

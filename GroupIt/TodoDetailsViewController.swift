@@ -38,16 +38,26 @@ class TodoDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         todoItemsTableView.dataSource = self
         todoItemsTableView.delegate = self
         
-        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Done, target: self, action: #selector(onAddButton))
-        addButton.tintColor = UIColor.blackColor()
-        
-        self.navigationItem.rightBarButtonItem = addButton
+//        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Done, target: self, action: #selector(onAddButton))
+//        addButton.tintColor = UIColor.blackColor()
+//        self.navigationItem.rightBarButtonItem = addButton
+        addNavBarButton()
 
         self.title = todoCategory?.categoryName
         
 //        performCRUD()
 //        performCRUDTodoItem()
     }
+    
+    func addNavBarButton() {
+        let addButton = UIButton()
+        addButton.setImage(GroupImageUtil.getAddImage(), forState: .Normal)
+        addButton.frame = CGRectMake(0, 0, 24, 24)
+        addButton.addTarget(self, action: #selector(onAddButton), forControlEvents: .TouchUpInside)
+        let addBarButton = UIBarButtonItem(customView: addButton)
+        self.navigationItem.setRightBarButtonItem(addBarButton, animated: true)
+    }
+
     
     func refresh() {
         self.title = todoCategory?.categoryName

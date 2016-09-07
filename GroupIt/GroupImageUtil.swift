@@ -17,4 +17,8 @@ class GroupImageUtil: NSObject {
         return UIImage(named: groupImages[index])
     }
     
+    static func getAddImage() -> UIImage? {
+        let addItemImage = "add-image-24-24"
+        return UIImage(named : addItemImage)
+    }
 }

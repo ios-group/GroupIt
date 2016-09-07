@@ -38,13 +38,19 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
-        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
-        self.navigationItem.rightBarButtonItem = addButton
-
+        addNavBarButton()
         //get all the groups for
-//        getAllGroups()
         let userId = (User.currentUser?.userId)!
         getGroupsByUser(userId)
+    }
+    
+    func addNavBarButton() {
+        let addButton = UIButton()
+        addButton.setImage(GroupImageUtil.getAddImage(), forState: .Normal)
+        addButton.frame = CGRectMake(0, 0, 24, 24)
+        addButton.addTarget(self, action: #selector(onAddButton), forControlEvents: .TouchUpInside)
+        let addBarButton = UIBarButtonItem(customView: addButton)
+        self.navigationItem.setRightBarButtonItem(addBarButton, animated: true)
     }
     
     @IBAction func onLogoutButton(sender: AnyObject) {
@@ -60,8 +66,7 @@ class GroupsViewController: UIViewController, UITableViewDataSource, UITableView
         let groupCell = tableView.dequeueReusableCellWithIdentifier("GroupsCell", forIndexPath: indexPath) as! GroupsCell
         groupCell.group = groups[indexPath.row]
         groupCell.groupImageView.image = GroupImageUtil.getGroupImage(indexPath.row)
-        
-        
+        groupCell.groupImageView.backgroundColor = ColorTheme.NAV_BAR_COLOR
         groupCell.delegate = self
         groupCell.backgroundColor = UIColor.clearColor()
         return groupCell

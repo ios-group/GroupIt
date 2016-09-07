@@ -24,6 +24,8 @@ class GroupCreateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        groupNameTextField.delegate = self
+        groupDescriptionTextField.delegate = self
         beautify()
         prepopulateData()
     }
@@ -37,6 +39,9 @@ class GroupCreateViewController: UIViewController {
         groupDescriptionTextField.setBottomBorder()
         groupSaveButton.setButtonBorder()
         groupCancelButton.setButtonBorder()
+        
+        TextFieldTheme.beautifyTextField(groupNameTextField, placeHolder: "name")
+        TextFieldTheme.beautifyTextField(groupDescriptionTextField, placeHolder: "description")
     }
     
     
@@ -68,4 +73,12 @@ class GroupCreateViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
+}
+
+extension GroupCreateViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
