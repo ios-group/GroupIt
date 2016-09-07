@@ -32,10 +32,19 @@ class ImageDetailsViewController: UIViewController {
         imagesCollectionView.backgroundColor = UIColor.whiteColor()
         
         beautify()
-        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
-        self.navigationItem.rightBarButtonItem = addButton
-        
+//        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
+//        self.navigationItem.rightBarButtonItem = addButton
+        addNavBarButton()
         self.title = imageCategory?.categoryName
+    }
+
+    func addNavBarButton() {
+        let addButton = UIButton()
+        addButton.setImage(GroupImageUtil.getAddImage(), forState: .Normal)
+        addButton.frame = CGRectMake(0, 0, 24, 24)
+        addButton.addTarget(self, action: #selector(onAddButton), forControlEvents: .TouchUpInside)
+        let addBarButton = UIBarButtonItem(customView: addButton)
+        self.navigationItem.setRightBarButtonItem(addBarButton, animated: true)
     }
 
     func refresh() {

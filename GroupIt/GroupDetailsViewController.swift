@@ -43,9 +43,9 @@ class GroupDetailsViewController: UIViewController {
         beautify()
         
         self.title = group?.groupName
-        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
-        self.navigationItem.rightBarButtonItem = addButton
-
+//        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
+//        self.navigationItem.rightBarButtonItem = addButton
+        addNavBarButton()
         
         let groupCategoryStoryboard = UIStoryboard(name: Constants.GROUP_CATEGORY_STORYBOARD_NAME, bundle: nil)
         let groupMemberStoryboard = UIStoryboard(name: Constants.GROUP_MEMBER_STORYBOARD_NAME, bundle: nil)
@@ -57,6 +57,15 @@ class GroupDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         onCategoriesBarItemTap(self)
         
+    }
+
+    func addNavBarButton() {
+        let addButton = UIButton()
+        addButton.setImage(GroupImageUtil.getAddImage(), forState: .Normal)
+        addButton.frame = CGRectMake(0, 0, 24, 24)
+        addButton.addTarget(self, action: #selector(onAddButton), forControlEvents: .TouchUpInside)
+        let addBarButton = UIBarButtonItem(customView: addButton)
+        self.navigationItem.setRightBarButtonItem(addBarButton, animated: true)
     }
 
     func refresh() {

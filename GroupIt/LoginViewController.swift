@@ -28,7 +28,8 @@ class LoginViewController: UIViewController {
         let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
         backgroundImage.image = UIImage(named: "bg-image-2")
         self.view.insertSubview(backgroundImage, atIndex: 0)
-        
+        passwordTextField.delegate = self
+        usernameTextField.delegate = self
         usernameTextField.setBottomBorder()
         passwordTextField.setBottomBorder()
         loginButton.setButtonBorder()
@@ -75,4 +76,12 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

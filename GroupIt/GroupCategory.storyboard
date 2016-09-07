@@ -17,30 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbr-89-tMy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbr-89-tMy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="71" id="Eai-Cg-Ndl" customClass="CategoryCell" customModule="GroupIt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="71"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="61" id="Eai-Cg-Ndl" customClass="CategoryCell" customModule="GroupIt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eai-Cg-Ndl" id="n21-hI-235">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CategoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mp-hV-eP5">
-                                                    <rect key="frame" x="12" y="14" width="240" height="18"/>
-                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CategoryType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-JU-oz1">
-                                                    <rect key="frame" x="13" y="40" width="238" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CategoryType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-JU-oz1">
+                                                    <rect key="frame" x="10" y="40" width="67" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CategoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mp-hV-eP5">
+                                                    <rect key="frame" x="10" y="8" width="84" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4mp-hV-eP5" firstAttribute="leading" secondItem="n21-hI-235" secondAttribute="leading" constant="10" id="MBM-Zb-eTD"/>
+                                                <constraint firstAttribute="bottom" secondItem="GQl-JU-oz1" secondAttribute="bottom" constant="8.5" id="dPF-iL-AUc"/>
+                                                <constraint firstItem="GQl-JU-oz1" firstAttribute="top" secondItem="4mp-hV-eP5" secondAttribute="bottom" constant="8" id="lYP-sl-zvK"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4mp-hV-eP5" secondAttribute="trailing" constant="10" id="o5o-z0-iRm"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GQl-JU-oz1" secondAttribute="trailing" constant="10" id="qKB-1Y-vNI"/>
+                                                <constraint firstItem="GQl-JU-oz1" firstAttribute="leading" secondItem="n21-hI-235" secondAttribute="leading" constant="10" id="qas-VZ-odW"/>
+                                                <constraint firstItem="4mp-hV-eP5" firstAttribute="top" secondItem="n21-hI-235" secondAttribute="top" constant="8" id="uLR-Ig-RlW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -104,35 +113,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xz1-8K-qKG">
-                                <rect key="frame" x="44" y="61" width="226" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I74-e3-dpu">
-                                <rect key="frame" x="196" y="191" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I74-e3-dpu">
+                                <rect key="frame" x="207" y="286" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="Hxh-wq-Qeb"/>
+                                    <constraint firstAttribute="height" constant="30" id="keD-jl-8Es"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onSaveButtonTap:" destination="jQL-81-acv" eventType="touchUpInside" id="Mqv-dv-ldf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYD-JY-ehN">
-                                <rect key="frame" x="82" y="191" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-Mg-fkW">
+                                <rect key="frame" x="44" y="215" width="233" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="MFc-SD-XM9"/>
+                                    <constraint firstAttribute="height" constant="30" id="fKR-LE-Use"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xz1-8K-qKG">
+                                <rect key="frame" x="114" y="46" width="93" height="29"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYD-JY-ehN">
+                                <rect key="frame" x="77" y="286" width="48" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9L4-3h-LP7"/>
+                                    <constraint firstAttribute="width" constant="48" id="J9w-jw-FZ8"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onCancelButtonTap:" destination="jQL-81-acv" eventType="touchUpInside" id="3qC-Bw-Ro3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-Mg-fkW">
-                                <rect key="frame" x="44" y="119" width="233" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Clf-Mg-fkW" firstAttribute="top" secondItem="xz1-8K-qKG" secondAttribute="bottom" constant="140" id="0Ww-Kf-POe"/>
+                            <constraint firstItem="Clf-Mg-fkW" firstAttribute="leading" secondItem="tYD-JY-ehN" secondAttribute="trailing" constant="-81" id="7h8-NA-riq"/>
+                            <constraint firstItem="I74-e3-dpu" firstAttribute="leading" secondItem="Clf-Mg-fkW" secondAttribute="trailing" constant="-70" id="7v3-IZ-Qlu"/>
+                            <constraint firstItem="xz1-8K-qKG" firstAttribute="centerX" secondItem="8dX-ZP-nqh" secondAttribute="centerX" id="LKR-eR-NN0"/>
+                            <constraint firstItem="I74-e3-dpu" firstAttribute="top" secondItem="Clf-Mg-fkW" secondAttribute="bottom" constant="41" id="Oz0-Z4-vlI"/>
+                            <constraint firstItem="tYD-JY-ehN" firstAttribute="top" secondItem="Clf-Mg-fkW" secondAttribute="bottom" constant="41" id="e2M-DP-nDu"/>
+                            <constraint firstItem="xz1-8K-qKG" firstAttribute="top" secondItem="srO-HF-sfa" secondAttribute="bottom" constant="26" id="ipJ-Ah-o1v"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xz1-8K-qKG" secondAttribute="trailing" constant="10" id="kiq-Py-fc4"/>
+                            <constraint firstItem="Clf-Mg-fkW" firstAttribute="centerX" secondItem="8dX-ZP-nqh" secondAttribute="centerX" id="pxh-xf-FLl"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryCancelButton" destination="tYD-JY-ehN" id="N5J-xt-AqD"/>
+                        <outlet property="categoryCreateButton" destination="I74-e3-dpu" id="mmw-95-d0n"/>
                         <outlet property="categoryNameTextField" destination="Clf-Mg-fkW" id="gWx-s5-ULK"/>
                         <outlet property="categoryTypeLabel" destination="xz1-8K-qKG" id="KAH-GD-u30"/>
                     </connections>
@@ -153,36 +200,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alO-PN-r9t">
-                                <rect key="frame" x="47" y="74" width="224" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alO-PN-r9t">
+                                <rect key="frame" x="48" y="182" width="224" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1tG-u2-c04"/>
+                                    <constraint firstAttribute="width" constant="224" id="3iB-1F-SXR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErB-0i-OJT">
-                                <rect key="frame" x="201" y="175" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErB-0i-OJT">
+                                <rect key="frame" x="205" y="321" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3Cd-Zh-wrf"/>
+                                    <constraint firstAttribute="width" constant="34" id="GEc-5v-qmk"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onSaveButtonTap:" destination="MkJ-2x-Xfv" eventType="touchUpInside" id="Ky3-Up-JMP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BA-K3-TDo">
-                                <rect key="frame" x="78" y="175" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BA-K3-TDo">
+                                <rect key="frame" x="78" y="321" width="48" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fi2-kL-Xbv"/>
+                                    <constraint firstAttribute="width" constant="48" id="r4f-nN-zwL"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onCancelButtonTap:" destination="MkJ-2x-Xfv" eventType="touchUpInside" id="NAf-Pk-iqZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqB-e2-86q">
-                                <rect key="frame" x="47" y="125" width="224" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqB-e2-86q">
+                                <rect key="frame" x="48" y="255" width="224" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6P0-Ul-3I9"/>
+                                    <constraint firstAttribute="width" constant="224" id="79p-R8-3RJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A56-Q4-7pF">
+                                <rect key="frame" x="126" y="94" width="69" height="28"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="alO-PN-r9t" firstAttribute="top" secondItem="A56-Q4-7pF" secondAttribute="bottom" constant="60" id="9Xa-6o-oVL"/>
+                            <constraint firstItem="0BA-K3-TDo" firstAttribute="top" secondItem="WqB-e2-86q" secondAttribute="bottom" constant="36" id="Ea3-xG-OPv"/>
+                            <constraint firstItem="ErB-0i-OJT" firstAttribute="leading" secondItem="WqB-e2-86q" secondAttribute="trailing" constant="-67" id="U0J-Bz-DGe"/>
+                            <constraint firstItem="WqB-e2-86q" firstAttribute="centerX" secondItem="V4W-XW-Sw8" secondAttribute="centerX" id="We5-Ae-Z8i"/>
+                            <constraint firstItem="ErB-0i-OJT" firstAttribute="top" secondItem="WqB-e2-86q" secondAttribute="bottom" constant="36" id="ZTh-WK-qis"/>
+                            <constraint firstItem="A56-Q4-7pF" firstAttribute="top" secondItem="n8s-bY-1Jg" secondAttribute="bottom" constant="74" id="eFu-Fz-MTr"/>
+                            <constraint firstItem="WqB-e2-86q" firstAttribute="leading" secondItem="0BA-K3-TDo" secondAttribute="trailing" constant="-78" id="eqL-MB-c4W"/>
+                            <constraint firstItem="alO-PN-r9t" firstAttribute="centerX" secondItem="V4W-XW-Sw8" secondAttribute="centerX" id="kcL-Su-lLx"/>
+                            <constraint firstItem="A56-Q4-7pF" firstAttribute="centerX" secondItem="V4W-XW-Sw8" secondAttribute="centerX" id="mmZ-AM-G11"/>
+                            <constraint firstItem="WqB-e2-86q" firstAttribute="top" secondItem="alO-PN-r9t" secondAttribute="bottom" constant="43" id="uhx-RL-k4g"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="groupCancelButton" destination="0BA-K3-TDo" id="8cU-Tb-XMe"/>
                         <outlet property="groupDescriptionTextField" destination="WqB-e2-86q" id="DYl-FF-1Bd"/>
                         <outlet property="groupNameTextField" destination="alO-PN-r9t" id="czr-o4-3Ff"/>
+                        <outlet property="groupSaveButton" destination="ErB-0i-OJT" id="jzg-Nj-zSt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXq-9u-ei9" userLabel="First Responder" sceneMemberID="firstResponder"/>

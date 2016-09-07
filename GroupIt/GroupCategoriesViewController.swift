@@ -87,11 +87,20 @@ class GroupCategoriesViewController: UIViewController, UITableViewDataSource, UI
         
         
         self.title = group?.groupName
-        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
-        self.navigationItem.rightBarButtonItem = addButton
-
+//        let addButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(onAddButton))
+//        self.navigationItem.rightBarButtonItem = addButton
+        addNavBarButton()
 //        groupTabBarView.backgroundColor = UIColor(red: 7/255, green: 152/255, blue: 253/255, alpha: 0.5)
         self.tableView.reloadData()
+    }
+
+    func addNavBarButton() {
+        let addButton = UIButton()
+        addButton.setImage(GroupImageUtil.getAddImage(), forState: .Normal)
+        addButton.frame = CGRectMake(0, 0, 24, 24)
+        addButton.addTarget(self, action: #selector(onAddButton), forControlEvents: .TouchUpInside)
+        let addBarButton = UIBarButtonItem(customView: addButton)
+        self.navigationItem.setRightBarButtonItem(addBarButton, animated: true)
     }
 
     override func viewDidLayoutSubviews() {
